@@ -9,6 +9,22 @@ Description: xplorerr is a shiny app for interactive statistical analysis and
     R users.
 Depends:
     R(>= 3.2.4)
+Imports:
+    olsrr,
+    inferr,
+    descriptr
+    shiny,
+    plotly,
+    rbokeh,
+    highcharter,
+    readxl,
+    readr,
+    jsonlite,
+    tools,
+    caret,
+    lubridate,
+    scales,
+    grid
 URL: http://rsquaredlabs.com:3838/explorer/, https://github.com/rsquaredacademy/xplorerr
 BugReports: https://github.com/rsquaredacademy/xplorerr/issues
 License: MIT + file LICENSE
