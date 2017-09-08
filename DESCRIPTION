@@ -1,11 +1,16 @@
 Package: xplorerr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Shiny app for interactive statistical analysis
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"))
+Description: xplorerr is a shiny app for interactive statistical analysis and  
+    serves as a demo app for packages such as descriptr, inferr and olsrr. It
+    should prove useful as a tool for teaching introductory statistics to new
+    R users.
+Depends:
+    R(>= 3.2.4)
+URL: http://rsquaredlabs.com:3838/explorer/, https://github.com/rsquaredacademy/xplorerr
+BugReports: https://github.com/rsquaredacademy/xplorerr/issues
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
