@@ -138,14 +138,7 @@ tabPanel('Home', value = 'tab_welcome', icon = icon('home'),
         a(img(src = 'linkedinicon.png'), href = "https://www.slideshare.net/rsquaredin", target = "_blank")
       )
     ),
-
-    fluidRow(column(12, hr())),
-
-    fluidRow(
-      column(12, align = 'center',
-        tags$footer('Copyright: 2014-2017 Rsquared Academy')
-      )
-    ),
+    
     br()
 
     # fluidRow(
