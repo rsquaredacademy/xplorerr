@@ -1,4 +1,4 @@
-# source('helper/freq-cat.R')
+source('helper/freq-cat.R')
 
 
 # observe({

@@ -1,4 +1,5 @@
-# source("helper/ubox-plot.R")
+library(shiny)
+source("helper/ubox-plot.R")
 
 
     # update variable selection for bar plots

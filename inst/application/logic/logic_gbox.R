@@ -1,4 +1,4 @@
-# source('helper/ggbox1.R')
+source('helper/ggbox1.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]

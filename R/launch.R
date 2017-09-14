@@ -8,5 +8,5 @@
 #' @export
 #'
 launch_xplorerr <- function() {
-  shiny::runApp(appDir = system.file("application", package = 'xplorerr'))
+    shiny::runApp(appDir = system.file("application", package = "xplorerr"))
 }

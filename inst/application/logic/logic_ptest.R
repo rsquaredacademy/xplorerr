@@ -1,5 +1,5 @@
-# source('helper/paired-ttest-shiny.R')
-# source('helper/utils.R')
+source('helper/paired-ttest-shiny.R')
+source('helper/utils.R')
 
 observe({
     updateSelectInput(session,

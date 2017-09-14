@@ -1,4 +1,4 @@
-# library(stringr)
+library(stringr)
 
     output$trans_try <- renderUI({
         ncol <- as.integer(ncol(uploadata$t))

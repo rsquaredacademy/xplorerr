@@ -1,6 +1,6 @@
-# source('helper/boxly2.R')
-# source('helper/bobox2.R')
-# source('helper/hibox2.R')
+source('helper/boxly2.R')
+source('helper/bobox2.R')
+source('helper/hibox2.R')
 
 observeEvent(input$button_split_no, {
         num_data <- final_split$train[, sapply(final_split$train, is.numeric)]

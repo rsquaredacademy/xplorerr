@@ -1,4 +1,4 @@
-# source('helper/ggbibar.R')
+source('helper/ggbibar.R')
 
 observeEvent(input$button_split_no, {
 

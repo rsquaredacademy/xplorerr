@@ -1,4 +1,4 @@
-# source("helper/line-plot.R")
+source("helper/line-plot.R")
 
     # update variable selection for scatter plots
     # observe({

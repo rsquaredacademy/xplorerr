@@ -1,6 +1,6 @@
-# source('helper/barly2.R')
-# source('helper/bobar2.R')
-# source('helper/bibar.R')
+source('helper/barly2.R')
+source('helper/bobar2.R')
+source('helper/bibar.R')
 
 observeEvent(input$button_split_no, {
 

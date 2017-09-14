@@ -1,4 +1,4 @@
-# source('helper/cross-table.R')
+source('helper/cross-table.R')
 
 observeEvent(input$button_split_no, {
 

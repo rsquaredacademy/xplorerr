@@ -1,6 +1,6 @@
-# library(shiny)
-# source("helper/histogram.R")
-# source("helper/freq-cont.R")
+library(shiny)
+source("helper/histogram.R")
+source("helper/freq-cont.R")
 
 
     # update variable selection for bar plots

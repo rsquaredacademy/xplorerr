@@ -1,6 +1,6 @@
-# source('helper/linely.R')
-# source('helper/boline.R')
-# source('helper/highline.R')
+source('helper/linely.R')
+source('helper/boline.R')
+source('helper/highline.R')
 
 observeEvent(input$button_split_no, {
         num_data <- cbind.data.frame(final_split$train[, sapply(final_split$train, is.numeric)],

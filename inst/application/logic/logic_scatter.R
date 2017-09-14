@@ -1,4 +1,4 @@
-# source("helper/scatter-plot.R")
+source("helper/scatter-plot.R")
 
     # observe({
     #     updateSelectInput(session, 'scatter_select_x', choices = names(data()))

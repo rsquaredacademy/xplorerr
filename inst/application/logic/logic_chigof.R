@@ -1,4 +1,4 @@
-# source('helper/chisq-gof-shiny.R')
+source('helper/chisq-gof-shiny.R')
 
 observe({
     updateSelectInput(session, 'var_chigof', choices = names(data()))

@@ -1,5 +1,5 @@
-# library(shiny)
-# source("helper/bbox-plot.R")
+library(shiny)
+source("helper/bbox-plot.R")
 
 
     # update variable selection for bar plots

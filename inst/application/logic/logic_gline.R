@@ -1,4 +1,4 @@
-# source('helper/ggline.R')
+source('helper/ggline.R')
 
 # out <- eventReactive(input$button_split_no, {
 #   num_data <- cbind.data.frame(final_split$train[, sapply(final_split$train, is.numeric)],

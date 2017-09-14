@@ -1,4 +1,4 @@
-# source("helper/bbar-plot.R")
+source("helper/bbar-plot.R")
 
 
 

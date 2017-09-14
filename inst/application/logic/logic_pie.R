@@ -1,4 +1,4 @@
-# source("helper/pie-plot.R")
+source("helper/pie-plot.R")
 
     # update variable selection for bar plots
     observe({

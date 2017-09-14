@@ -1,4 +1,4 @@
-# source('helper/t-test-shiny.R')
+source('helper/t-test-shiny.R')
 
 observe({
     updateSelectInput(session,

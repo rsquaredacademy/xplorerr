@@ -1,5 +1,5 @@
-# source('helper/piely.R')
-# source('helper/highpie.R')
+source('helper/piely.R')
+source('helper/highpie.R')
 
 observeEvent(input$button_split_no, {
 

@@ -1,4 +1,4 @@
-# source('helper/one-samp-var-shiny.R')
+source('helper/one-samp-var-shiny.R')
 
 observe({
     updateSelectInput(session,

@@ -1,4 +1,4 @@
-# source('helper/group-summary.R')
+source('helper/group-summary.R')
 
 # descriptive statistics
 # observe({

@@ -1,4 +1,4 @@
-# source('helper/ggpie.R')
+source('helper/ggpie.R')
 
 observeEvent(input$button_split_no, {
 

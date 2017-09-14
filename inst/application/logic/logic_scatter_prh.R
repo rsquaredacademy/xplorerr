@@ -1,6 +1,6 @@
-# source('helper/scatterly.R')
-# source('helper/boscatter.R')
-# source('helper/hscatter.R')
+source('helper/scatterly.R')
+source('helper/boscatter.R')
+source('helper/hscatter.R')
 
 observeEvent(input$button_split_no, {
 
