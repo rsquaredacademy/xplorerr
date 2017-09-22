@@ -21,7 +21,7 @@ launch_app_xplorerr <- function() {
 #' @export
 #'
 launch_app_visualizer <- function() {
-    shiny::runApp(appDir = system.file("app-visualizer", package = "xplorerr"))
+    shiny::runApp(appDir = system.file("app-visualize", package = "xplorerr"))
 }
 
 #' @title Launch Descriptive Statistics App
