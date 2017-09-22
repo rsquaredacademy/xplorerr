@@ -1,0 +1,38 @@
+library(descriptr)
+library(dplyr)
+library(tibble)
+library(readxl)
+library(readr)
+library(jsonlite)
+library(magrittr)
+library(tools)
+library(lubridate)
+library(scales)
+library(stringr)
+
+shinyServer(function(input, output, session) {
+    
+    source("logic/logic_dataoptions.R", local = T)
+    source("logic/logic_upload.R", local = T)
+    source("logic/logic_transform2.R", local = T)
+    source("logic/logic_select.R", local = T)
+    source("logic/logic_filter.R", local = T)
+    source("logic/logic_screen.R", local = T)
+    source("logic/logic_view.R", local = T)
+    source("logic/logic_summary.R", local = T)
+    source("logic/logic_freq_qual.R", local = T)
+    source("logic/logic_freq_quant.R", local = T)
+    source("logic/logic_cross.R", local = T)
+    source("logic/logic_mult1.R", local = T)
+    source("logic/logic_mult2.R", local = T)
+    source("logic/logic_group_summary.R", local = T)
+    source("logic/logic_binom.R", local = T)
+    source("logic/logic_f.R", local = T)
+    source("logic/logic_t.R", local = T)
+    source("logic/logic_norm.R", local = T)
+    source("logic/logic_chisq.R", local = T)
+    source("logic/logic_home.R", local = T)
+    
+})
+
+
