@@ -690,44 +690,52 @@ output$ui_mselplot <- renderUI({
 # })
 
 # all subset
-# d_allsub <- eventReactive(input$submit_allsub, {
-#   # validate(need((input$allsub_fmla != ''), 'Please specify model'))
-#     data <- final_split$train
+d_allsub <- eventReactive(input$submit_allsub, {
+  data <- final_split$train
+  k <- lm(input$allsub_fmla, data = data)
+  olsrr:::mod_sel_data(k)
+})
+
+# allsub_model <- eventReactive(input$submit_allsub, {
+  
+#   k <- lm(input$allsub_fmla, data = d_allsub())
+#   ols_all_subset(k)
+#   # ols_all_subset(k)
+#   # lm(input$allsub_fmla, data = final_split$train)
+#   # ols_all_subset(all_use_n())
+#   # if (input$all_use_model) {
+#   #   ols_all_subset(all_use_n())
+#   # } else {
+#   #   k <- lm(input$allsub_fmla, data = d_allsub())
+#   #   ols_all_subset(k)
+#   # }
 # })
 
-allsub_model <- eventReactive(input$submit_allsub, {
-  if (input$all_use_model) {
-    ols_all_subset(all_use_n())
-  } else {
-    model <- lm(input$allsub_fmla, data = final_split$train)
-    ols_all_subset(model)
-  }
-})
+# a1_title <- eventReactive(input$submit_allsub, {
+#   column(12, align = 'center', h4('All Subset Regression'))
+# })
 
-a1_title <- eventReactive(input$submit_allsub, {
-  column(12, align = 'center', h4('All Subset Regression'))
-})
+# output$all_title1 <- renderUI({
+#   a1_title()
+# })
 
-output$all_title1 <- renderUI({
-  a1_title()
-})
+# a2_title <- eventReactive(input$submit_allsub, {
+#   column(12, align = 'center', h4('All Subset Regression Plot'))
+# })
 
-a2_title <- eventReactive(input$submit_allsub, {
-  column(12, align = 'center', h4('All Subset Regression Plot'))
-})
-
-output$all_title2 <- renderUI({
-  a2_title()
-})
+# output$all_title2 <- renderUI({
+#   a2_title()
+# })
 
 
 output$allsub_out <- renderPrint({
-  allsub_model()
+  d_allsub()
+  # allsub_model()
 })
 
-output$allsub_plot <- renderPlot({
-  plot(allsub_model())
-})
+# output$allsub_plot <- renderPlot({
+#   plot(allsub_model())
+# })
 
 bestsub_model <- eventReactive(input$submit_bestsub, {
   if (input$best_use_prev) {
@@ -949,7 +957,7 @@ aicboth_model <- eventReactive(input$submit_aicboth, {
     ols_stepaic_both(all_use_n(),
       as.logical(input$aicboth_details))
   } else {
-    model <- lm(input$aicboth_fmla, data = final_split$train)
+    model <- lm(input$aicboth_fmla, data = `final_split$train`)
     ols_stepaic_both(model,
       as.logical(input$aicboth_details))
   }
