@@ -11,6 +11,32 @@ Depends:
     R(>= 3.2.4)
 Imports:
     shiny
+Suggests:
+    caret,
+    descriptr,
+    dplyr,
+    ggplot2,
+    grid,
+    gridExtra,
+    haven,
+    highcharter,
+    inferr,
+    jsonlite,
+    lubridate,
+    magrittr,
+    olsrr,
+    plotly,
+    purrr,
+    rbokeh,
+    readr,
+    readxl,
+    scales,	
+    shinyBS,
+    shinythemes,
+    stringr,
+    tibble,
+    tidyr,
+    tools
 URL: http://rsquaredlabs.com:3838/explorer/, https://github.com/rsquaredacademy/xplorerr
 BugReports: https://github.com/rsquaredacademy/xplorerr/issues
 License: GPL-3 + file LICENSE
