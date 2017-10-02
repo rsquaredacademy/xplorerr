@@ -10,9 +10,7 @@ tabPanel('F Distribution', value = 'tab_f',
       ),
       column(5, align = 'right',
         actionButton(inputId='fdistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/f_plot.html', '_blank')"),
-        actionButton(inputId='fdistlink3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/f_plot.html', '_blank')")
       )
     ),
     hr(),

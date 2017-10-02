@@ -9,7 +9,7 @@ tabPanel('One Way ANOVA', value = 'tab_anova',
         actionButton(inputId='anovalink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/owanova.html', '_blank')"),
         actionButton(inputId='anovalink3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=6ywh-fVTvFQ', '_blank')")
       )
     ),
     hr(),

@@ -11,7 +11,7 @@ tabPanel('Summary', value = 'tab_summary',
           actionButton(inputId='sumrylink1', label="Help", icon = icon("question-circle"),
             onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/summary_stats.html', '_blank')"),
           actionButton(inputId='sumrylink3', label="Demo", icon = icon("video-camera"),
-            onclick ="window.open('http://google.com', '_blank')")
+            onclick ="window.open('https://www.youtube.com/watch?v=cq6_1SQjNmM', '_blank')")
         )
       ),
       hr(),

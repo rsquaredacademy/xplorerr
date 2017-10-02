@@ -10,7 +10,7 @@ tabPanel('One Sample Variance', value = 'tab_osvartest',
         actionButton(inputId='osvarlink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/os_vartest.html', '_blank')"),
         actionButton(inputId='osvarlink3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=00ZCHwMPaFY', '_blank')")
       )
     ),
     hr(),

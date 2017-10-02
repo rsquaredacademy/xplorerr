@@ -59,16 +59,6 @@ tabPanel("About", value="tab_about", icon = icon('info-circle'),
 
         br(),
         br(),
-
-        fluidRow(
-          column(6, align = 'center', offset = 3,
-            tags$iframe(src='https://forms.zohopublic.com/rsquaredacademy/form/ContactForm/formperma/7mm67F924f01g7_7F109hm91h',
-              width = '99%', height = '500px')
-          )
-        ),
-
-        br(),
-        br(),
         br(),
         br()
 

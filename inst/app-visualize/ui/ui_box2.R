@@ -2,12 +2,8 @@ tabPanel('2 Factor Box Plot', value = 'tab_box2',
 
     fluidPage(
       fluidRow(
-                 column(9, align = 'left',
+                 column(12, align = 'left',
                    h4('2 Factor Box Plot')
-                 ),
-                 column(3, align = 'right',
-                   actionButton(inputId='box2link1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
                  )
                ),
                hr(),

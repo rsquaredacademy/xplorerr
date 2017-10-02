@@ -13,9 +13,7 @@ tabPanel('Binomial Distribution', value = 'tab_binom',
           ),
           column(4, align = 'right',
             actionButton(inputId='binomdist1', label="Help", icon = icon("question-circle"),
-              onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/binom_plot.html', '_blank')"),
-            actionButton(inputId='binomdist3', label="Demo", icon = icon("video-camera"),
-              onclick ="window.open('http://google.com', '_blank')")
+              onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/binom_plot.html', '_blank')")
           )
         ),
         hr(),

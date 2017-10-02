@@ -2,12 +2,8 @@ tabPanel('Scatter Plot', value = 'tab_scatter_prh',
 
 	fluidPage(
 		fluidRow(
-			column(9, align = 'left',
+			column(12, align = 'left',
 				h4('Scatter Plot')
-			),
-			column(3, align = 'right',
-				actionButton(inputId='scatprhothlink1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
 			)
 		),
 

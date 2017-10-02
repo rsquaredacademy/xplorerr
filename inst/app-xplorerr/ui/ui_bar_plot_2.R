@@ -2,12 +2,8 @@ tabPanel('2 Factor Bar Plot', value = 'tab_bar_plot_2',
 
 	fluidPage(
 		fluidRow(
-			column(9, align = 'left',
+			column(12, align = 'left',
 				h4('Bar Plot - II')
-			),
-			column(3, align = 'right',
-				actionButton(inputId='bar2othlink1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
 			)
 		),
 

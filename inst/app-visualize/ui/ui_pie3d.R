@@ -2,12 +2,8 @@ tabPanel('3D Pie Chart', value = 'tab_pie3d',
 
     fluidPage(
         fluidRow(
-                 column(9, align = 'left',
+                 column(12, align = 'left',
                    h4('3D Pie Chart')
-                 ),
-                 column(3, align = 'right',
-                   actionButton(inputId='pielink2', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
                  )
                ),
                hr(),

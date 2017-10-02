@@ -11,7 +11,7 @@ tabPanel('Independent Sample t', value = 'tab_indttest',
         actionButton(inputId='indttest1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/ind_ttest.html', '_blank')"),
         actionButton(inputId='indttest3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=iKFFzv9WiUo', '_blank')")
       )
     ),
     hr(),

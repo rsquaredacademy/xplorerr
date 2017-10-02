@@ -2,12 +2,8 @@ tabPanel('Histogram', value = 'tab_hist_prh',
 
 	fluidPage(
 		fluidRow(
-			column(9, align = 'left',
+			column(12, align = 'left',
 				h4('Histogram')
-			),
-			column(3, align = 'right',
-				actionButton(inputId='histprhothlink1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
 			)
 		),
 

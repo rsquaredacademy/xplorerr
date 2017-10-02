@@ -3,12 +3,8 @@ tabPanel('Line Chart - II', value = 'tab_gline2',
 	fluidPage(
 
 		fluidRow(
-			column(9, align = 'left',
+			column(12, align = 'left',
 				h4('Line Plot - II')
-			),
-			column(3, align = 'right',
-				actionButton(inputId='line2link1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
 			)
 		),
 

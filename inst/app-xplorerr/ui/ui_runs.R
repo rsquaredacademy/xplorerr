@@ -13,7 +13,7 @@ tabPanel('Runs Test', value = 'tab_runs',
         actionButton(inputId='runslink1', label="Help", icon = icon("question-circle"),
           onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/runs_test.html', '_blank')"),
         actionButton(inputId='runslink3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=H12KM_uHbWc', '_blank')")
       )
     ),
     hr(),

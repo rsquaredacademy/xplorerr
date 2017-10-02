@@ -3,12 +3,8 @@ tabPanel('Bar Plot', value = 'tab_gbar',
 	fluidPage(
 
 		fluidRow(
-			column(9, align = 'left',
+			column(12, align = 'left',
 				h4('Bar Plot')
-			),
-			column(3, align = 'right',
-				actionButton(inputId='barlink1', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('http://google.com', '_blank')")
 			)
 		),
 
