@@ -21,7 +21,8 @@ launch_app_xplorerr <- function() {
 #' @export
 #'
 launch_app_visualizer <- function() {
-    shiny::runApp(appDir = system.file("app-visualize", package = "xplorerr"))
+  message('Highcharts (www.highcharts.com) is a Highsoft software product which is not free for commercial and Governmental use')
+  shiny::runApp(appDir = system.file("app-visualize", package = "xplorerr"))
 }
 
 #' @title Launch Descriptive Statistics App
