@@ -13,6 +13,16 @@ install:
 cache:
   - C:\RLibrary
 
+environment:
+  global:
+    WARNINGS_ARE_ERRORS: 1
+
+  matrix:
+  - R_VERSION: devel
+    R_ARCH: x64
+
+  - R_VERSION: patched
+
 # Adapt as necessary starting from here
 
 build_script:
