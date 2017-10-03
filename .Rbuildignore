@@ -1,2 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.travis\.yml$
+^README\.Rmd$
+^README-.*\.png$
+^appveyor\.yml$
+^cran-comments\.md$
+^CONDUCT\.md$
