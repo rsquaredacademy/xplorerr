@@ -4,7 +4,7 @@
 \name{xplorerr}
 \alias{xplorerr}
 \alias{xplorerr-package}
-\title{\code{olsrr} package}
+\title{\code{xplorerr} package}
 \description{
 R Shiny app for interactive statistical analysis
 }
