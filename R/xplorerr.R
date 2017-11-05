@@ -1,4 +1,4 @@
-#' \code{olsrr} package
+#' \code{xplorerr} package
 #'
 #' R Shiny app for interactive statistical analysis
 #'
