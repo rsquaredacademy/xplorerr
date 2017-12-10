@@ -9,9 +9,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='allsub1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_all_subset.html', '_blank')"),
-                  actionButton(inputId='allsub3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_all_subset.html', '_blank')")
                 )
               )
   } else if (input$mselect == "Best Subset") {
@@ -24,9 +22,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='bestsub1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_best_subset.html', '_blank')"),
-                  actionButton(inputId='bestsub3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_best_subset.html', '_blank')")
                 )
               )
     
@@ -41,9 +37,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='stepwise1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepwise.html', '_blank')"),
-                  actionButton(inputId='stepwise3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepwise.html', '_blank')")
                 )
               )
     
@@ -58,9 +52,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='stepf1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_forward.html', '_blank')"),
-                  actionButton(inputId='stepf3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_forward.html', '_blank')")
                 )
               )
     
@@ -75,9 +67,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='stepb1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_backward.html', '_blank')"),
-                  actionButton(inputId='stepb3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_step_backward.html', '_blank')")
                 )
               )
     
@@ -92,9 +82,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='stepaicf1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_forward.html', '_blank')"),
-                  actionButton(inputId='stepaicf3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_forward.html', '_blank')")
                 )
               )
     
@@ -109,9 +97,7 @@ output$ui_mselectlink <- renderUI({
                 ),
                 column(6, align = 'right',
                   actionButton(inputId='stepaicb1', label="Help", icon = icon("question-circle"),
-                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_backward.html', '_blank')"),
-                  actionButton(inputId='stepaicb3', label="Demo", icon = icon("video-camera"),
-                    onclick ="window.open('http://google.com', '_blank')")
+                    onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_stepaic_backward.html', '_blank')")
                 )
               )
     
@@ -690,47 +676,39 @@ output$ui_mselplot <- renderUI({
 # })
 
 # all subset
-d_allsub <- eventReactive(input$submit_allsub, {
-  data <- final_split$train
-  k <- lm(input$allsub_fmla, data = data)
-  olsrr:::mod_sel_data(k)
+# d_allsub <- eventReactive(input$submit_allsub, {
+#   # validate(need((input$allsub_fmla != ''), 'Please specify model'))
+#     data <- final_split$train
+# })
+
+allsub_model <- eventReactive(input$submit_allsub, {
+  if (input$all_use_model) {
+    ols_all_subset(all_use_n())
+  } else {
+    model <- lm(input$allsub_fmla, data = final_split$train)
+    ols_all_subset(model)
+  }
 })
 
-# allsub_model <- eventReactive(input$submit_allsub, {
-  
-#   k <- lm(input$allsub_fmla, data = d_allsub())
-#   ols_all_subset(k)
-#   # ols_all_subset(k)
-#   # lm(input$allsub_fmla, data = final_split$train)
-#   # ols_all_subset(all_use_n())
-#   # if (input$all_use_model) {
-#   #   ols_all_subset(all_use_n())
-#   # } else {
-#   #   k <- lm(input$allsub_fmla, data = d_allsub())
-#   #   ols_all_subset(k)
-#   # }
-# })
+a1_title <- eventReactive(input$submit_allsub, {
+  column(12, align = 'center', h4('All Subset Regression'))
+})
 
-# a1_title <- eventReactive(input$submit_allsub, {
-#   column(12, align = 'center', h4('All Subset Regression'))
-# })
+output$all_title1 <- renderUI({
+  a1_title()
+})
 
-# output$all_title1 <- renderUI({
-#   a1_title()
-# })
+a2_title <- eventReactive(input$submit_allsub, {
+  column(12, align = 'center', h4('All Subset Regression Plot'))
+})
 
-# a2_title <- eventReactive(input$submit_allsub, {
-#   column(12, align = 'center', h4('All Subset Regression Plot'))
-# })
-
-# output$all_title2 <- renderUI({
-#   a2_title()
-# })
+output$all_title2 <- renderUI({
+  a2_title()
+})
 
 
 output$allsub_out <- renderPrint({
-  d_allsub()
-  # allsub_model()
+  allsub_model()
 })
 
 # output$allsub_plot <- renderPlot({
@@ -741,7 +719,8 @@ bestsub_model <- eventReactive(input$submit_bestsub, {
   if (input$best_use_prev) {
     ols_best_subset(all_use_n())
   } else {
-    model <- lm(input$bestsub_fmla, data = final_split$train)
+    data <- final_split$train
+    model <- lm(input$bestsub_fmla, data = data)
     ols_best_subset(model)
   }
 })
@@ -957,7 +936,7 @@ aicboth_model <- eventReactive(input$submit_aicboth, {
     ols_stepaic_both(all_use_n(),
       as.logical(input$aicboth_details))
   } else {
-    model <- lm(input$aicboth_fmla, data = `final_split$train`)
+    model <- lm(input$aicboth_fmla, data = final_split$train)
     ols_stepaic_both(model,
       as.logical(input$aicboth_details))
   }

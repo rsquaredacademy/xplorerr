@@ -9,9 +9,9 @@ tabPanel('Screen', value = 'tab_screen',
             ),
             column(4, align = 'right',
               actionButton(inputId='dscreenlink1', label="Help", icon = icon("question-circle"),
-                onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/screener.html', '_blank')"),
+                onclick ="window.open('http://www.rsquaredacademy.com/descriptr/reference/ds_screener.html', '_blank')"),
               actionButton(inputId='dscreenlink3', label="Demo", icon = icon("video-camera"),
-                onclick ="window.open('https://www.youtube.com/watch?v=jBaU3g-ShDo', '_blank')")
+                onclick ="window.open('https://www.youtube.com/watch?v=X8b0beNJ64A#t=03m09s', '_blank')")
             )
           ),
           hr(),

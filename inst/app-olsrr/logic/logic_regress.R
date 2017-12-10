@@ -27,6 +27,7 @@ all_use_n <- eventReactive(input$submit_regress, {
   k <- model()
   object <- k$model
   formul <- formula(object)  
-  n <- lm(formul, data = eval(object$call$data))
+  data <- final_split$train
+  n <- lm(formul, data = data)
   n
 })
