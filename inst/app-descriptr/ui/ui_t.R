@@ -10,7 +10,7 @@ tabPanel('t Distribution', value = 'tab_t',
       ),
       column(6, align = 'right',
         actionButton(inputId='tdistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/t_plot.html', '_blank')"),
+          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/dist_t_plot.html', '_blank')"),
         actionButton(inputId='tdistlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('http://google.com', '_blank')")
       )
