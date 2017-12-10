@@ -135,7 +135,7 @@ tabPanel('Home', value = 'tab_welcome', icon = icon('home'),
         a(img(src = 'twittericon.png'), href = "https://twitter.com/rsquaredacademy", target = "_blank"),
         a(img(src = 'githubicon.png'), href = "https://github.com/rsquaredacademy", target = "_blank"),
         a(img(src = 'youtubeicon.png'), href = "https://www.youtube.com/user/rsquaredin/", target = "_blank"),
-        a(img(src = 'linkedinicon.png'), href = "https://www.slideshare.net/rsquaredin", target = "_blank")
+        a(img(src = 'linkedinicon.png'), href = "https://in.linkedin.com/company/rsquared-academy", target = "_blank")
       )
     ),
 

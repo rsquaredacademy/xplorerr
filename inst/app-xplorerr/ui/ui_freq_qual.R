@@ -10,7 +10,7 @@ tabPanel('Frequency - I', value = 'tab_fqual',
             ),
             column(6, align = 'right',
               actionButton(inputId='fqualink1', label="Help", icon = icon("question-circle"),
-                onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/freq_table.html', '_blank')"),
+                onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/ds_freq_table.html', '_blank')"),
               actionButton(inputId='fqualink3', label="Demo", icon = icon("video-camera"),
                 onclick ="window.open('https://www.youtube.com/watch?v=BMKV2Rocm1s', '_blank')")
             )
