@@ -60,7 +60,7 @@ d_summary <- eventReactive(input$submit_summary, {
   # validate(need(input$var_summary != '', 'Please select a variable.'))
   req(input$var_summary)
   data <- final_split$train[, c(input$var_summary)]
-  summary_stats(data)
+  ds_summary_stats(data)
 })
 
 

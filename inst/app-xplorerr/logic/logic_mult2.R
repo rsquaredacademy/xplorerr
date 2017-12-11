@@ -6,7 +6,7 @@ output$mult2 <- renderPrint({
   } else if (ncol(num_data) < 3) {
     out <- NULL
   } else {
-    tway_tables(final_split$train)  
+    ds_tway_tables(final_split$train)  
   }
 })
 

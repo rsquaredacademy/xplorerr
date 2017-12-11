@@ -64,7 +64,7 @@ conames <- reactive({
 
 
 cross_out <- eventReactive(input$submit_cross, {
-  k <- cross_table(d_cross(), as.character(input$var1_cross), 
+  k <- ds_cross_table(d_cross(), as.character(input$var1_cross), 
     as.character(input$var2_cross))
   k
 })
