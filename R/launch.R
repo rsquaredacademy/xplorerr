@@ -60,3 +60,16 @@ launch_app_inferr <- function() {
 launch_app_olsrr <- function() {
     shiny::runApp(appDir = system.file("app-olsrr", package = "xplorerr"))
 }
+
+
+#' @title Launch Logistic Regression App
+#' @description Launches the binary logistic regression app
+#' @examples
+#' \dontrun{
+#' launch_app_blorr()
+#' }
+#' @export
+#'
+launch_app_blorr <- function() {
+  shiny::runApp(appDir = system.file("app-blorr", package = "xplorerr"))
+}
