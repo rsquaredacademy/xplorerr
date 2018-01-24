@@ -1,11 +1,8 @@
 Package: xplorerr
 Type: Package
-Title: Shiny App for Interactive Statistical Analysis
+Title: Shiny Apps for Interactive Statistical Analysis
 Version: 0.1.0
-Authors@R: c(
-    person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre")),
-    person("Rsquared", "Academy", role = "fnd")
-    )
+Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"))
 Description: App for interactive statistical analysis and  
     serves as a demo app for packages such as descriptr, inferr and olsrr. It
     should prove useful as a tool for teaching introductory statistics to new
@@ -16,9 +13,13 @@ Imports:
     shiny
 Suggests:
     caret,
+    cli,
+    clisymbols,
+    crayon,
     descriptr,
     dplyr,
     ggplot2,
+    glue,
     grid,
     gridExtra,
     haven,
@@ -31,18 +32,22 @@ Suggests:
     plotly,
     purrr,
     rbokeh,
+    Rcpp,
     readr,
     readxl,
+    rlang,
     scales,	
     shinyBS,
     shinythemes,
+    stats,
     stringr,
     tibble,
     tidyr,
-    tools
-URL: http://rsquaredlabs.com:3838/explorer/, https://github.com/rsquaredacademy/xplorerr
+    tools,
+    utils
+URL: https://rsquaredacademy.github.io/xplorerr/, https://github.com/rsquaredacademy/xplorerr
 BugReports: https://github.com/rsquaredacademy/xplorerr/issues
-License: GPL-3 + file LICENSE
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
