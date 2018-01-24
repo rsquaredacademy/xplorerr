@@ -6,8 +6,6 @@ home:
   links:
     - text: Learn more
       href: http://www.rsquaredacademy.com
-    - text: Try app at
-      href: http://rsquaredlabs.com:3838/explorer/
 
 reference:
 - title: All functions
@@ -16,6 +14,7 @@ reference:
   - launch_app_descriptr
   - launch_app_inferr
   - launch_app_olsrr
+  - launch_app_blorr
   - launch_app_visualizer
   - launch_app_xplorerr
   - xplorerr
