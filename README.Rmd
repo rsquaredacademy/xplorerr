@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# xplorerr
+xplorerr: Shiny Apps for Interactive Analysis <img src="xplorerr.png" align="right" />
+---------
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
 [![Travis-CI Build Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr)
@@ -35,18 +36,17 @@ xplorerr provides a set of shiny apps useful for:
 You can install xplorerr from github with:
 
 ```{r gh-installation, eval = FALSE}
-# install xplorerr from CRAN
-install.packages('xplorerr')
-
 # install.packages("devtools")
 devtools::install_github("rsquaredacademy/xplorerr")
 ```
 
 ## Usage
 
-There are five apps in xplorerr which can be launched using `launch_app_*` prefix (easy tab completion)
+There are six apps in xplorerr which can be launched using `launch_app_*` prefix (easy tab completion).
 
 ### Descriptive Statistics
+
+Useful for generating descriptive/summary statistics and exploring distributions.
 
 ```{r descriptr, eval=FALSE}
 launch_app_descriptr()
@@ -54,23 +54,39 @@ launch_app_descriptr()
 
 ### Hypothesis Testing
 
+Useful for performing parametric and non-parametric tests.
+
 ```{r inferr, eval=FALSE}
 launch_app_inferr()
 ```
 
 ### Visualization
 
+Visualize data using different libraries such as ggplot2, plotly and rbokeh.
+
 ```{r visualize, eval=FALSE}
 launch_app_visualizer()
 ```
 
-### Model Building
+### Linear Regression
+
+Build linear regression models using OLS technique.
 
 ```{r olsrr, eval=FALSE}
 launch_app_olsrr()
 ```
 
+### Logistic Regression
+
+Build and validate binary logistic regression models.
+
+```{r blorr, eval=FALSE}
+launch_app_blorr()
+```
+
 ### Xplorerr
+
+Single app that includes all of the above.
 
 ```{r xplorerr, eval=FALSE}
 launch_app_xplorerr()
