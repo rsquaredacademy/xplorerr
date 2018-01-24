@@ -10,7 +10,7 @@ tabPanel('Normal Distribution', value = 'tab_norm',
       ),
       column(4, align = 'right',
         actionButton(inputId='ndistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/norm_plot.html', '_blank')")
+          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/dist_norm_plot.html', '_blank')")
       )
     ),
     hr(),
