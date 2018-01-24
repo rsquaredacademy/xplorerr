@@ -4,8 +4,7 @@
   tips <- c(
     "Learn more about xplorerr at http://github.com/rsquaredacademy/xplorerr/.",
     "Use suppressPackageStartupMessages() to eliminate package startup messages.",
-    "Need help getting started with data science? Visit: http://www.rsquaredacademy.com",
-    "Check out our interactive app for quick data exploration. Visit: http://www.rsquaredlabs.com:3838/explorer/."
+    "Need help getting started with data science? Visit: http://www.rsquaredacademy.com"
   )
 
   tip <- sample(tips, 1)
