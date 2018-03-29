@@ -1,17 +1,3 @@
-#' @importFrom shiny runApp
-#' @title Launch Xplorerr App
-#' @description Launches the xplorerr app
-#' @examples
-#' \dontrun{
-#' launch_app_xplorerr()
-#' }
-#' @export
-#'
-launch_app_xplorerr <- function() {
-    shiny::runApp(appDir = system.file("app-xplorerr", package = "xplorerr"))
-}
-
-
 #' @title Launch Visualization App
 #' @description Launches the Visualizer app
 #' @examples
