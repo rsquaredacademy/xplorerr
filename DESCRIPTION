@@ -3,15 +3,15 @@ Type: Package
 Title: Shiny Apps for Interactive Statistical Analysis
 Version: 0.1.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"))
-Description: App for interactive statistical analysis and  
-    serves as a demo app for packages such as descriptr, inferr and olsrr. It
-    should prove useful as a tool for teaching introductory statistics to new
-    R users.
+Description: App for interactive statistical analysis and serves as a demo app 
+    for packages such as descriptr, inferr, olsrr and blorr. It should prove 
+    useful as a tool for teaching introductory statistics to new R users.
 Depends:
     R(>= 3.2.4)
 Imports:
     shiny
 Suggests:
+    blorr,
     caret,
     cli,
     clisymbols,
@@ -35,6 +35,7 @@ Suggests:
     Rcpp,
     readr,
     readxl,
+    recipes,
     rlang,
     scales,	
     shinyBS,
@@ -45,7 +46,7 @@ Suggests:
     tidyr,
     tools,
     utils
-URL: https://rsquaredacademy.github.io/xplorerr/, https://github.com/rsquaredacademy/xplorerr
+URL: https://github.com/rsquaredacademy/xplorerr, https://xplorerr.rsquaredacademy.com/ 
 BugReports: https://github.com/rsquaredacademy/xplorerr/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
