@@ -29,7 +29,8 @@ xplorerr provides a set of shiny apps useful for:
 - exploring statistical distributions
 - hypothesis testing
 - data visualization
-- and modeling
+- linear regression modeling
+- logistic regression modeling
 
 ## Installation
 
@@ -42,7 +43,7 @@ devtools::install_github("rsquaredacademy/xplorerr")
 
 ## Usage
 
-There are six apps in xplorerr which can be launched using `launch_app_*` prefix (easy tab completion).
+There are five apps in xplorerr which can be launched using `launch_app_*` prefix (easy tab completion).
 
 ### Descriptive Statistics
 
@@ -82,14 +83,6 @@ Build and validate binary logistic regression models.
 
 ```{r blorr, eval=FALSE}
 launch_app_blorr()
-```
-
-### Xplorerr
-
-Single app that includes all of the above.
-
-```{r xplorerr, eval=FALSE}
-launch_app_xplorerr()
 ```
 
 
