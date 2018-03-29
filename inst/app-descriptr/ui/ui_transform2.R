@@ -9,7 +9,7 @@ tabPanel('Transform', value = 'tab_transform',
                  ),
                  column(6, align = 'right',
                    actionButton(inputId='translink3', label="Demo", icon = icon("video-camera"),
-                     onclick ="window.open('https://www.youtube.com/watch?v=zG_Jswxk55c', '_blank')")
+                     onclick ="window.open('https://www.youtube.com/watch?v=IckaPr19Bvc#t=01m23s', '_blank')")
                  )
                ),
                hr(),

@@ -12,7 +12,7 @@ tabPanel('KS Chart', value = 'tab_ks_chart',
     
       column(6, align = 'right',
         actionButton(inputId='kschartlink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_ks_chart.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_ks_chart.html', '_blank')")
       )
     
     ),

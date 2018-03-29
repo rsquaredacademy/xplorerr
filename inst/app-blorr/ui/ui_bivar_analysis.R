@@ -9,7 +9,7 @@ tabPanel('Bivariate Analysis', value = 'tab_bivar_analysis',
       ),
       column(6, align = 'right',
         actionButton(inputId='bivarlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_bivariate_analysis.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_bivariate_analysis.html', '_blank')")
       )
       
     ),

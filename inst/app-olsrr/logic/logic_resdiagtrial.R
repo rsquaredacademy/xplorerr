@@ -7,7 +7,7 @@ output$ui_resdiaglink <- renderUI({
         ),
         column(6, align = 'right',
           actionButton(inputId='rvsp1', label="Help", icon = icon("question-circle"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rvsp_plot.html', '_blank')")
+            onclick ="window.open('https://olsrr.rsquaredacademy.com/reference/ols_plot_resid_fit.html', '_blank')")
         )
       )
     } else if (input$restrial1 == "Residual Box Plot") {
@@ -17,7 +17,7 @@ output$ui_resdiaglink <- renderUI({
         ),
         column(6, align = 'right',
           actionButton(inputId='rbplot1', label="Help", icon = icon("question-circle"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_boxplot.html', '_blank')")
+            onclick ="window.open('https://olsrr.rsquaredacademy.com/reference/ols_plot_resid_box.html', '_blank')")
         )
       )
     } else if (input$restrial1 == "Residual Histogram") {
@@ -28,7 +28,7 @@ output$ui_resdiaglink <- renderUI({
         ),
         column(6, align = 'right',
           actionButton(inputId='rhist1', label="Help", icon = icon("question-circle"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_hist.html', '_blank')")
+            onclick ="window.open('https://olsrr.rsquaredacademy.com/reference/ols_plot_resid_hist.html', '_blank')")
         )
       )
     } else if (input$restrial1 == "Residual QQ Plot") {
@@ -39,7 +39,7 @@ output$ui_resdiaglink <- renderUI({
         ),
         column(6, align = 'right',
           actionButton(inputId='rqq1', label="Help", icon = icon("question-circle"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_rsd_qqplot.html', '_blank')")
+            onclick ="window.open('https://olsrr.rsquaredacademy.com/reference/ols_plot_resid_qq.html', '_blank')")
         )
       )
     } else if (input$restrial1 == "Normality Test") {
@@ -50,7 +50,7 @@ output$ui_resdiaglink <- renderUI({
         ),
         column(6, align = 'right',
           actionButton(inputId='resnorm1', label="Help", icon = icon("question-circle"),
-            onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/ols_norm_test.html', '_blank')")
+            onclick ="window.open('https://olsrr.rsquaredacademy.com/reference/ols_test_normality.html', '_blank')")
         )
       )
     }
@@ -240,46 +240,46 @@ output$ui_resdiagout <- renderUI({
 
 d_respred_mod <- eventReactive(input$submit_respred_plot, {
   if(input$respred_use_prev) {
-    ols_rvsp_plot(all_use_n())
+    ols_plot_resid_fit(all_use_n())
   } else {
     k <- lm(input$respred_fmla, data = final_split$train)
-    ols_rvsp_plot(k)
+    ols_plot_resid_fit(k)
   }
 })
 
 d_resbox_mod <- eventReactive(input$submit_resbox_plot, {
   if(input$resbox_use_prev) {
-    ols_rsd_boxplot(all_use_n())
+    ols_plot_resid_box(all_use_n())
   } else {
     k <- lm(input$resbox_fmla, data = final_split$train)
-    ols_rsd_boxplot(k)
+    ols_plot_resid_box(k)
   }
 })
 
 d_reshist_mod <- eventReactive(input$submit_reshist_plot, {
   if(input$reshist_use_prev) {
-    ols_rsd_hist(all_use_n())
+    ols_plot_resid_hist(all_use_n())
   } else {
     k <- lm(input$reshist_fmla, data = final_split$train)
-    ols_rsd_hist(k)
+    ols_plot_resid_hist(k)
   }
 })
 
 d_resqq_mod <- eventReactive(input$submit_resqq_plot, {
   if(input$resqq_use_prev) {
-    ols_rsd_qqplot(all_use_n())
+    ols_plot_resid_qq(all_use_n())
   } else {
     k <- lm(input$resqq_fmla, data = final_split$train)
-    ols_rsd_qqplot(k)
+    ols_plot_resid_qq(k)
   }
 })
 
 d_resnorm_mod <- eventReactive(input$submit_resnorm, {
   if(input$resnorm_use_prev) {
-    ols_norm_test(all_use_n())
+    ols_test_normality(all_use_n())
   } else {
     k <- lm(input$resnorm_fmla, data = final_split$train)
-    ols_norm_test(k)
+    ols_test_normality(k)
   }
 })
 

@@ -9,7 +9,7 @@ tabPanel('Segment Distribution', value = 'tab_segment_dist',
       ),
       column(6, align = 'right',
         actionButton(inputId='segdistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_segment_dist.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_segment_dist.html', '_blank')")
       )
       
     ),

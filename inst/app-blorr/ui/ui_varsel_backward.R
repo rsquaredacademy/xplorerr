@@ -12,7 +12,7 @@ tabPanel('Backward Elimination', value = 'tab_varsel_backward',
 
       column(6, align = 'right',
         actionButton(inputId='varsel_be', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/blr_backward_elimination.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_backward_elimination.html', '_blank')")
       )
 
     ),

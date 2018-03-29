@@ -12,7 +12,7 @@ tabPanel('Fit Diagnostics', value = 'tab_diag_fit',
     
       column(6, align = 'right',
         actionButton(inputId='fitlink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_plot_diag_fit.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_plot_diag_fit.html', '_blank')")
       )
     
     ),

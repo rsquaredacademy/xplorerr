@@ -12,7 +12,7 @@ tabPanel('DFBETAs Panel', value = 'tab_dfbetas_panel',
     
       column(6, align = 'right',
         actionButton(inputId='dfbetaslink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_plot_dfbetas_panel.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_plot_dfbetas_panel.html', '_blank')")
       )
     
     ),

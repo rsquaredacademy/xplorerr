@@ -10,7 +10,7 @@ tabPanel('Group Summary', value = 'tab_gsummary',
              ),
              column(4, align = 'right',
                actionButton(inputId='gstatlink1', label="Help", icon = icon("question-circle"),
-                 onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/ds_group_summary.html', '_blank')"),
+                 onclick ="window.open('https://descriptr.rsquaredacademy.com/reference/ds_group_summary.html', '_blank')"),
                actionButton(inputId='gstatlink3', label="Demo", icon = icon("video-camera"),
                  onclick ="window.open('https://www.youtube.com/watch?v=7kvasytLmmk', '_blank')")
              )

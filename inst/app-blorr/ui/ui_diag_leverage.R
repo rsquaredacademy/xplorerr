@@ -12,7 +12,7 @@ tabPanel('Leverage Diagnostics', value = 'tab_diag_leverage',
     
       column(6, align = 'right',
         actionButton(inputId='levlink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_plot_diag_leverage.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_plot_diag_leverage.html', '_blank')")
       )
     
     ),

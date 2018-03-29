@@ -9,7 +9,7 @@ tabPanel('Filter', value = 'tab_filter',
       ),
       column(6, align = 'right',
         actionButton(inputId='fildatalink', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=IckaPr19Bvc#t=02m42s', '_blank')")
       )
     ),
     hr(),

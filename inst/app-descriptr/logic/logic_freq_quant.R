@@ -1,14 +1,3 @@
-source('helper/freq-cont.R')
-
-# descriptive statistics
-# observe({
-#     updateSelectInput(session,
-#                       inputId = "var_freq_quant",
-#                       choices = names(data()),
-#                       selected = '')
-    
-# })
-
 observeEvent(input$finalok, {
     num_data <- final_split$train[, sapply(final_split$train, is.numeric)]
     if (is.null(dim(num_data))) {
@@ -18,7 +7,7 @@ observeEvent(input$finalok, {
         colnames(numdata) <- j
         updateSelectInput(session, inputId = "var_freq_quant",
           choices = names(numdata))
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
           inputId = 'filter_quant',
           min = min(numdata),
           max = max(numdata),
@@ -28,13 +17,13 @@ observeEvent(input$finalok, {
       } else if (ncol(num_data) < 1) {
         updateSelectInput(session, inputId = "var_freq_quant",
             choices = '', selected = '')
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
                         inputId = 'filter_quant',
                         value = '')
       } else {
-          updateSelectInput(session, 'var_freq_quant', 
+          updateSelectInput(session, 'var_freq_quant',
             choices = names(num_data), selected = names(num_data))
-          updateSliderInput(session = session, 
+          updateSliderInput(session = session,
                         inputId = 'filter_quant',
                         min = min(num_data),
                         max = max(num_data),
@@ -42,8 +31,8 @@ observeEvent(input$finalok, {
                         value = c(min(num_data), max(num_data))
           )
       }
-    
-    
+
+
 })
 
 observeEvent(input$submit_part_train_per, {
@@ -55,7 +44,7 @@ observeEvent(input$submit_part_train_per, {
         colnames(numdata) <- j
         updateSelectInput(session, inputId = "var_freq_quant",
           choices = names(numdata))
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
           inputId = 'filter_quant',
           min = min(numdata),
           max = max(numdata),
@@ -65,13 +54,13 @@ observeEvent(input$submit_part_train_per, {
       } else if (ncol(num_data) < 1) {
         updateSelectInput(session, inputId = "var_freq_quant",
             choices = '', selected = '')
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
                         inputId = 'filter_quant',
                         value = '')
       } else {
-          updateSelectInput(session, 'var_freq_quant', 
+          updateSelectInput(session, 'var_freq_quant',
             choices = names(num_data), selected = names(num_data))
-          updateSliderInput(session = session, 
+          updateSliderInput(session = session,
                         inputId = 'filter_quant',
                         min = min(num_data),
                         max = max(num_data),
@@ -79,8 +68,8 @@ observeEvent(input$submit_part_train_per, {
                         value = c(min(num_data), max(num_data))
           )
       }
-    
-    
+
+
 })
 
 # selected data
@@ -90,7 +79,7 @@ d_freq_quant <- eventReactive(input$submit_fquant, {
 
 # update filter slider
 observe({
-  updateSliderInput(session = session, 
+  updateSliderInput(session = session,
                       inputId = 'filter_quant',
                       min = min(d_freq_quant()),
                       max = max(d_freq_quant()),
@@ -113,7 +102,9 @@ fil_quant_data <- reactive({
 })
 
 fquant_out <- eventReactive(input$submit_fquant, {
-  ko <- freq_cont(fil_quant_data(), as.character(input$var_freq_quant), input$bins)
+  ko <- ds_freq_cont(fil_quant_data(),
+                     !! sym(as.character(input$var_freq_quant)),
+                     input$bins)
   ko
 })
 
@@ -131,7 +122,7 @@ output$freq_quant <- renderPrint({
 })
 
 output$hist_freq_quant <- renderPlot({
-	hist(fquant_out())
+	plot(fquant_out())
 })
 
 

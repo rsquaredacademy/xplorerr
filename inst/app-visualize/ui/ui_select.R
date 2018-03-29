@@ -9,7 +9,7 @@ tabPanel('Select Variables', value = 'tab_selvar',
       ),
       column(6, align = 'right',
         actionButton(inputId='selvarlink', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://www.youtube.com/watch?v=IckaPr19Bvc#t=02m19s', '_blank')")
       )
     ),
     hr(),

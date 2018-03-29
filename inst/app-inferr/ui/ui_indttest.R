@@ -3,13 +3,13 @@ tabPanel('Independent Sample t', value = 'tab_indttest',
     fluidRow(
       column(6, align = 'left',
         h4('Independent Sample t Test'),
-        p('Compares the means of two independent groups in order to determine 
+        p('Compare the means of two independent groups in order to determine 
           whether there is statistical evidence that the associated population 
           means are significantly different.')
       ),
       column(6, align = 'right',
         actionButton(inputId='indttest1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/infer_ts_ind_ttest.html', '_blank')"),
+          onclick ="window.open('https://inferr.rsquaredacademy.com/reference/infer_ts_ind_ttest.html', '_blank')"),
         actionButton(inputId='indttest3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('https://www.youtube.com/watch?v=iKFFzv9WiUo', '_blank')")
       )

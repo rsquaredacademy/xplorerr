@@ -52,7 +52,7 @@ seg_dist <- eventReactive(input$submit_segdist, {
 })
 
 twowayseg <- eventReactive(input$submit_2wayseg, {
-	blorr::blr_twoway_segment(data = final_split$train,
+	blorr::blr_segment_twoway(data = final_split$train,
 		response = input$resp_2wayseg, variable_1 = input$var1_2wayseg,
 		variable_2 = input$var2_2wayseg)
 })

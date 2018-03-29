@@ -9,7 +9,7 @@ tabPanel('WoE & IV', value = 'tab_woe_iv',
       ),
       column(6, align = 'right',
         actionButton(inputId='woelink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_woe_iv.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_woe_iv.html', '_blank')")
       )
       
     ),

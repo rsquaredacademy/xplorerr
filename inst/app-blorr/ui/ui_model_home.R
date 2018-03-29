@@ -25,7 +25,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_reg_click',
+						inputId = 'model_bivar_click',
 						label = 'Click Here',
 						width = '120px'
 					)
@@ -45,7 +45,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_resdiag_click',
+						inputId = 'model_regress_click',
 						label = 'Click Here',
 						width = '120px'
 					)
@@ -65,7 +65,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_het_click',
+						inputId = 'model_fitstat_click',
 						label = 'Click Here',
 						width = '120px'
 					)
@@ -85,7 +85,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_coldiag_click',
+						inputId = 'model_varsel_click',
 						label = 'Click Here',
 						width = '120px'
 					)
@@ -105,7 +105,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_infl_click',
+						inputId = 'model_validation_click',
 						label = 'Click Here',
 						width = '120px'
 					)
@@ -125,7 +125,7 @@ tabPanel('Model Building', value = 'tab_model_home',
 
 			column(2, align = 'left',
 					actionButton(
-						inputId = 'model_fit_click',
+						inputId = 'model_resdiag_click',
 						label = 'Click Here',
 						width = '120px'
 					)

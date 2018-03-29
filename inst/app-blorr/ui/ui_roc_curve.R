@@ -12,7 +12,7 @@ tabPanel('ROC Curve', value = 'tab_roc_curve',
     
       column(6, align = 'right',
         actionButton(inputId='roclink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_roc_curve.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_roc_curve.html', '_blank')")
       )
     
     ),

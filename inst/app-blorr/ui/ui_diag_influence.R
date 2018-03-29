@@ -12,7 +12,7 @@ tabPanel('Influence Diagnostics', value = 'tab_diag_influence',
     
       column(6, align = 'right',
         actionButton(inputId='infllink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_plot_diag_influence.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_plot_diag_influence.html', '_blank')")
       )
     
     ),

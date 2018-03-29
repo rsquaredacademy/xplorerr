@@ -32,6 +32,7 @@ tabPanel('Data Sources', value = 'tab_datasources',
 
 		br(),
 
+
 		fluidRow(
 			column(12, align = 'center',
 				h6('The app takes a few seconds to load. Please wait for ~12 seconds.')

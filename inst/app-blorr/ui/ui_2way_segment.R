@@ -9,7 +9,7 @@ tabPanel('Two Way Segmentation', value = 'tab_2way_segment',
       ),
       column(6, align = 'right',
         actionButton(inputId='2wayseglink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_twoway_segment.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_twoway_segment.html', '_blank')")
       )
       
     ),

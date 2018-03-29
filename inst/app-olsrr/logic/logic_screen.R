@@ -1,6 +1,6 @@
 # output
 output$screen <- renderPrint({
-    ds_screener(filt_data$p)
+    screener(filt_data$p)
 })
 
 observeEvent(input$finalok, {

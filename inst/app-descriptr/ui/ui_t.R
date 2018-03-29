@@ -4,15 +4,12 @@ tabPanel('t Distribution', value = 'tab_t',
     fluidRow(
       column(6, align = 'left',
         h4('t Distribution'),
-        p('Visualize how degrees of freedom affect the shape of t distribution. 
-          Compute/visualize quantiles out of given probability and probability 
+        p('Visualize how degrees of freedom affect the shape of t distribution. Compute/visualize quantiles out of given probability and probability 
           from a given quantile.')
       ),
       column(6, align = 'right',
         actionButton(inputId='tdistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/dist_t_plot.html', '_blank')"),
-        actionButton(inputId='tdistlink3', label="Demo", icon = icon("video-camera"),
-          onclick ="window.open('http://google.com', '_blank')")
+          onclick ="window.open('https://descriptr.rsquaredacademy.com/reference/dist_t_plot.html', '_blank')")
       )
     ),
     hr(),

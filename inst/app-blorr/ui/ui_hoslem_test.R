@@ -12,7 +12,7 @@ tabPanel('Hosmer Lemeshow Test', value = 'tab_hoslem_test',
     
       column(6, align = 'right',
         actionButton(inputId='conf1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_hosmer_lemeshow_test.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_hosmer_lemeshow_test.html', '_blank')")
       )
     
     ),

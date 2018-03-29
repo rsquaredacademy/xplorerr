@@ -12,7 +12,7 @@ tabPanel('Stepwise Selection', value = 'tab_varsel_stepwise',
 
       column(6, align = 'right',
         actionButton(inputId='varsel_se', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/blr_stepwise_selection.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_stepwise_selection.html', '_blank')")
       )
 
     ),

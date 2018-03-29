@@ -11,7 +11,7 @@ tabPanel('Chisquare Distribution', value = 'tab_chisq',
       ),
       column(4, align = 'right',
         actionButton(inputId='chidistlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/descriptr/reference/dist_chi_plot.html', '_blank')")
+          onclick ="window.open('https://descriptr.rsquaredacademy.com/reference/dist_chi_plot.html', '_blank')")
       )
     ),
     hr(),

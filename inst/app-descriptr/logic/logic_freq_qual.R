@@ -1,13 +1,3 @@
-source('helper/freq-cat.R')
-
-
-# observe({
-#     updateSelectInput(session,
-#                       inputId = "var_table",
-#                       choices = names(data()),
-#                       selected = '')
-# })
-
 observeEvent(input$finalok, {
     num_data <- final_split$train[, sapply(final_split$train, is.factor)]
     if (is.null(dim(num_data))) {
@@ -23,7 +13,7 @@ observeEvent(input$finalok, {
                       inputId = "var_table",
                       choices = names(num_data))
 
-    }  
+    }
 })
 
 observeEvent(input$submit_part_train_per, {
@@ -41,7 +31,7 @@ observeEvent(input$submit_part_train_per, {
                       inputId = "var_table",
                       choices = names(num_data))
 
-    }  
+    }
 })
 
 # selected data
@@ -54,7 +44,7 @@ d_freq_qual <- eventReactive(input$submit_fqual, {
 })
 
 fqual_out <- eventReactive(input$submit_fqual, {
-  ki <- freq_table(d_freq_qual(), as.character(input$var_table))
+  ki <- ds_freq_table(final_split$train, !! sym(as.character(input$var_table)))
   ki
 })
 
@@ -72,20 +62,6 @@ output$freq_qual <- renderPrint({
 })
 
 output$qual_vert <- renderPlot({
-    barplot(fqual_out())
+    plot(fqual_out())
 })
 
-# output$qual_horiz <- renderPlot({
-#     ki <- freq_table(fil_qual_data())
-#     j <- as.numeric(ki$ftable[, 2])
-#     h <- j
-#     ymax <- max(h)
-#     cols <- length(j)
-#     x_names <- ki$ftable[, 1]
-#     k <- barplot(j, col = topo.colors(cols), horiz = T,
-#                  main = paste('Bar Plot of', input$name_freq_qual),
-#                  xlab = 'Frequency',
-#                  ylab = input$name_freq_qual,
-#                  names.arg = x_names)
-
-# })

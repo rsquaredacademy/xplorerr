@@ -1,5 +1,3 @@
-source('helper/cross-table.R')
-
 observeEvent(input$finalok, {
 
     num_data <- final_split$train[, sapply(final_split$train, is.factor)]
@@ -22,7 +20,7 @@ observeEvent(input$finalok, {
              updateSelectInput(session, 'var1_cross', choices = names(num_data))
              updateSelectInput(session, 'var2_cross', choices = names(num_data))
         }
-    
+
 })
 
 # observeEvent(input$finalok, {
@@ -47,14 +45,14 @@ observeEvent(input$finalok, {
 #              updateSelectInput(session, 'var1_cross', choices = names(num_data))
 #              updateSelectInput(session, 'var2_cross', choices = names(num_data))
 #         }
-    
+
 # })
 
 # selected data
 d_cross <- eventReactive(input$submit_cross, {
     # validate(need((input$var1_cross != '' & input$var2_cross != ''), 'Please select two variables.'))
     data <- final_split$train[, c(input$var1_cross, input$var2_cross)]
-    
+
 })
 
 # column names
@@ -64,8 +62,8 @@ conames <- reactive({
 
 
 cross_out <- eventReactive(input$submit_cross, {
-  k <- cross_table(d_cross(), as.character(input$var1_cross), 
-    as.character(input$var2_cross))
+  k <- ds_cross_table(final_split$train, !! sym(as.character(input$var1_cross)),
+    !! sym(as.character(input$var2_cross)))
   k
 })
 
@@ -99,29 +97,18 @@ output$cross3_title <- renderUI({
   c3_title()
 })
 
-c4_title <- eventReactive(input$submit_cross, {
-  h3('Mosaic Plot', style = 'align:center;')
-})
-
-output$cross4_title <- renderUI({
-  c4_title()
-})
-
 
 output$cross_bar_stacked <- renderPlot({
-  plot(cross_out())
+  plot(cross_out(), stacked = TRUE)
 })
 
 output$cross_bar_grouped <- renderPlot({
-  plot(cross_out(), beside = TRUE)
+  plot(cross_out())
 })
 
 output$cross_bar_proportional <- renderPlot({
   plot(cross_out(), proportional = TRUE)
 })
 
-output$cross_mosaic_plot <- renderPlot({
-  mosaicplot(cross_out())
-})
 
 

@@ -7,7 +7,7 @@ observeEvent(input$finalok, {
         colnames(numdata) <- j
         updateSelectInput(session, inputId = "var_summary",
             choices = names(numdata), selected = names(numdata))
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
                         inputId = 'filter_summary',
                         min = min(numdata),
                         max = max(numdata),
@@ -17,13 +17,13 @@ observeEvent(input$finalok, {
       } else if (ncol(num_data) < 1) {
         updateSelectInput(session, inputId = "var_summary",
             choices = '', selected = '')
-        updateSliderInput(session = session, 
+        updateSliderInput(session = session,
                         inputId = 'filter_summary',
                         value = '')
       } else {
-          updateSelectInput(session, 'var_summary', 
+          updateSelectInput(session, 'var_summary',
             choices = names(num_data), selected = names(num_data))
-          updateSliderInput(session = session, 
+          updateSliderInput(session = session,
                         inputId = 'filter_summary',
                         min = min(num_data),
                         max = max(num_data),
@@ -48,7 +48,7 @@ observeEvent(input$submit_part_train_per, {
         updateSelectInput(session, inputId = "var_summary",
             choices = '', selected = '')
       } else {
-          updateSelectInput(session, 'var_summary', 
+          updateSelectInput(session, 'var_summary',
             choices = names(num_data), selected = names(num_data))
       }
 
@@ -59,8 +59,7 @@ observeEvent(input$submit_part_train_per, {
 d_summary <- eventReactive(input$submit_summary, {
   # validate(need(input$var_summary != '', 'Please select a variable.'))
   req(input$var_summary)
-  data <- final_split$train[, c(input$var_summary)]
-  ds_summary_stats(data)
+  ds_summary_stats(final_split$train, !! sym(input$var_summary))
 })
 
 

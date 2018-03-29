@@ -1,18 +1,16 @@
-source('helper/group-summary.R')
-
 # descriptive statistics
 # observe({
-    
+
 #     updateSelectInput(session,
 #                       inputId = "var_group",
 #                       choices = names(data()),
 #                       selected = '')
-    
+
 #     updateSelectInput(session,
 #                       inputId = "var_grp_summary",
 #                       choices = names(data()),
 #                       selected = '')
-    
+
 # })
 
 observeEvent(input$finalok, {
@@ -50,7 +48,7 @@ observeEvent(input$finalok, {
           choices = names(num_data), selected = names(num_data))
       }
 
-    
+
 })
 
 observeEvent(input$submit_part_train_per, {
@@ -88,21 +86,22 @@ observeEvent(input$submit_part_train_per, {
           choices = names(num_data), selected = names(num_data))
       }
 
-    
+
 })
 
 
 # selected data
 d_group_summary <- eventReactive(input$submit_gsummary, {
     # validate(need(input$var_group != '', 'Please select a grouping and summary variable.'))
-    data <- final_split$train[, c(input$var_group, 
+    data <- final_split$train[, c(input$var_group,
                         input$var_grp_summary)]
 })
 
 
 gsummary_out <- eventReactive(input$submit_gsummary, {
-  ko <- group_summary(d_group_summary(), as.character(input$var_group),
-                        as.character(input$var_grp_summary))
+  ko <- ds_group_summary(d_group_summary(),
+                         !! sym(as.character(input$var_group)),
+                         !! sym(as.character(input$var_grp_summary)))
   ko
 })
 
@@ -120,6 +119,6 @@ output$group_summary <- renderPrint({
 })
 
 output$box_group_summary <- renderPlot({
-  boxplot.group_summary(gsummary_out())    
+  plot(gsummary_out())
 })
 

@@ -1,5 +1,5 @@
 output$binom_shape <- renderPlot({
- dist_binom_plot(input$binom_n, input$binom_p)
+  dist_binom_plot(input$binom_n, input$binom_p)
 })
 
 output$bprob_plot <- renderPlot({

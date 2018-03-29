@@ -12,7 +12,7 @@ tabPanel('Lorenz Curve', value = 'tab_lorenz_curve',
     
       column(6, align = 'right',
         actionButton(inputId='lorenzlink', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_lorenz_curve.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_lorenz_curve.html', '_blank')")
       )
     
     ),

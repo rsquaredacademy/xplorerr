@@ -8,7 +8,7 @@ tabPanel('Regression', value = 'tab_regress',
       ),
       column(6, align = 'right',
         actionButton(inputId='mlr1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/blorr/reference/blr_regress.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_regress.html', '_blank')")
       )
     ),
     hr(),

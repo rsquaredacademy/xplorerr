@@ -3,15 +3,15 @@ tabPanel('Levene Test', value = 'tab_levtest',
     fluidRow(
       column(6, align = 'left',
         h4('Levene Test'),
-        p("Levene's robust test statistic for the equality of variances and the 
-          two statistics proposed by Brown and Forsythe that replace the mean in 
-          Levene's formula with alternative location estimators. The first alternative 
-          replaces the mean with the median. The second alternative replaces the mean 
+        p("Levene's robust test statistic for the equality of variances and the
+          two statistics proposed by Brown and Forsythe that replace the mean in
+          Levene's formula with alternative location estimators. The first alternative
+          replaces the mean with the median. The second alternative replaces the mean
           with the 10% trimmed mean.")
       ),
       column(6, align = 'right',
         actionButton(inputId='levtestlink1', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/inferr/reference/infer_levene_test.html', '_blank')"),
+          onclick ="window.open('https://inferr.rsquaredacademy.com/reference/infer_levene_test.html', '_blank')"),
         actionButton(inputId='levtestlink3', label="Demo", icon = icon("video-camera"),
           onclick ="window.open('https://www.youtube.com/watch?v=Yz5fhDhzMKI', '_blank')")
       )
@@ -72,32 +72,6 @@ tabPanel('Levene Test', value = 'tab_levtest',
                   br(),
                   column(12, align = 'center',
                       verbatimTextOutput('levtestg_out')
-                  )
-              )
-            )
-          ),
-          tabPanel('Using Formula',
-            fluidPage(
-              fluidRow(
-                column(2, align = 'right', br(), h5('Model Formula:')),
-                column(10, align = 'left',
-                    textInput("levtest_fmla", label = '', width = '660px',
-                                    value = ""),
-                    bsTooltip("levtest_fmla", "Specify a formula",
-                              "left", options = list(container = "body")))
-              ),
-              fluidRow(
-                  column(12, align = 'center',
-                  br(),
-                  br(),
-                  actionButton(inputId = 'submit_levtestf', label = 'Submit', width = '120px', icon = icon('check')),
-                  bsTooltip("submit_levtestf", "Click here to view test result.",
-                                "bottom", options = list(container = "body")))
-              ),
-              fluidRow(
-                  br(),
-                  column(12, align = 'center',
-                      verbatimTextOutput('levtestf_out')
                   )
               )
             )

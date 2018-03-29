@@ -12,7 +12,7 @@ tabPanel('Forward Selection', value = 'tab_varsel_forward',
 
       column(6, align = 'right',
         actionButton(inputId='varsel_fe', label="Help", icon = icon("question-circle"),
-          onclick ="window.open('https://rsquaredacademy.github.io/olsrr/reference/blr_forward_selection.html', '_blank')")
+          onclick ="window.open('https://blorr.rsquaredacademy.com/reference/blr_forward_selection.html', '_blank')")
       )
 
     ),
