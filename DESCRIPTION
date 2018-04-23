@@ -1,22 +1,18 @@
 Package: xplorerr
 Type: Package
-Title: Shiny Apps for Interactive Statistical Analysis
+Title: Shiny Apps for Interactive Data Visualization
 Version: 0.1.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"))
-Description: App for interactive statistical analysis and serves as a demo app 
-    for packages such as descriptr, inferr, olsrr and blorr. It should prove 
-    useful as a tool for teaching introductory statistics to new R users.
+Description: Tools for interactive data visualization built using 'shiny'. Users
+    can visualize data using 'ggplot2', 'plotly', 'rbokeh' and 'highcharter'
+    libraries. 
 Depends:
     R(>= 3.2.4)
 Imports:
     shiny
 Suggests:
-    blorr,
     caret,
     cli,
-    clisymbols,
-    crayon,
-    descriptr,
     dplyr,
     ggplot2,
     glue,
@@ -24,11 +20,9 @@ Suggests:
     gridExtra,
     haven,
     highcharter,
-    inferr,
     jsonlite,
     lubridate,
     magrittr,
-    olsrr,
     plotly,
     purrr,
     rbokeh,

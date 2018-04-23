@@ -13,9 +13,5 @@ reference:
 - title: All functions
   desc: ~
   contents:
-  - launch_app_descriptr
-  - launch_app_inferr
-  - launch_app_olsrr
-  - launch_app_blorr
   - launch_app_visualizer
   - xplorerr

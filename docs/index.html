@@ -5,16 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shiny Apps for Interactive Statistical Analysis • xplorerr</title>
-<meta name="description" content="Rsquared Academy xplorerr Package">
-    <meta name="author" content="Rsquared Academy">
-    <link rel="canonical" href="https://xplorerr.rsquaredacademy.com/" />
-    <meta property="og:url" content="https://xplorerr.rsquaredacademy.com/"/>
-    <meta property="og:title" content="Rsquared Academy"/>
-    <meta property="og:site_name" content="xplorerr.rsquaredacademy.com"/>
-    <meta property="og:description" content="Rsquared Academy xplorerr Package."/>
-    <meta name="keywords" content="aravind, hebbali, rsquared, academy, interactive, shiny, olsrr, package, blorr, inferr, descriptr, visualization, R" />
-    <meta name="description" content="Rsquared Academy xplorerr Package" />
+<title>Shiny Apps for Interactive Data Visualization • xplorerr</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
@@ -74,67 +65,35 @@
     
 <div class="contents">
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<div id="xplorerr-shiny-apps-for-interactive-analysis" class="section level2">
+<div id="xplorerr-shiny-apps-for-interactive-data-visualization" class="section level2">
 <h2 class="hasAnchor">
-<a href="#xplorerr-shiny-apps-for-interactive-analysis" class="anchor"></a>xplorerr: Shiny Apps for Interactive Analysis <img src="xplorerr.png" align="right">
+<a href="#xplorerr-shiny-apps-for-interactive-data-visualization" class="anchor"></a>xplorerr: Shiny Apps for Interactive Data Visualization <img src="xplorerr.png" align="right">
 </h2>
-<p><a href="https://cran.r-project.org/package=xplorerr"><img src="http://www.r-pkg.org/badges/version/xplorerr" alt="CRAN_Status_Badge"></a> <a href="https://travis-ci.org/rsquaredacademy/xplorerr"><img src="https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/rsquaredacademy/xplorerr"><img src="https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="https://cran.r-project.org/package=xplorerr"><img src="https://cranlogs.r-pkg.org/badges/grand-total/xplorerr"></a> <img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></p>
+
 </div>
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
 <a href="#overview" class="anchor"></a>Overview</h2>
-<p>xplorerr provides a set of shiny apps useful for:</p>
+<p>xplorerr provides a set of shiny apps for interactive data visualization using:</p>
 <ul>
-<li>generating descriptive &amp; summary statistics</li>
-<li>exploring statistical distributions</li>
-<li>hypothesis testing</li>
-<li>data visualization</li>
-<li>linear regression modeling</li>
-<li>logistic regression modeling</li>
+<li>ggplot2</li>
+<li>plotly</li>
+<li>rbokeh</li>
+<li>highcharter</li>
 </ul>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install xplorerr from github with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"rsquaredacademy/xplorerr"</span>)</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages("devtools")</span>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"rsquaredacademy/xplorerr"</span>)</code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
-<p>There are five apps in xplorerr which can be launched using <code>launch_app_*</code> prefix (easy tab completion).</p>
-<div id="descriptive-statistics" class="section level3">
-<h3 class="hasAnchor">
-<a href="#descriptive-statistics" class="anchor"></a>Descriptive Statistics</h3>
-<p>Useful for generating descriptive/summary statistics and exploring distributions.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="reference/launch_app_descriptr.html">launch_app_descriptr</a></span>()</a></code></pre></div>
-</div>
-<div id="hypothesis-testing" class="section level3">
-<h3 class="hasAnchor">
-<a href="#hypothesis-testing" class="anchor"></a>Hypothesis Testing</h3>
-<p>Useful for performing parametric and non-parametric tests.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="reference/launch_app_inferr.html">launch_app_inferr</a></span>()</a></code></pre></div>
-</div>
-<div id="visualization" class="section level3">
-<h3 class="hasAnchor">
-<a href="#visualization" class="anchor"></a>Visualization</h3>
-<p>Visualize data using different libraries such as ggplot2, plotly and rbokeh.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/launch_app_visualizer.html">launch_app_visualizer</a></span>()</a></code></pre></div>
-</div>
-<div id="linear-regression" class="section level3">
-<h3 class="hasAnchor">
-<a href="#linear-regression" class="anchor"></a>Linear Regression</h3>
-<p>Build linear regression models using OLS technique.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/launch_app_olsrr.html">launch_app_olsrr</a></span>()</a></code></pre></div>
-</div>
-<div id="logistic-regression" class="section level3">
-<h3 class="hasAnchor">
-<a href="#logistic-regression" class="anchor"></a>Logistic Regression</h3>
-<p>Build and validate binary logistic regression models.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/launch_app_blorr.html">launch_app_blorr</a></span>()</a></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/launch_app_visualizer.html">launch_app_visualizer</a></span>()</code></pre></div>
 <p>Please note that this project is released with a <a href="CONDUCT.md">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-</div>
 </div>
 </div>
   </div>
@@ -157,6 +116,11 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>Aravind Hebbali <br><small class="roles"> Author, maintainer </small> </li>
+</ul>
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://travis-ci.org/rsquaredacademy/xplorerr"><img src="https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://ci.appveyor.com/project/rsquaredacademy/xplorerr"><img src="https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 </ul>
 </div>
 
