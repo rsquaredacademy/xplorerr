@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-xplorerr: Shiny Apps for Interactive Data Visualization <img src="xplorerr.png" align="right" />
-------------------------------------------------------------------------------------------------
+xplorerr: Shiny Apps for Interactive Data Visualization <img src="xplorerr.png" height="100px" align="right" />
+---------------------------------------------------------------------------------------------------------------
 
 [![Travis-CI Build Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&svg=true)](https://ci.appveyor.com/project/rsquaredacademy/xplorerr)
 

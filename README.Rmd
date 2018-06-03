@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-xplorerr: Shiny Apps for Interactive Data Visualization <img src="xplorerr.png" align="right" />
+xplorerr: Shiny Apps for Interactive Data Visualization <img src="xplorerr.png" height="100px" align="right" />
 ---------
 
 [![Travis-CI Build Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr)
