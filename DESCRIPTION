@@ -1,31 +1,44 @@
 Package: xplorerr
 Type: Package
-Title: Shiny Apps for Interactive Data Visualization
+Title: Tools for Interactive Data Exploration
 Version: 0.1.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"))
-Description: Tools for interactive data visualization built using 'shiny'. Users
-    can visualize data using 'ggplot2', 'plotly', 'rbokeh' and 'highcharter'
-    libraries. 
+Description: Tools for interactive data exploration built using 'shiny'. Includes descriptive statistics,
+    inferential statistics, linear regression, logistic regression and RFM analysis.
 Depends:
     R(>= 3.2.4)
 Imports:
     shiny
 Suggests:
+    assertthat,
+    car,
     caret,
+    checkmate,
     cli,
+    clisymbols, 
+    crayon,
     dplyr,
+    DT,
+    e1071,
+    forcats,
     ggplot2,
     glue,
+    goftest,
+    graphics,
     grid,
     gridExtra,
     haven,
     highcharter,
+    ineq,
     jsonlite,
+    kableExtra,
     lubridate,
     magrittr,
+    nortest,
     plotly,
     purrr,
     rbokeh,
+    RColorBrewer,
     Rcpp,
     readr,
     readxl,
@@ -33,6 +46,7 @@ Suggests:
     rlang,
     scales,	
     shinyBS,
+    shinycssloaders,
     shinythemes,
     stats,
     stringr,
