@@ -13,5 +13,10 @@ reference:
 - title: All functions
   desc: ~
   contents:
-  - launch_app_visualizer
+  - app_visualizer
+  - app_descriptive
+  - app_inference
+  - app_linear_regression
+  - app_logistic_regression
+  - app_rfm_analysis
   - xplorerr
