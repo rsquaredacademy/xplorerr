@@ -1,6 +1,6 @@
 templates:
   params:
-    bootswatch: cerulean
+    bootswatch: cosmo
 
 home:
   links:

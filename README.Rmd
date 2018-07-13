@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-xplorerr: Tools for Interactive Data Exploration <img src="xplorerr.png" height="100px" align="right" />
+xplorerr: Tools for Interactive Data Exploration <img src="hex_xplorerr.png" height="100px" align="right" />
 ---------
 
 **Author:** [Aravind Hebbali](https://www.aravindhebbali.com/)<br/>
