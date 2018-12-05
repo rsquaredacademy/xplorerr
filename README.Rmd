@@ -12,11 +12,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-xplorerr: Tools for Interactive Data Exploration <img src="hex_xplorerr.png" height="100px" align="right" />
----------
+# xplorerr 
 
-**Author:** [Aravind Hebbali](https://www.aravindhebbali.com/)<br/>
-**License:** [MIT](https://opensource.org/licenses/MIT)
+> Tools for interactive data analysis 
 
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
 [![Travis-CI Build Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr)
@@ -25,9 +23,10 @@ xplorerr: Tools for Interactive Data Exploration <img src="hex_xplorerr.png" hei
 
 ## Overview
 
-xplorerr provides a set of tools for interactive data exploration:
+xplorerr provides a set of tools for interactive data analysis:
 
 - Descirptive statistics
+- Visualize probability distributions
 - Inferential statistics
 - Linear regression
 - Logistic regression
@@ -40,27 +39,34 @@ xplorerr provides a set of tools for interactive data exploration:
 
 ## Installation
 
-You can install xplorerr from github with:
-
 ```{r gh-installation, eval = FALSE}
+# Install development version from GitHub
 # install.packages("devtools")
 devtools::install_github("rsquaredacademy/xplorerr")
 ```
 
 ## Usage
 
-#### Descirptive statistics
+#### Descirptive Statistics
 
 Generate descriptive statistics such as measures of location,
 dispersion, frequency tables, cross tables, group summaries and multiple
-one/two way tables. Visualize and compute percentiles/probabilities of 
-normal, t, f, chi square and binomial distributions.
+one/two way tables. 
 
 ```{r descriptive, eval=FALSE}
 app_descriptive()
 ```
 
-#### Inferential statistics
+#### Visualize Probability Distributions
+
+Visualize and compute percentiles/probabilities of normal, t, f, chi square 
+and binomial distributions.
+
+```{r vistributions, eval = FALSE}
+app_vistributions()
+```
+
+#### Inferential Statistics
 
 Select set of parametric and non-parametric statistical tests. 'inferr' builds upon the solid set of
 statistical tests provided in 'stats' package by including additional data types as inputs, expanding and
@@ -71,7 +77,7 @@ chi square tests, Levene's test, McNemar Test, Cochran's Q test and Runs test.
 app_inference()
 ```
 
-#### Linear regression
+#### Linear Regression
 
 Tools designed to make it easier for users, particularly beginner/intermediate R users 
 to build ordinary least squares regression models. Includes comprehensive regression output, 
@@ -83,7 +89,7 @@ model fit assessment and variable selection procedures.
 app_linear_regression()
 ```
 
-#### Logistic regression
+#### Logistic Regression
 
 Tools designed to make it easier for beginner and intermediate users to build and validate 
 binary logistic regression models. Includes bivariate analysis, comprehensive regression output, 
@@ -114,5 +120,6 @@ Tools for interactive data visualization . Users can visualize data using 'ggplo
 app_visualizer()
 ```
 
+## Community Guidelines
 
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

@@ -1,3 +1,9 @@
+url: https://xplorerr.rsquaredacademy.com
+
+authors:
+  Aravind Hebbali:
+    href: https://www.aravindhebbali.com
+
 templates:
   params:
     bootswatch: cosmo
@@ -11,11 +17,12 @@ home:
 
 reference:
 - title: All functions
-  desc: ~
+
   contents:
-  - app_visualizer
   - app_descriptive
+  - app_vistributions
   - app_inference
+  - app_visualizer
   - app_linear_regression
   - app_logistic_regression
   - app_rfm_analysis

@@ -23,6 +23,18 @@ app_descriptive <- function() {
   shiny::runApp(appDir = system.file("app-descriptr", package = "xplorerr"))
 }
 
+#' @title Visualize distributions
+#' @description Launches app for visualizing probability distributions.
+#' @examples
+#' \dontrun{
+#' app_descriptive()
+#' }
+#' @export
+#'
+app_vistributions <- function() {
+  shiny::runApp(appDir = system.file("app-vistributions", package = "xplorerr"))
+}
+
 
 #' @title Inferential Statistics
 #' @description Launches the inferential statistics app.

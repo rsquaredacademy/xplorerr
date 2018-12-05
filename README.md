@@ -1,68 +1,95 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-xplorerr: Tools for Interactive Data Exploration <img src="xplorerr.png" height="100px" align="right" />
---------------------------------------------------------------------------------------------------------
 
-**Author:** [Aravind Hebbali](https://www.aravindhebbali.com/)<br/> **License:** [MIT](https://opensource.org/licenses/MIT)
+# xplorerr
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr) [![Travis-CI Build Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&svg=true)](https://ci.appveyor.com/project/rsquaredacademy/xplorerr) [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+> Tools for interactive data
+analysis
 
-Overview
---------
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
+[![Travis-CI Build
+Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&svg=true)](https://ci.appveyor.com/project/rsquaredacademy/xplorerr)
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-xplorerr provides a set of tools for interactive data exploration:
+## Overview
 
--   Descirptive statistics
--   Inferential statistics
--   Linear regression
--   Logistic regression
--   RFM Analysis
--   Data visualization
-    -   ggplot2
-    -   plotly
-    -   rbokeh
-    -   highcharter
+xplorerr provides a set of tools for interactive data analysis:
 
-Installation
-------------
+  - Descirptive statistics
+  - Visualize probability distributions
+  - Inferential statistics
+  - Linear regression
+  - Logistic regression
+  - RFM Analysis
+  - Data visualization
+      - ggplot2
+      - plotly
+      - rbokeh
+      - highcharter
 
-You can install xplorerr from github with:
+## Installation
 
 ``` r
+# Install development version from GitHub
 # install.packages("devtools")
 devtools::install_github("rsquaredacademy/xplorerr")
 ```
 
-Usage
------
+## Usage
 
-#### Descirptive statistics
+#### Descirptive Statistics
 
-Generate descriptive statistics such as measures of location, dispersion, frequency tables, cross tables, group summaries and multiple one/two way tables. Visualize and compute percentiles/probabilities of normal, t, f, chi square and binomial distributions.
+Generate descriptive statistics such as measures of location,
+dispersion, frequency tables, cross tables, group summaries and multiple
+one/two way tables.
 
 ``` r
 app_descriptive()
 ```
 
-#### Inferential statistics
+#### Visualize Probability Distributions
 
-Select set of parametric and non-parametric statistical tests. 'inferr' builds upon the solid set of statistical tests provided in 'stats' package by including additional data types as inputs, expanding and restructuring the test results. The tests included are t tests, variance tests, proportion tests, chi square tests, Levene's test, McNemar Test, Cochran's Q test and Runs test.
+Visualize and compute percentiles/probabilities of normal, t, f, chi
+square and binomial distributions.
+
+``` r
+app_vistributions()
+```
+
+#### Inferential Statistics
+
+Select set of parametric and non-parametric statistical tests. ‘inferr’
+builds upon the solid set of statistical tests provided in ‘stats’
+package by including additional data types as inputs, expanding and
+restructuring the test results. The tests included are t tests, variance
+tests, proportion tests, chi square tests, Levene’s test, McNemar Test,
+Cochran’s Q test and Runs test.
 
 ``` r
 app_inference()
 ```
 
-#### Linear regression
+#### Linear Regression
 
-Tools designed to make it easier for users, particularly beginner/intermediate R users to build ordinary least squares regression models. Includes comprehensive regression output, heteroskedasticity tests, collinearity diagnostics, residual diagnostics, measures of influence, model fit assessment and variable selection procedures.
+Tools designed to make it easier for users, particularly
+beginner/intermediate R users to build ordinary least squares regression
+models. Includes comprehensive regression output, heteroskedasticity
+tests, collinearity diagnostics, residual diagnostics, measures of
+influence, model fit assessment and variable selection procedures.
 
 ``` r
 app_linear_regression()
 ```
 
-#### Logistic regression
+#### Logistic Regression
 
-Tools designed to make it easier for beginner and intermediate users to build and validate binary logistic regression models. Includes bivariate analysis, comprehensive regression output, model fit statistics, variable selection procedures, model validation techniques and a 'shiny' app for interactive model building.
+Tools designed to make it easier for beginner and intermediate users to
+build and validate binary logistic regression models. Includes bivariate
+analysis, comprehensive regression output, model fit statistics,
+variable selection procedures, model validation techniques and a ‘shiny’
+app for interactive model building.
 
 ``` r
 app_logistic_regression()
@@ -70,7 +97,10 @@ app_logistic_regression()
 
 #### RFM Analysis
 
-Tools for RFM (recency, frequency and monetary value) analysis. Generate RFM score from both transaction and customer level data. Visualize the relationship between recency, frequency and monetary value using heatmap, histograms, bar charts and scatter plots.
+Tools for RFM (recency, frequency and monetary value) analysis. Generate
+RFM score from both transaction and customer level data. Visualize the
+relationship between recency, frequency and monetary value using
+heatmap, histograms, bar charts and scatter plots.
 
 ``` r
 app_rfm_analysis()
@@ -78,10 +108,15 @@ app_rfm_analysis()
 
 #### Data Visualization
 
-Tools for interactive data visualization . Users can visualize data using 'ggplot2', 'plotly', 'rbokeh' and 'highcharter' libraries.
+Tools for interactive data visualization . Users can visualize data
+using ‘ggplot2’, ‘plotly’, ‘rbokeh’ and ‘highcharter’ libraries.
 
 ``` r
 app_visualizer()
 ```
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+## Community Guidelines
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
