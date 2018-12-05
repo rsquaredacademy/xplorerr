@@ -1,77 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/index.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/index.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/news/index.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_descriptive.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_inference.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_linear_regression.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_logistic_regression.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_rfm_analysis.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/app_visualizer.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/conduct</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/license-text</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://xplorerr.rsquaredacademy.com/reference/xplorerr.html</loc>
-  <lastmod>2018-07-02T09:15:45+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/index.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_descriptive.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_inference.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_linear_regression.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_logistic_regression.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_rfm_analysis.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/app_visualizer.html</loc>
+  </url>
+  <url>
+    <loc>https://xplorerr.rsquaredacademy.com/reference/xplorerr.html</loc>
+  </url>
 </urlset>
