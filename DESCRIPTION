@@ -5,56 +5,32 @@ Version: 0.1.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0001-9220-9669"))
 Description: Tools for interactive data exploration built using 'shiny'. Includes descriptive statistics,
-    inferential statistics, linear regression, logistic regression and RFM analysis.
+    visualizing probability distributions, inferential statistics, linear regression, logistic regression 
+    and RFM analysis.
 Depends:
     R(>= 3.2.4)
 Imports:
     shiny
 Suggests:
-    assertthat,
-    car,
-    caret,
-    checkmate,
-    cli,
-    clisymbols, 
-    crayon,
-    dplyr,
+    blorr,
+    descriptr,
     DT,
-    e1071,
-    forcats,
-    ggplot2,
-    glue,
-    goftest,
-    graphics,
     grid,
-    gridExtra,
     haven,
     highcharter,
-    ineq,
+    inferr,
     jsonlite,
     kableExtra,
-    lubridate,
-    magrittr,
-    nortest,
+    olsrr,
     plotly,
-    purrr,
     rbokeh,
-    RColorBrewer,
-    Rcpp,
     readr,
     readxl,
-    recipes,
-    rlang,
-    scales,	
+    rfm,
     shinyBS,
     shinycssloaders,
     shinythemes,
-    stats,
-    stringr,
-    tibble,
-    tidyr,
     tools,
-    utils,
     vistributions
 URL: https://github.com/rsquaredacademy/xplorerr, https://xplorerr.rsquaredacademy.com/ 
 BugReports: https://github.com/rsquaredacademy/xplorerr/issues
