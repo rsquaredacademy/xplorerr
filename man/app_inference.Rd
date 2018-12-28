@@ -10,7 +10,7 @@ app_inference()
 Launches the inferential statistics app.
 }
 \examples{
-\dontrun{
-app_inference()
+if (interactive()) {
+  app_inference()
 }
 }

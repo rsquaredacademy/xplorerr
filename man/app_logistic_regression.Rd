@@ -10,7 +10,7 @@ app_logistic_regression()
 Launches the logistic regression app.
 }
 \examples{
-\dontrun{
-app_logistic_regression()
+if (interactive()) {
+  app_logistic_regression()
 }
 }

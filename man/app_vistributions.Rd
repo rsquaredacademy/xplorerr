@@ -10,7 +10,7 @@ app_vistributions()
 Launches app for visualizing probability distributions.
 }
 \examples{
-\dontrun{
-app_descriptive()
+if (interactive()) {
+  app_descriptive()
 }
 }

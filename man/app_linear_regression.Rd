@@ -10,7 +10,7 @@ app_linear_regression()
 Launches the linear regression app.
 }
 \examples{
-\dontrun{
-app_linear_regression()
+if (interactive()) {
+  app_linear_regression()
 }
 }
