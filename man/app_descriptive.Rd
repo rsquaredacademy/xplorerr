@@ -10,7 +10,7 @@ app_descriptive()
 Launches the descriptive statistics app.
 }
 \examples{
-if (interactive()) {
-  app_descriptive()
+\dontrun{
+app_descriptive()
 }
 }

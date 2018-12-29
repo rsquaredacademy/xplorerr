@@ -10,7 +10,7 @@ app_rfm_analysis()
 Launches the RFM analyssi app.
 }
 \examples{
-if (interactive()) {
-  app_rfm_analysis()
+\dontrun{
+app_rfm_analysis()
 }
 }

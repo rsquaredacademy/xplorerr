@@ -10,7 +10,7 @@ app_visualizer()
 Launches the visualizer app.
 }
 \examples{
-if (interactive()) {
-  app_visualizer()
+\dontrun{
+app_visualizer()
 }
 }

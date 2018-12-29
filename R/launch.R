@@ -1,8 +1,8 @@
 #' @title Visualization 
 #' @description Launches the visualizer app.
 #' @examples
-#' if (interactive()) {
-#'   app_visualizer()
+#' \dontrun{
+#' app_visualizer()
 #' }
 #' @export
 #'
@@ -14,8 +14,8 @@ app_visualizer <- function() {
 #' @title Descriptive Statistics
 #' @description Launches the descriptive statistics app.
 #' @examples
-#' if (interactive()) {
-#'   app_descriptive()
+#' \dontrun{
+#' app_descriptive()
 #' }
 #' @export
 #'
@@ -26,8 +26,8 @@ app_descriptive <- function() {
 #' @title Visualize distributions
 #' @description Launches app for visualizing probability distributions.
 #' @examples
-#' if (interactive()) {
-#'   app_descriptive()
+#' \dontrun{
+#' app_descriptive()
 #' }
 #' @export
 #'
@@ -39,8 +39,8 @@ app_vistributions <- function() {
 #' @title Inferential Statistics
 #' @description Launches the inferential statistics app.
 #' @examples
-#' if (interactive()) {
-#'   app_inference()
+#' \dontrun{
+#' app_inference()
 #' }
 #' @export
 #'
@@ -51,8 +51,8 @@ app_inference <- function() {
 #' @title Linear Regression
 #' @description Launches the linear regression app.
 #' @examples
-#' if (interactive()) {
-#'   app_linear_regression()
+#' \dontrun{
+#' app_linear_regression()
 #' }
 #' @export
 #'
@@ -63,8 +63,8 @@ app_linear_regression <- function() {
 #' @title Logistic Regression
 #' @description Launches the logistic regression app.
 #' @examples
-#' if (interactive()) {
-#'   app_logistic_regression()
+#' \dontrun{
+#' app_logistic_regression()
 #' }
 #' @export
 #'
@@ -75,8 +75,8 @@ app_logistic_regression <- function() {
 #' @title RFM Analysis
 #' @description Launches the RFM analyssi app.
 #' @examples
-#' if (interactive()) {
-#'   app_rfm_analysis()
+#' \dontrun{
+#' app_rfm_analysis()
 #' }
 #' @export
 #'
