@@ -113,6 +113,22 @@ data6 <- reactive({
     }
 })
 
+inFile7 <- reactive({
+    if(is.null(input$file7)) {
+        return(NULL)
+    } else {
+        input$file7
+    }
+})
+
+data7 <- reactive({
+    if(is.null(inFile7())) {
+        return(NULL)
+    } else {
+         readRDS(inFile7()$datapath)
+    }
+})
+
 
 observe({
   updateSelectInput(
@@ -120,7 +136,7 @@ observe({
     inputId = 'sel_data',
     label = '',
     choices = c(input$file1$name, input$file2$name, input$file3$name,
-      input$file4$name, input$file5$name, input$file6$name),
+      input$file4$name, input$file5$name, input$file6$name, input$file7$name),
     selected = ''
   )
 })
@@ -176,6 +192,8 @@ observeEvent(input$submit_seldata, {
     uploadata$t <- uploadata$t <- data5()
   } else if (ext_type() == 'dta') {
     uploadata$t <- data6()
+  } else {
+    uploadata$t <- data7()
   }
 
 })
@@ -183,21 +201,6 @@ observeEvent(input$submit_seldata, {
 observeEvent(input$use_sample_data, {
   uploadata$t <- sampdata$s
 })
-
-
-  # if (input$sel_data == 'csv') {
-  #   data1()
-  # } else if (input$sel_data == 'excel') {
-  #   data2()
-  # } else if (input$sel_data == 'json') {
-  #   data3()
-  # } else if (input$sel_data == 'sas') {
-  #   data4()
-  # } else if (input$sel_data == 'spss') {
-  #   data5()
-  # } else if (input$sel_data == 'stata') {
-  #   data6()
-  # }
 
 
 observeEvent(input$use_sample_data, {
@@ -266,6 +269,16 @@ observeEvent(input$sas2datasrc, {
 })
 
 observeEvent(input$sas2datatrans, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
+  updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
+})
+
+observeEvent(input$rds2datasrc, {
+  updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
+  updateNavlistPanel(session, 'navlist_up', 'tab_datasources')
+})
+
+observeEvent(input$rds2datatrans, {
   updateNavbarPage(session, 'mainpage', selected = 'tab_trans')
   updateNavlistPanel(session, 'navlist_trans', 'tab_seldata')
 })
