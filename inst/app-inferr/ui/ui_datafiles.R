@@ -369,6 +369,64 @@ tabPanel('Upload File', value = 'tab_uploadfile',
 
 			        )
 						
+					),
+
+					tabPanel('RDS', value = 'tab_upload_rds',
+
+						br(),
+
+						fluidPage(
+
+			        fluidRow(
+			          column(8, align = 'left',
+			            h4('Upload Data'),
+			            p('Upload data from a RDS file.')
+			          ),
+			          column(4, align = 'right',
+			            actionButton(inputId='uploadrds2', label="Demo", icon = icon("video-camera"),
+			              onclick ="window.open('https://www.youtube.com/watch?v=IckaPr19Bvc#t=00m29s', '_blank')")
+			          )
+			        ),
+			        hr(),
+
+			            fluidRow(
+			                column(12, align = 'center',
+			                    fileInput(
+			                      inputId = 'file7',
+			                      label = 'Choose file:',
+			                      accept = ''
+			                    )
+			                )
+			            ),
+
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+			            br(),
+
+			            fluidRow(
+			            	
+			            	column(6, align = 'left',
+			            		actionButton(inputId='rds2datasrc', label="Data Sources", icon = icon("long-arrow-left"))
+			            	),
+
+			            	column(6, align = 'right',
+			            		actionButton(inputId='rds2datatrans', label="Data Selection", icon = icon("long-arrow-right"))
+			            	)
+
+			            )
+
+			        )
+						
 					)
 
 				)
