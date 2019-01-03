@@ -7,5 +7,5 @@ output$chiprob_plot <- renderPlot({
 })
 
 output$chiperc_plot <- renderPlot({
-  vdist_chisquare_perc(input$chiperc_p, input$chiperc_df, input$chiperc_tail)
+  print(vdist_chisquare_perc(input$chiperc_p, input$chiperc_df, input$chiperc_tail))
 })
