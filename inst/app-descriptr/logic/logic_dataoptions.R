@@ -57,13 +57,6 @@ file_upload_options <- eventReactive(input$upload_files_yes, {
 						label = 'SAS',
 						width = '120px'
 					)
-				),
-				column(3, align = 'center',
-					actionButton(
-						inputId = 'upload_rds_file',
-						label = 'RDS',
-						width = '120px'
-					)
 				)
 	)
 
@@ -113,10 +106,4 @@ observeEvent(input$upload_sas_file, {
 	updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
   updateNavlistPanel(session, 'navlist_up', 'tab_uploadfile')
   updateTabsetPanel(session, 'tabset_upload', selected = 'tab_upload_sas')
-})
-
-observeEvent(input$upload_rds_file, {
-	updateNavbarPage(session, 'mainpage', selected = 'tab_upload')
-  updateNavlistPanel(session, 'navlist_up', 'tab_uploadfile')
-  updateTabsetPanel(session, 'tabset_upload', selected = 'tab_upload_rds')
 })
