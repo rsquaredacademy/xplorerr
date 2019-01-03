@@ -4,9 +4,9 @@ Title: Tools for Interactive Data Exploration
 Version: 0.1.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0001-9220-9669"))
-Description: Tools for interactive data exploration built using 'shiny'. Includes descriptive statistics,
-    visualizing probability distributions, inferential statistics, linear regression, logistic regression 
-    and RFM analysis.
+Description: Tools for interactive data exploration built using 'shiny'. Includes apps for descriptive 
+    statistics, visualizing probability distributions, inferential statistics, linear regression, 
+    logistic regression and RFM analysis.
 Depends:
     R(>= 3.2.4)
 Imports:
