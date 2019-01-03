@@ -39,7 +39,7 @@ devtools::install_github("rsquaredacademy/xplorerr")
 
 ## Usage
 
-#### Descirptive Statistics
+#### Descriptive Statistics
 
 Generate descriptive statistics such as measures of location,
 dispersion, frequency tables, cross tables, group summaries and multiple

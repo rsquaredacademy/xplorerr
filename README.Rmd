@@ -47,11 +47,10 @@ devtools::install_github("rsquaredacademy/xplorerr")
 
 ## Usage
 
-#### Descirptive Statistics
+#### Descriptive Statistics
 
-Generate descriptive statistics such as measures of location,
-dispersion, frequency tables, cross tables, group summaries and multiple
-one/two way tables. 
+Generate descriptive statistics such as measures of location, dispersion, 
+frequency tables, cross tables, group summaries and multiple one/two way tables. 
 
 ```{r descriptive, eval=FALSE}
 app_descriptive()
@@ -59,8 +58,8 @@ app_descriptive()
 
 #### Visualize Probability Distributions
 
-Visualize and compute percentiles/probabilities of normal, t, f, chi square 
-and binomial distributions.
+Visualize and compute percentiles/probabilities of normal, t, f, chi square and 
+binomial distributions.
 
 ```{r vistributions, eval = FALSE}
 app_vistributions()
@@ -68,10 +67,11 @@ app_vistributions()
 
 #### Inferential Statistics
 
-Select set of parametric and non-parametric statistical tests. 'inferr' builds upon the solid set of
-statistical tests provided in 'stats' package by including additional data types as inputs, expanding and
-restructuring the test results. The tests included are t tests, variance tests, proportion tests, 
-chi square tests, Levene's test, McNemar Test, Cochran's Q test and Runs test.
+Select set of parametric and non-parametric statistical tests. 'inferr' builds 
+upon the solid set of statistical tests provided in 'stats' package by 
+including additional data types as inputs, expanding and restructuring the test 
+results. The tests included are t tests, variance tests, proportion tests, chi 
+square tests, Levene's test, McNemar Test, Cochran's Q test and Runs test.
 
 ```{r inference, eval=FALSE}
 app_inference()
@@ -79,10 +79,11 @@ app_inference()
 
 #### Linear Regression
 
-Tools designed to make it easier for users, particularly beginner/intermediate R users 
-to build ordinary least squares regression models. Includes comprehensive regression output, 
-heteroskedasticity tests, collinearity diagnostics, residual diagnostics, measures of influence, 
-model fit assessment and variable selection procedures.
+Tools designed to make it easier for users, particularly beginner/intermediate 
+R users to build ordinary least squares regression models. Includes 
+comprehensive regression output, heteroskedasticity tests, collinearity 
+diagnostics, residual diagnostics, measures of influence, model fit assessment 
+and variable selection procedures.
 
 
 ```{r linear, eval=FALSE}
@@ -91,10 +92,11 @@ app_linear_regression()
 
 #### Logistic Regression
 
-Tools designed to make it easier for beginner and intermediate users to build and validate 
-binary logistic regression models. Includes bivariate analysis, comprehensive regression output, 
-model fit statistics, variable selection procedures, model validation techniques and a 'shiny' 
-app for interactive model building.
+Tools designed to make it easier for beginner and intermediate users to build 
+and validate binary logistic regression models. Includes bivariate analysis, 
+comprehensive regression output, model fit statistics, variable selection 
+procedures, model validation techniques and a 'shiny' app for interactive model 
+building.
 
 ```{r logistic, eval=FALSE}
 app_logistic_regression()
@@ -102,10 +104,10 @@ app_logistic_regression()
 
 #### RFM Analysis
 
-Tools for RFM (recency, frequency and monetary value) analysis. 
-Generate RFM score from both transaction and customer level data. Visualize the
-relationship between recency, frequency and monetary value using heatmap, 
-histograms, bar charts and scatter plots.
+Tools for RFM (recency, frequency and monetary value) analysis. Generate RFM 
+score from both transaction and customer level data. Visualize the relationship 
+between recency, frequency and monetary value using heatmap, histograms, bar 
+charts and scatter plots.
 
 ```{r rfm, eval=FALSE}
 app_rfm_analysis()
@@ -113,8 +115,8 @@ app_rfm_analysis()
 
 #### Data Visualization
 
-Tools for interactive data visualization . Users can visualize data using 'ggplot2', 'plotly', 
-'rbokeh' and 'highcharter' libraries. 
+Tools for interactive data visualization . Users can visualize data using 
+'ggplot2', 'plotly', 'rbokeh' and 'highcharter' libraries. 
 
 ```{r visualize, eval=FALSE}
 app_visualizer()
