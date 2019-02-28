@@ -102,7 +102,7 @@ fil_quant_data <- reactive({
 })
 
 fquant_out <- eventReactive(input$submit_fquant, {
-  ko <- ds_freq_cont(fil_quant_data(),
+  ko <- ds_freq_table(fil_quant_data(),
                      !! sym(as.character(input$var_freq_quant)),
                      input$bins)
   ko

@@ -4,8 +4,8 @@ output$screen <- renderPrint({
 })
 
 observeEvent(input$finalok, {
-	updateNavbarPage(session, 'mainpage', selected = 'tab_home_analyze')
-	updateNavlistPanel(session, 'navlist_home', 'tab_analyze_home')
+	updateNavbarPage(session, 'mainpage', selected = 'tab_eda')
+	# updateNavlistPanel(session, 'navlist_eda', 'tab_eda')
 })
 
 final_split <- reactiveValues(train = NULL)
