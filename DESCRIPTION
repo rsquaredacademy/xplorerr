@@ -10,7 +10,9 @@ Description: Tools for interactive data exploration built using 'shiny'. Include
 Depends:
     R(>= 3.2.4)
 Imports:
-    shiny
+    magrittr,
+    shiny,
+    utils
 Suggests:
     blorr,
     descriptr,
