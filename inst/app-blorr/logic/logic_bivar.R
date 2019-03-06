@@ -31,7 +31,7 @@ observe({
 
 bivar <- eventReactive(input$submit_bivar, {
 	blorr::blr_bivariate_analysis(data = final_split$train,
-		response = input$resp_bivar, !!! syms(input$var_bivar))
+		response = input$resp_bivar, input$var_bivar)
 })
 
 woe_iv <- eventReactive(input$submit_woe, {
