@@ -10,7 +10,7 @@ conf_result <- eventReactive(input$submit_conf, {
   if (input$conf_use_test_data) {
     out <- blr_confusion_matrix(k, cutoff = input$conf_cutoff, data = final_split$test)
   } else {
-    out <- blr_confusion_matrix(k, cutoff = input$conf_cutoff)
+    out <- blr_confusion_matrix(k, cutoff = input$conf_cutoff, data = final_split$train)
   }
 
   return(out)
@@ -44,7 +44,7 @@ hoslem_result <- eventReactive(input$submit_hoslem, {
   if (input$hoslem_use_test_data) {
     out <- blr_test_hosmer_lemeshow(k, data = final_split$test)
   } else {
-    out <- blr_test_hosmer_lemeshow(k)
+    out <- blr_test_hosmer_lemeshow(k, data = final_split$train)
   }
 
   return(out)
@@ -68,7 +68,7 @@ lift_result <- eventReactive(input$submit_lift, {
   if (input$lift_use_test_data) {
     out <- blr_gains_table(k, data = final_split$test)
   } else {
-    out <- blr_gains_table(k)
+    out <- blr_gains_table(k, data = final_split$train)
   }
 
   return(out)
@@ -104,7 +104,7 @@ roc_result <- eventReactive(input$submit_roc, {
   if (input$roc_use_test_data) {
     out <- blr_gains_table(k, data = final_split$test)
   } else {
-    out <- blr_gains_table(k)
+    out <- blr_gains_table(k, data = final_split$train)
   }
 
   return(out)
@@ -129,7 +129,7 @@ ks_result <- eventReactive(input$submit_ks, {
   if (input$ks_use_test_data) {
     out <- blr_gains_table(k, data = final_split$test)
   } else {
-    out <- blr_gains_table(k)
+    out <- blr_gains_table(k, data = final_split$train)
   }
 
   return(out)
