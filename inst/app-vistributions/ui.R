@@ -1,6 +1,7 @@
 library(shiny)
 library(shinyBS)
 library(shinythemes)
+library(magrittr)
 
 shinyUI(
 
