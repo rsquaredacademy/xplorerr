@@ -12,10 +12,10 @@ check_suggests <- function(pkg) {
       if (utils::menu(c("Yes", "No")) == 1) {
         utils::install.packages(pkg)
       } else {
-        stop(msg, call. = FALSE)
+        stop(paste0(pkg, ' must be installed for this functionality.'), call. = FALSE)
       }
     } else {
-      stop(msg, call. = FALSE)
+      stop(paste0(pkg, ' must be installed for this functionality.'), call. = FALSE)
     }
   }
 

@@ -1,4 +1,4 @@
-#' @title Visualization 
+#' @title Visualization
 #' @description Launches the visualizer app.
 #' @examples
 #' \dontrun{
@@ -8,26 +8,26 @@
 #'
 app_visualizer <- function() {
 
-	check_suggests(shiny)
-	check_suggests(shinyBS)
-	check_suggests(shinythemes)
-	check_suggests(descriptr)
-	check_suggests(dplyr)
-	check_suggests(ggplot2)
-	check_suggests(plotly)
-	check_suggests(rbokeh)
-	check_suggests(highcharter)
-	check_suggests(purrr)
-	check_suggests(tidyr)
-	check_suggests(tibble)
-	check_suggests(readxl)
-	check_suggests(readr)
-	check_suggests(jsonlite)
-	check_suggests(magrittr)
-	check_suggests(tools)
-	check_suggests(lubridate)
-	check_suggests(scales)
-	check_suggests(stringr)
+	check_suggests('shiny')
+	check_suggests('shinyBS')
+	check_suggests('shinythemes')
+	check_suggests('descriptr')
+	check_suggests('dplyr')
+	check_suggests('ggplot2')
+	check_suggests('plotly')
+	check_suggests('rbokeh')
+	check_suggests('highcharter')
+	check_suggests('purrr')
+	check_suggests('tidyr')
+	check_suggests('tibble')
+	check_suggests('readxl')
+	check_suggests('readr')
+	check_suggests('jsonlite')
+	check_suggests('magrittr')
+	check_suggests('tools')
+	check_suggests('lubridate')
+	check_suggests('scales')
+	check_suggests('stringr')
 
   message('Highcharts (www.highcharts.com) is a Highsoft software product which is not free for commercial and Governmental use')
   shiny::runApp(appDir = system.file("app-visualize", package = "xplorerr"))
