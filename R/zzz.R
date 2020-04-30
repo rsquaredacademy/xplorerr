@@ -1,4 +1,3 @@
-#' @importFrom magrittr %>% extract
 .onAttach <- function(...) {
   if (!interactive() || stats::runif(1) > 0.1) return()
 
