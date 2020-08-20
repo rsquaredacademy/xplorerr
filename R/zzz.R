@@ -1,16 +1,10 @@
-#' @importFrom magrittr %>% extract
 .onAttach <- function(...) {
   if (!interactive() || stats::runif(1) > 0.1) return()
 
-  pkgs <- utils::available.packages()
-
-  cran_version <-
-    pkgs %>%
-    extract("xplorerr", "Version") %>%
-    package_version()
-
+  pkgs          <- utils::available.packages()
+  cran_version  <- package_version(pkgs["olsrr", "Version"])
   local_version <- utils::packageVersion("xplorerr")
-  behind_cran <- cran_version > local_version
+  behind_cran   <- cran_version > local_version
 
 
   tips <- c(
