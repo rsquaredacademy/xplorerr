@@ -3,16 +3,13 @@
 
 # xplorerr
 
-> Tools for interactive data
-analysis
+> Tools for interactive data analysis
 
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
 [![cran
 checks](https://cranchecks.info/badges/summary/xplorerr)](https://cran.r-project.org/web/checks/check_results_xplorerr.html)
-[![Travis-CI Build
-Status](https://travis-ci.org/rsquaredacademy/xplorerr.svg?branch=master)](https://travis-ci.org/rsquaredacademy/xplorerr)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/rsquaredacademy/xplorerr?branch=master&svg=true)](https://ci.appveyor.com/project/rsquaredacademy/xplorerr)
+[![R build
+status](https://github.com/rsquaredacademy/xplorerr/workflows/R-CMD-check/badge.svg)](https://github.com/rsquaredacademy/xplorerr/actions)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/xplorerr)](https://cran.r-project.org/package=xplorerr)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 

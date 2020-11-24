@@ -11,3 +11,4 @@
 ^_pkgdown\.yml$
 ^hex_xplorerr\.png$
 ^docs$
+^\.github$
