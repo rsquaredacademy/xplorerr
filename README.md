@@ -10,8 +10,9 @@
 checks](https://cranchecks.info/badges/summary/xplorerr)](https://cran.r-project.org/web/checks/check_results_xplorerr.html)
 [![R build
 status](https://github.com/rsquaredacademy/xplorerr/workflows/R-CMD-check/badge.svg)](https://github.com/rsquaredacademy/xplorerr/actions)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/xplorerr)](https://cran.r-project.org/package=xplorerr)
+[![status](https://tinyverse.netlify.com/badge/xplorerr)](https://CRAN.R-project.org/package=xplorerr)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/xplorerr)](https://cran.r-project.org/package=xplorerr)
 
 ## Overview
 
