@@ -1,4 +1,5 @@
 library(shiny)
+library(data.table)
 library(inferr)
 library(dplyr)
 library(purrr)

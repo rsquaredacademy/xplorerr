@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
       inputId = "var_tsvartest1",
@@ -95,26 +99,19 @@ observeEvent(input$submit_part_train_per, {
 
 
 d_tsvartest <- eventReactive(input$submit_tsvartest, {
-	# validate(need((input$var_tsvartest1 != '' & input$var_tsvartest2 != ''), 'Please select variables.'))
   req(input$var_tsvartest1)
   req(input$var_tsvartest2)
   data <- final_split$train[, c(input$var_tsvartest1, input$var_tsvartest2)]
-  k <- infer_ts_var_test(data, !! sym(as.character(input$var_tsvartest1)),
-                      !! sym(as.character(input$var_tsvartest2)),
-                      alternative = input$tsvartest_type)
-  k
+  xpl_ts_var_test(data, input$var_tsvartest1, input$var_tsvartest2,
+                  alternative = input$tsvartest_type)
 })
 
 d_tsvartestg <- eventReactive(input$submit_tsvartestg, {
-	# validate(need((input$var_tsvartestg1 != '' & input$var_tsvartestg2 != ''), 'Please select variables.'))
   req(input$var_tsvartestg1)
   req(input$var_tsvartestg2)
   data <- final_split$train[, c(input$var_tsvartestg1, input$var_tsvartestg2)]
-  # validate(need(nlevels(data[, 2]) == 2, 'Please select a binary variable.'))
-  k <- infer_ts_var_test(data, !! sym(as.character(input$var_tsvartestg1)),
-                         group_var = !! sym(as.character(input$var_tsvartestg2)),
+  xpl_ts_var_test(data, input$var_tsvartestg1, input$var_tsvartestg2,
                          alternative = input$tsvartestg_type)
-  k
 })
 
 output$tsvartest_out <- renderPrint({

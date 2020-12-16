@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
                       inputId = "var_binomtest",

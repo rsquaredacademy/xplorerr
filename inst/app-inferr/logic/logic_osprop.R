@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
                       inputId = "var_osproptest",
@@ -37,11 +41,8 @@ observeEvent(input$submit_part_train_per, {
 d_osproptest <- eventReactive(input$submit_osproptest, {
   req(input$var_osproptest)
   data <- final_split$train
-  # validate(need(nlevels(data) == 2, 'Please select a binary variable.'))
-  out <- infer_os_prop_test(data, !! sym(as.character(input$var_osproptest)),
-                            input$osproptest_prob,
-                            input$osproptest_type)
-  out
+  xpl_os_prop_test(data, input$var_osproptest, input$osproptest_prob,
+                   input$osproptest_type)
 })
 
 output$osproptest_out <- renderPrint({
@@ -49,7 +50,7 @@ output$osproptest_out <- renderPrint({
 })
 
 ospropcalc <- eventReactive(input$submit_ospropcalc, {
-  infer_os_prop_test(n = input$n_ospropcalc, phat = as.numeric(input$p_ospropcalc), prob = input$prob_ospropcalc,
+  xpl_os_prop_test(data = input$n_ospropcalc, phat = as.numeric(input$p_ospropcalc), prob = input$prob_ospropcalc,
       alternative = input$ospropcalc_type)
 })
 

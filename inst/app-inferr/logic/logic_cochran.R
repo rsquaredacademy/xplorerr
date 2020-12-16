@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session, 'var_cochran', choices = names(data()))
 })
@@ -39,12 +43,9 @@ observeEvent(input$submit_part_train_per, {
 })
 
 d_cochran <- eventReactive(input$submit_cochran, {
-	# validate(need((input$var_cochran != ''), 'Please select variables.'))
   req(input$var_cochran)
   data <- final_split$train[, c(input$var_cochran)]
-  # validate(need(data %>% map(nlevels) %>% `<`(3) %>% all(), 'Only binary variables must be selected.'))
-  k <- infer_cochran_qtest(data, !!! syms(input$var_cochran))
-  k
+  xpl_cochran_qtest(data, input$var_cochran)
 })
 
 output$cochran_out <- renderPrint({

@@ -88,7 +88,8 @@ app_vistributions <- function() {
 #'
 app_inference <- function() {
 
-	check_suggests('inferr')
+	check_suggests('data.table')
+	check_suggests('magrittr')
 	check_suggests('descriptr')
 	check_suggests('jsonlite')
 	check_suggests('haven')

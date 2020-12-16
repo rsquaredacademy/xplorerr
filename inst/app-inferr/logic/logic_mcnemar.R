@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session, 'var_mcnemar1', choices = names(data()))
     updateSelectInput(session, 'var_mcnemar2', choices = names(data()))
@@ -35,14 +39,11 @@ observeEvent(input$submit_part_train_per, {
 })
 
 d_mcnemar <- eventReactive(input$submit_mcnemar, {
-	# validate(need((input$var_mcnemar1 != '' & input$var_mcnemar2 != ''), 'Please select variables.'))
   req(input$var_mcnemar1)
   req(input$var_mcnemar2)
   data <- final_split$train[, c(input$var_mcnemar1, input$var_mcnemar2)]
-  # validate(need((nlevels(data[, 1]) == 2 & nlevels(data[, 2]) == 2), 'Please select binary variables.'))
   k <- table(data[, 1], data[, 2])
-  out <- infer_mcnemar_test(k)
-  out
+  xpl_mcnemar_test(k)
 })
 
 output$mcnemar_out <- renderPrint({
@@ -51,8 +52,7 @@ output$mcnemar_out <- renderPrint({
 
 result2 <- eventReactive(input$submit_mcnemarc, {
   k <- matrix(c(input$mc_00, input$mc_10, input$mc_01, input$mc_11), nrow = 2)
-  out <- infer_mcnemar_test(k)
-  out
+  xpl_mcnemar_test(k)
 })
 
 output$mcnemarc_out <- renderPrint({

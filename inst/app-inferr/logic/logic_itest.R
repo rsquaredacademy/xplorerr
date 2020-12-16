@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
                       inputId = "var_itest1",
@@ -70,14 +74,11 @@ observeEvent(input$submit_part_train_per, {
 })
 
 d_itest <- eventReactive(input$submit_itest, {
-	# validate(need((input$var_itest1 != '' & input$var_itest2 != ''), 'Please select two variables.'))
   req(input$var_itest1)
   req(input$var_itest2)
   data <- final_split$train[, c(input$var_itest1, input$var_itest2)]
-  # validate(need(nlevels(data[, 1]) == 2, 'Please select a binary variable.'))
-  k <- infer_ts_ind_ttest(data, !! sym(as.character(input$var_itest1)),
-      !! sym(as.character(input$var_itest2)), input$itest_conf, input$itest_type)
-  k
+  xpl_ts_ind_ttest(data, input$var_itest1, input$var_itest2, 
+                   input$itest_conf, input$itest_type)
 })
 
 output$itest_out <- renderPrint({

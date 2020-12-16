@@ -28,7 +28,7 @@ tabPanel('Sample Data', value = 'tab_use_sample',
 					inputId = 'mpg_data',
 					label = 'mpg',
 					width = '200px',
-					onclick ="window.open('http://ggplot2.tidyverse.org/reference/mpg.html', 'newwindow', 'width=800,height=600')"
+					onclick ="window.open('https://ggplot2.tidyverse.org/reference/mpg.html', 'newwindow', 'width=800,height=600')"
 				)
 			),
 
@@ -37,7 +37,7 @@ tabPanel('Sample Data', value = 'tab_use_sample',
 					inputId = 'hsb_data',
 					label = 'hsb',
 					width = '200px',
-					onclick ="window.open('http://www.rsquaredacademy.com/descriptr/reference/hsb.html', 'newwindow', 'width=800,height=600')"
+					onclick ="window.open('https://www.rsquaredacademy.com/descriptr/reference/hsb.html', 'newwindow', 'width=800,height=600')"
 				)
 			)
 
@@ -52,7 +52,7 @@ tabPanel('Sample Data', value = 'tab_use_sample',
 					inputId = 'exam_data',
 					label = 'exam',
 					width = '200px',
-					onclick ="window.open('http://www.rsquaredacademy.com/inferr/reference/exam.html', 'newwindow', 'width=800,height=600')"
+					onclick ="window.open('https://inferr.rsquaredacademy.com/reference/exam.html', 'newwindow', 'width=800,height=600')"
 				)
 			),
 
@@ -61,7 +61,7 @@ tabPanel('Sample Data', value = 'tab_use_sample',
 					inputId = 'treatment_data',
 					label = 'treatment',
 					width = '200px',
-					onclick ="window.open('http://www.rsquaredacademy.com/inferr/reference/treatment.html', 'newwindow', 'width=800,height=600')"
+					onclick ="window.open('https://www.rsquaredacademy.com/inferr/reference/treatment.html', 'newwindow', 'width=800,height=600')"
 				)
 			),			
 
@@ -70,7 +70,7 @@ tabPanel('Sample Data', value = 'tab_use_sample',
 					inputId = 'diamonds_data',
 					label = 'diamonds',
 					width = '200px',
-					onclick ="window.open('http://ggplot2.tidyverse.org/reference/diamonds.html', 'newwindow', 'width=800,height=600')"
+					onclick ="window.open('https://ggplot2.tidyverse.org/reference/diamonds.html', 'newwindow', 'width=800,height=600')"
 				)
 			)
 

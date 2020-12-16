@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
                       inputId = "var_osvartest",
@@ -41,11 +45,9 @@ observeEvent(input$submit_part_train_per, {
 
 
 d_osvartest <- eventReactive(input$submit_osvartest, {
-	# validate(need((input$var_osvartest != ''), 'Please select a variable.'))
   data <- final_split$train
-  k <- infer_os_var_test(data, !! sym(as.character(input$var_osvartest)),
-    input$sd_osvartest, input$osvartest_conf, input$osvartest_type)
-  k
+  xpl_os_var_test(data, input$var_osvartest, input$sd_osvartest, 
+                  input$osvartest_conf, input$osvartest_type)
 })
 
 output$osvartest_out <- renderPrint({
