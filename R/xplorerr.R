@@ -6,6 +6,8 @@
 #' \href{https://github.com/rsquaredacademy/xplorerr}{GitHub}
 #'
 #' @docType package
+#' @importFrom Rcpp sourceCpp
+#' @useDynLib xplorerr
 #' @name xplorerr
 NULL
 

@@ -809,7 +809,7 @@ xpl_levene_test <- function(data, variables = NULL, group_var = "NULL",
       stop("Please specify at least two variables.", call. = FALSE)
     }
 
-    out   <- inferr:::gvar(ln, ly)
+    out   <- xpl_gvar(ln, ly)
     fdata <- unlist(z)
 
     groupvars <-
@@ -1387,7 +1387,7 @@ xpl_runs_test <- function(data, x, drop = FALSE,
       unlist(use.names = FALSE)
   }
 
-  n_runs   <- inferr:::nsignC(x_binary)
+  n_runs   <- xpl_nsignC(x_binary)
   n1       <- sum(x_binary)
   n0       <- length(x_binary) - n1
   exp_runs <- expruns(n0, n1)
@@ -1605,7 +1605,7 @@ xpl_ts_var_test <- function(data, variables = NULL, group_var = "NULL",
       stop("Please specify at least two variables.", call. = FALSE)
     }
 
-    out   <- inferr:::gvar(ln, ly)
+    out   <- xpl_gvar(ln, ly)
     fdata <- unlist(z)
 
     groupvars <-

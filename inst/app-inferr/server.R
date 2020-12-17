@@ -1,6 +1,5 @@
 library(shiny)
 library(data.table)
-library(inferr)
 library(dplyr)
 library(purrr)
 library(tidyr)
@@ -14,6 +13,7 @@ library(lubridate)
 library(scales)
 library(stringr)
 library(rlang)
+library(xplorerr)
 
 shinyServer(function(input, output, session) {
 
