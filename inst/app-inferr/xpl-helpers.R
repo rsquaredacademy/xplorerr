@@ -1709,3 +1709,111 @@ tbl_stats <- function(data, y) {
   c(length(dat), mean(dat), sd(dat), (sd(dat) / sqrt(length(dat))))
              
 }
+
+# binomial test
+xpl_binom_calc <- function(n, success, prob = 0.5, ...) {
+
+  if (!is.numeric(n)) {
+    stop("n must be an integer")
+  }
+
+  if (!is.numeric(success)) {
+    stop("success must be an integer")
+  }
+
+  if (!is.numeric(prob)) {
+    stop("prob must be numeric")
+  }
+
+  if ((prob < 0) | (prob > 1)) {
+    stop("prob must be between 0 and 1")
+  }
+
+  k <- binom_comp(n, success, prob)
+
+  out <-
+    list(
+      exp_k      = k$exp_k,
+      exp_p      = k$exp_p,
+      k          = k$k,
+      n          = n,
+      obs_p      = k$obs_p,
+      pval_lower = k$lower,
+      pval_upper = k$upper
+  )
+
+  print_binom(out)
+}
+
+xpl_binom_test <- function(data, variable, prob = 0.5) {
+
+  varyable <- variable
+  fdata    <- data[[varyable]]
+
+  if (!is.factor(fdata)) {
+    stop("variable must be of type factor", call. = FALSE)
+  }
+
+  if (nlevels(fdata) > 2) {
+    stop("Binomial test is applicable only to binary data i.e. categorical data with 2 levels.", call. = FALSE)
+  }
+
+  if (!is.numeric(prob)) {
+    stop("prob must be numeric", call. = FALSE)
+  }
+
+  if ((prob < 0) | (prob > 1)) {
+    stop("prob must be between 0 and 1", call. = FALSE)
+  }
+
+  n <- length(fdata)
+  k <- table(fdata)[[2]]
+  xpl_binom_calc(n, k, prob)
+}
+
+binom_comp <- function(n, success, prob) {
+
+  n     <- n
+  k     <- success
+  obs_p <- k / n
+  exp_k <- round(n * prob)
+  lt    <- stats::pbinom(k, n, prob, lower.tail = T)
+  ut    <- stats::pbinom(k - 1, n, prob, lower.tail = F)
+  p_opp <- round(stats::dbinom(k, n, prob), 9)
+  i_p   <- stats::dbinom(exp_k, n, prob)
+  i_k   <- exp_k
+
+  if (k < exp_k) {
+    while (i_p > p_opp) {
+      i_k <- i_k + 1
+      i_p <- round(stats::dbinom(i_k, n, prob), 9)
+      if (round(i_p) == p_opp) {
+        break
+      }
+    }
+
+    ttf <- stats::pbinom(k, n, prob, lower.tail = T) +
+      stats::pbinom(i_k - 1, n, prob, lower.tail = F)
+  } else {
+    while (p_opp <= i_p) {
+      i_k <- i_k - 1
+      i_p <- stats::dbinom(i_k, n, prob)
+      if (round(i_p) == p_opp) {
+        break
+      }
+    }
+
+    i_k <- i_k
+
+    tt <- stats::pbinom(i_k, n, prob, lower.tail = T) +
+      stats::pbinom(k - 1, n, prob, lower.tail = F)
+
+    ttf <- ifelse(tt <= 1, tt, 1)
+  }
+
+  list(
+    n = n, k = k, exp_k = exp_k, obs_p = obs_p, exp_p = prob, ik = i_k,
+    lower = round(lt, 6), upper = round(ut, 6), two_tail = round(ttf, 6)
+  )
+
+}

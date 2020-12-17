@@ -39,17 +39,19 @@ observeEvent(input$submit_part_train_per, {
 })
 
 d_binomtest <- eventReactive(input$submit_binomtest, {
-	# validate(need((input$var_binomtest != ''), 'Please select two variables.'))
   req(input$var_binomtest)
   data <- final_split$train[, c(input$var_binomtest)]
+  xpl_binom_test(final_split$train, input$var_binomtest, input$binomtest_prob)
+})
+
+d_binom_calc <- eventReactive(input$submit_binomcalc, {
+	xpl_binom_calc(input$n_binomcalc, input$s_binomcalc, input$p_binomcalc)
 })
 
 output$binomtest_out <- renderPrint({
-  # validate(need(nlevels(d_binomtest()) == 2, 'Please select a binary variable.'))
-  infer_binom_test(final_split$train, !! sym(as.character(input$var_binomtest)),
-                   input$binomtest_prob)
+  d_binomtest()
 })
 
 output$binomcalc_out <- renderPrint({
-  infer_binom_calc(input$n_binomcalc, input$s_binomcalc, input$p_binomcalc)
+  d_binom_calc()
 })
