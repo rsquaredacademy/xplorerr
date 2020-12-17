@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session, 'var_runs', choices = names(data()))
 })
@@ -42,14 +46,12 @@ observeEvent(input$submit_part_train_per, {
 
 d_runs <- eventReactive(input$submit_runs, {
   req(input$var_runs)
-	# validate(need((input$var_runs != ''), 'Please select variables.'))
   data <- final_split$train
-  out <- infer_runs_test(data, !! sym(input$var_runs),
-                         as.logical(input$runs_drop),
-                         as.logical(input$runs_split),
-                         as.logical(input$runs_mean),
-                         input$runs_thold)
-  out
+  xpl_runs_test(data, input$var_runs,
+                as.logical(input$runs_drop),
+                as.logical(input$runs_split),
+                as.logical(input$runs_mean),
+                input$runs_thold)
 })
 
 output$runs_out <- renderPrint({

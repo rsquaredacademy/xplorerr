@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
   updateSelectInput(session,inputId = "var_levtest",
     choices = names(data()), selected = '')
@@ -77,20 +81,15 @@ observeEvent(input$submit_part_train_per, {
 
 d_levtest <- eventReactive(input$submit_levtest, {
   req(input$var_levtest)
-	# validate(need((input$var_levtest != ''), 'Please select variables'))
   data <- final_split$train[, c(input$var_levtest)]
-  out <- infer_levene_test(data, !!! syms(input$var_levtest))
-  out
+  xpl_levene_test(data, variables = input$var_levtest)
 })
 
 d_levtestg <- eventReactive(input$submit_levtestg, {
   req(input$var_levtestg1)
   req(input$var_levtestg2)
-	# validate(need((input$var_levtestg1 != '' & input$var_levtestg2 != ''), 'Please select variables'))
   data <- final_split$train[, c(input$var_levtestg1, input$var_levtestg2)]
-  out <- infer_levene_test(data, !! sym(input$var_levtestg1),
-                           group_var = !! sym(input$var_levtestg2))
-  out
+  xpl_levene_test(data, input$var_levtestg1, group_var = input$var_levtestg2)
 })
 
 

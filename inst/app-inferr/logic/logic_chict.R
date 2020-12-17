@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session, 'var_chict1', choices = names(data()))
     updateSelectInput(session, 'var_chict2', choices = names(data()))
@@ -36,11 +40,9 @@ observeEvent(input$submit_part_train_per, {
 
 
 d_chict <- eventReactive(input$submit_chict, {
-	# validate(need((input$var_chict1 != '' & input$var_chict2 != ''), 'Please select variables.'))
     data <- final_split$train[, c(input$var_chict1, input$var_chict2)]
 })
 
 output$chict_out <- renderPrint({
-  infer_chisq_assoc_test(d_chict(), !! sym(input$var_chict1),
-                         !! sym(input$var_chict2))
+  xpl_chisq_assoc_test(d_chict(), input$var_chict1, input$var_chict2)
 })

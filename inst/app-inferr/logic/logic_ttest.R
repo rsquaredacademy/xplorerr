@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session,
                       inputId = "var_ttest",
@@ -63,13 +67,10 @@ observeEvent(input$submit_part_train_per, {
 })
 
 d_ttest <- eventReactive(input$submit_ttest, {
-	# validate(need(input$var_ttest != '', 'Please select a variable.'))
   req(input$ttest_mu)
   data <- final_split$train
-  k <- infer_os_t_test(data, !! sym(as.character(input$var_ttest)),
-                   as.numeric(input$ttest_mu), input$ttest_alpha,
-                   input$ttest_type)
-  k
+  xpl_os_t_test(data, input$var_ttest, as.numeric(input$ttest_mu), 
+                input$ttest_alpha, input$ttest_type)
 })
 
 

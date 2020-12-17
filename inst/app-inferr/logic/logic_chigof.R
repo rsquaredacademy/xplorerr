@@ -1,3 +1,7 @@
+source("xpl-helpers.R")
+source("xpl-output.R")
+source("xpl-format.R")
+
 observe({
     updateSelectInput(session, 'var_chigof', choices = names(data()))
 })
@@ -67,10 +71,8 @@ props <- reactive({
 
 df_chigof <- eventReactive(input$submit_chigof, {
   data <- final_split$train
-  # validate(need(sum(props()) == 1, 'Expected proportion must add up to 1.'))
-  k <- infer_chisq_gof_test(data, !! sym(as.character(input$var_chigof)), props(),
-  as.logical(input$chigof_cc))
-  k
+  xpl_chisq_gof_test(data, input$var_chigof, props(), as.logical(input$chigof_cc))
+  
 })
 
 
