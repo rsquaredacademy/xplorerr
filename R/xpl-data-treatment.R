@@ -8,4 +8,6 @@
 #'   \item{treatment2}{result of treatment type 2}
 #' }
 #'
+#' @usage data(treatment)
+#'
 "treatment"

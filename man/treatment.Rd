@@ -12,7 +12,7 @@ A data frame with 50 rows and 2 variables:
 }
 }
 \usage{
-treatment
+data(treatment)
 }
 \description{
 A dataset containing information about two treatments
