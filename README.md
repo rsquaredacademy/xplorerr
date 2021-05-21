@@ -5,30 +5,34 @@
 
 > Tools for interactive data analysis
 
+<!-- badges: start -->
+
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
 [![cran
 checks](https://cranchecks.info/badges/summary/xplorerr)](https://cran.r-project.org/web/checks/check_results_xplorerr.html)
 [![R build
 status](https://github.com/rsquaredacademy/xplorerr/workflows/R-CMD-check/badge.svg)](https://github.com/rsquaredacademy/xplorerr/actions)
 [![status](https://tinyverse.netlify.com/badge/xplorerr)](https://CRAN.R-project.org/package=xplorerr)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Lifecycle:
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/xplorerr)](https://cran.r-project.org/package=xplorerr)
+<!-- badges: end -->
 
 ## Overview
 
 xplorerr provides a set of tools for interactive data analysis:
 
-  - Descriptive statistics
-  - Visualize probability distributions
-  - Inferential statistics
-  - Linear regression
-  - Logistic regression
-  - RFM Analysis
-  - Data visualization
-      - ggplot2
-      - plotly
-      - rbokeh
-      - highcharter
+-   Descriptive statistics
+-   Visualize probability distributions
+-   Inferential statistics
+-   Linear regression
+-   Logistic regression
+-   RFM Analysis
+-   Data visualization
+    -   ggplot2
+    -   plotly
+    -   rbokeh
+    -   highcharter
 
 ## Installation
 
@@ -118,9 +122,3 @@ using ‘ggplot2’, ‘plotly’, ‘rbokeh’ and ‘highcharter’ libraries.
 ``` r
 app_visualizer()
 ```
-
-## Community Guidelines
-
-Please note that this project is released with a [Contributor Code of
-Conduct](CONDUCT.md). By participating in this project you agree to
-abide by its terms.
