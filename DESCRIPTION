@@ -21,6 +21,7 @@ Suggests:
     grid,
     haven,
     highcharter,
+    inferr,
     jsonlite,
     kableExtra,
     magrittr,
