@@ -1,7 +1,6 @@
 library(shiny)
 library(ggplot2)
 library(plotly)
-library(rbokeh)
 library(highcharter)
 library(dplyr)
 library(purrr)

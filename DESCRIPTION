@@ -1,7 +1,7 @@
 Package: xplorerr
 Type: Package
 Title: Tools for Interactive Data Exploration
-Version: 0.1.2.9000
+Version: 0.2.0
 Authors@R: person("Aravind", "Hebbali", email = "hebbali.aravind@gmail.com", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0001-9220-9669"))
 Description: Tools for interactive data exploration built using 'shiny'. Includes apps for descriptive 
@@ -27,13 +27,13 @@ Suggests:
     magrittr,
     olsrr,
     plotly,
-    rbokeh,
     readr,
     readxl,
     rfm,
     shinyBS,
     shinycssloaders,
     shinythemes,
+    standby,
     tools,
     vistributions
 URL: https://github.com/rsquaredacademy/xplorerr, https://xplorerr.rsquaredacademy.com/ 
@@ -41,6 +41,6 @@ BugReports: https://github.com/rsquaredacademy/xplorerr/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 LinkingTo: 
     Rcpp
