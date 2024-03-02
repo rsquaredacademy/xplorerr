@@ -17,16 +17,6 @@ ggline2 <- function(data, x, columns, groups, cols = NULL,
                    add_text = FALSE, xloc = NA, yloc = NA, 
                    label = NA, tex_color = NA, tex_size = NA) {
   
-  # x <- data %>%
-  #   select(x) %>%
-  #   pull(1)
-  # 
-  # column <- data %>%
-  #   select(columns)
-  # 
-  # groupvar <- data %>%
-  #   select(groups)
-
   p <- ggplot(data)
   
   p <- p +

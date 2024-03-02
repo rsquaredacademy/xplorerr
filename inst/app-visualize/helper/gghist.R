@@ -78,4 +78,3 @@ gghist <- function(data, x, bins = 5, fill = 'blue', col = 'black',
   
 }
 
-gghist(mtcars, 'mpg')

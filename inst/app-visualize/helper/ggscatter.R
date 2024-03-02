@@ -107,16 +107,3 @@ gscatter <- function(data, x, y, aes_var = FALSE, reg_line = FALSE,
   p
 }
 
-
-
-# test
-# mtcars$cyl <- as.factor(mtcars$cyl)
-# mtcars$gear <- as.factor(mtcars$gear)
-# mtcars$am <- as.factor(mtcars$am)
-
-# gscatter(mtcars, 'disp', 'mpg', aes_var = TRUE, 
-#           color = 'cyl')
-            
-# k <- gscatter(mtcars, 'disp', 'mpg', aes_var = FALSE, 
-#           color = 'red', shape = 22, size = 3, fill = 'blue',
-#           reg_line = TRUE, reg_method = 'loess', reg_se = FALSE)

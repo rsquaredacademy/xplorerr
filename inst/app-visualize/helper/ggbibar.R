@@ -86,4 +86,3 @@ ggbibar <- function(data, x, y, stacked = TRUE, horizontal = FALSE,
 
 }
 
-ggbibar(mtcars, 'cyl', 'gear', horizontal = TRUE, stacked = FALSE)

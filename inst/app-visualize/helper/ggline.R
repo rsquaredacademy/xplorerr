@@ -1,10 +1,3 @@
-# gdp <- readr::read_csv('J:/R/ggplot_xplorerr/gdp.csv')
-# p <- ggplot(gdp) +
-#   geom_line(aes(x = year, y = india), col = 'blue') +
-#   geom_line(aes(x = year, y = china), col = 'red')
-# p
-
-
 ggline <- function(data, x, columns, cols = 'black', theme = "Default",
                    alphas = 1, ltypes = 1, sizes = 1,
                    yaxlimit = FALSE, y1 = NA, y2 = NA, 
@@ -121,4 +114,3 @@ ggline <- function(data, x, columns, cols = 'black', theme = "Default",
   
 }
 
-# ggline(gdp, 'year', c('india', 'china'))
