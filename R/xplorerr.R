@@ -6,10 +6,12 @@
 #' \href{https://github.com/rsquaredacademy/xplorerr}{GitHub}
 #'
 #' @docType package
+#' @keywords internal
 #' @importFrom Rcpp sourceCpp
 #' @useDynLib xplorerr
 #' @name xplorerr
-NULL
+#' @aliases xplorerr-package
+"_PACKAGE"
 
 ## quiets concerns of R CMD check re: the .'s that appear in pipelines
 if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
