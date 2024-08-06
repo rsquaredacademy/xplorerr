@@ -14,6 +14,7 @@ library(tools)
 library(lubridate)
 library(scales)
 library(stringr)
+library(DT)
 
 shinyServer(function(input, output, session) {
     
