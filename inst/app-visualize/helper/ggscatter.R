@@ -23,7 +23,7 @@ gscatter <- function(data, x, y, aes_var = FALSE, reg_line = FALSE,
   
   if(aes_var) {
     if(is.numeric(shape)) {
-      p <- ggplot(data = data, mapping = aes_string(x = x, y = y, 
+      p <- ggplot(data = data, mapping = aes(x = .data[[x]], y = .data[[y]], 
         colour = color, shape = color, size = size)) +
         geom_point()
     } else {

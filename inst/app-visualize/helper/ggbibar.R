@@ -22,8 +22,8 @@ ggbibar <- function(data, x, y, stacked = TRUE, horizontal = FALSE,
     posit <- 'dodge'
   }
   
-  p <- ggplot(data, aes_string(x)) +
-    geom_bar(aes_string(fill = y), position = posit)
+  p <- ggplot(data, aes(.data[[x]])) +
+    geom_bar(aes(fill = .data[[y]]), position = posit)
   
   if (horizontal) {
     p <- p + coord_flip()

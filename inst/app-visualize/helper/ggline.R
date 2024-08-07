@@ -18,11 +18,11 @@ ggline <- function(data, x, columns, cols = 'black', theme = "Default",
                    label = NA, tex_color = NA, tex_size = NA) {
   
   x <- data %>%
-  select(x) %>%
+  select(all_of(x)) %>%
   pull(1)
 
   column <- data %>%
-    select(columns)
+    select(all_of(columns))
 
   j <- column %>% ncol()
 
@@ -50,9 +50,9 @@ ggline <- function(data, x, columns, cols = 'black', theme = "Default",
 
   for (i in n) {
     p <- p +
-      geom_line(aes_string(x = x, y = column[[i]]),
+      geom_line(aes(x = x, y = column[[i]]),
                            color = cols[[i]], alpha = alphas[[i]],
-                           linetype = ltypes[[i]], size = sizes[[i]])
+                           linetype = ltypes[[i]], linewidth = sizes[[i]])
   }
   
   if (yaxlimit) {

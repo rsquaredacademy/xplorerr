@@ -18,7 +18,7 @@ ggbar1 <- function(data, column, bar_col = 'blue', bor_col = 'black', theme = "D
                    add_text = FALSE, xloc = NA, yloc = NA, 
                    label = NA, tex_color = NA, tex_size = NA) {
   
-  p <- ggplot(data, aes_string(column)) +
+  p <- ggplot(data, aes(.data[[column]])) +
     geom_bar(fill = bar_col, col = bor_col)
   
   if (yaxlimit) {
