@@ -7,32 +7,25 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
-[![cran
-checks](https://cranchecks.info/badges/summary/xplorerr)](https://cran.r-project.org/web/checks/check_results_xplorerr.html)
-[![R build
-status](https://github.com/rsquaredacademy/xplorerr/workflows/R-CMD-check/badge.svg)](https://github.com/rsquaredacademy/xplorerr/actions)
-[![status](https://tinyverse.netlify.com/badge/xplorerr)](https://CRAN.R-project.org/package=xplorerr)
-[![Lifecycle:
-stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/xplorerr)](https://cran.r-project.org/package=xplorerr)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/xplorerr)](https://cran.r-project.org/package=xplorerr)
+[![R-CMD-check](https://github.com/rsquaredacademy/xplorerr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rsquaredacademy/xplorerr/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ## Overview
 
 xplorerr provides a set of tools for interactive data analysis:
 
--   Descriptive statistics
--   Visualize probability distributions
--   Inferential statistics
--   Linear regression
--   Logistic regression
--   RFM Analysis
--   Data visualization
-    -   ggplot2
-    -   plotly
-    -   rbokeh
-    -   highcharter
+- Descriptive statistics
+- Visualize probability distributions
+- Inferential statistics
+- Linear regression
+- Logistic regression
+- RFM Analysis
+- Data visualization
+  - ggplot2
+  - plotly
+  - rbokeh
+  - highcharter
 
 ## Installation
 
