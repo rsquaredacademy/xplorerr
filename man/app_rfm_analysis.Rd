@@ -7,7 +7,7 @@
 app_rfm_analysis()
 }
 \description{
-Launches the RFM analyssi app.
+Launches the RFM analysis app.
 }
 \examples{
 \dontrun{

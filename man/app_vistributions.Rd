@@ -11,6 +11,6 @@ Launches app for visualizing probability distributions.
 }
 \examples{
 \dontrun{
-app_descriptive()
+app_vistributions()
 }
 }
