@@ -1,0 +1,2082 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "blorr"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> library('blorr')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("blr_bivariate_analysis")
+> ### * blr_bivariate_analysis
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_bivariate_analysis
+> ### Title: Bivariate analysis
+> ### Aliases: blr_bivariate_analysis blr_bivariate_analysis.default
+> 
+> ### ** Examples
+> 
+> blr_bivariate_analysis(hsb2, honcomp, female, prog, race, schtyp)
+                         Bivariate Analysis                           
+---------------------------------------------------------------------
+Variable    Information Value    LR Chi Square    LR DF    LR p-value 
+---------------------------------------------------------------------
+ female           0.10              3.9350          1        0.0473   
+  prog            0.43              16.1450         2        3e-04    
+  race            0.33              11.3694         3        0.0099   
+ schtyp           0.00              0.0445          1        0.8330   
+---------------------------------------------------------------------
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_coll_diag")
+> ### * blr_coll_diag
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_coll_diag
+> ### Title: Collinearity diagnostics
+> ### Aliases: blr_coll_diag blr_vif_tol blr_eigen_cindex
+> 
+> ### ** Examples
+> 
+> # model
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> # vif and tolerance
+> blr_vif_tol(model)
+  Variable Tolerance      VIF
+1  female1 0.9824347 1.017879
+2     read 0.6021370 1.660752
+3  science 0.5939847 1.683545
+> 
+> # eigenvalues and condition indices
+> blr_eigen_cindex(model)
+  Eigenvalue Condition Index    intercept      female1         read
+1 3.57391760        1.000000 3.500782e-06 2.232611e-05 0.0006577134
+2 0.39409893        3.011408 5.155657e-06 8.559696e-04 0.0015266309
+3 0.01888407       13.757025 1.632498e-03 4.397949e-05 0.1143698337
+4 0.01309940       16.517583 5.619292e-05 1.312420e-05 0.2758987745
+       science
+1 0.0009448623
+2 0.0025603607
+3 0.0545537252
+4 0.5468553525
+> 
+> # collinearity diagnostics
+> blr_coll_diag(model)
+Tolerance and Variance Inflation Factor
+---------------------------------------
+  Variable Tolerance      VIF
+1  female1 0.9824347 1.017879
+2     read 0.6021370 1.660752
+3  science 0.5939847 1.683545
+
+
+Eigenvalue and Condition Index
+------------------------------
+  Eigenvalue Condition Index    intercept      female1         read
+1 3.57391760        1.000000 3.500782e-06 2.232611e-05 0.0006577134
+2 0.39409893        3.011408 5.155657e-06 8.559696e-04 0.0015266309
+3 0.01888407       13.757025 1.632498e-03 4.397949e-05 0.1143698337
+4 0.01309940       16.517583 5.619292e-05 1.312420e-05 0.2758987745
+       science
+1 0.0009448623
+2 0.0025603607
+3 0.0545537252
+4 0.5468553525
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_confusion_matrix")
+> ### * blr_confusion_matrix
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_confusion_matrix
+> ### Title: Confusion matrix
+> ### Aliases: blr_confusion_matrix blr_confusion_matrix.default
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_confusion_matrix(model, cutoff = 0.4)
+Confusion Matrix and Statistics 
+
+          Reference
+Prediction   0   1
+         0 125  16
+         1  22  37
+
+
+                Accuracy : 0.8100 
+     No Information Rate : 0.7350 
+
+                   Kappa : 0.5293 
+
+McNemars's Test P-Value  : 0.4173 
+
+             Sensitivity : 0.6981 
+             Specificity : 0.8503 
+          Pos Pred Value : 0.6271 
+          Neg Pred Value : 0.8865 
+              Prevalence : 0.2650 
+          Detection Rate : 0.1850 
+    Detection Prevalence : 0.2950 
+       Balanced Accuracy : 0.7742 
+               Precision : 0.6271 
+                  Recall : 0.6981 
+
+        'Positive' Class : 1> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_decile_capture_rate")
+> ### * blr_decile_capture_rate
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_decile_capture_rate
+> ### Title: Event rate by decile
+> ### Aliases: blr_decile_capture_rate
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_decile_capture_rate(gt)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_decile_lift_chart")
+> ### * blr_decile_lift_chart
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_decile_lift_chart
+> ### Title: Decile lift chart
+> ### Aliases: blr_decile_lift_chart
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_decile_lift_chart(gt)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_gains_table")
+> ### * blr_gains_table
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_gains_table
+> ### Title: Gains table & lift chart
+> ### Aliases: blr_gains_table plot.blr_gains_table
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> # gains table
+> blr_gains_table(model)
+   decile total  1  0       ks tp  tn  fp fn sensitivity specificity accuracy
+1       1    20 14  6 22.33346 14 141   6 39    26.41509    95.91837     77.5
+2       2    20 13  7 42.09986 27 134  13 26    50.94340    91.15646     80.5
+3       3    20 10 10 54.16506 37 124  23 16    69.81132    84.35374     80.5
+4       4    20  7 13 58.52907 44 111  36  9    83.01887    75.51020     77.5
+5       5    20  3 17 52.62482 47  94  53  6    88.67925    63.94558     70.5
+6       6    20  3 17 46.72058 50  77  70  3    94.33962    52.38095     63.5
+7       7    20  1 19 35.68220 51  58  89  2    96.22642    39.45578     54.5
+8       8    20  2 18 27.21088 53  40 107  0   100.00000    27.21088     46.5
+9       9    20  0 20 13.60544 53  20 127  0   100.00000    13.60544     36.5
+10     10    20  0 20  0.00000 53   0 147  0   100.00000     0.00000     26.5
+> 
+> # lift chart
+> k <- blr_gains_table(model)
+> plot(k)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_gini_index")
+> ### * blr_gini_index
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_gini_index
+> ### Title: Gini index
+> ### Aliases: blr_gini_index
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_gini_index(model)
+[1] 0.5252134
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_ks_chart")
+> ### * blr_ks_chart
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_ks_chart
+> ### Title: KS chart
+> ### Aliases: blr_ks_chart
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_ks_chart(gt)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_launch_app")
+> ### * blr_launch_app
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_launch_app
+> ### Title: Launch shiny app
+> ### Aliases: blr_launch_app
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D blr_launch_app()
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_linktest")
+> ### * blr_linktest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_linktest
+> ### Title: Model specification error
+> ### Aliases: blr_linktest
+> 
+> ### ** Examples
+> 
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_linktest(model)
+
+Call:
+glm(formula = resp ~ fit + fit2, family = binomial(link = "logit"), 
+    data = newdat)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  0.03569    0.23399   0.153    0.879    
+fit          0.93715    0.20767   4.513  6.4e-06 ***
+fit2        -0.03920    0.08970  -0.437    0.662    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 231.29  on 199  degrees of freedom
+Residual deviance: 160.04  on 197  degrees of freedom
+AIC: 166.04
+
+Number of Fisher Scoring iterations: 6
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_lorenz_curve")
+> ### * blr_lorenz_curve
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_lorenz_curve
+> ### Title: Lorenz curve
+> ### Aliases: blr_lorenz_curve
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_lorenz_curve(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_model_fit_stats")
+> ### * blr_model_fit_stats
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_model_fit_stats
+> ### Title: Model fit statistics
+> ### Aliases: blr_model_fit_stats
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_model_fit_stats(model)
+                              Model Fit Statistics                                
+---------------------------------------------------------------------------------
+Log-Lik Intercept Only:      -115.644    Log-Lik Full Model:              -80.118 
+Deviance(196):                160.236    LR(3):                            71.052 
+                                         Prob > LR:                         0.000 
+MCFadden's R2                   0.307    McFadden's Adj R2:                 0.273 
+ML (Cox-Snell) R2:              0.299    Cragg-Uhler(Nagelkerke) R2:        0.436 
+McKelvey & Zavoina's R2:        0.518    Efron's R2:                        0.330 
+Count R2:                       0.810    Adj Count R2:                      0.283 
+BIC:                          181.430    AIC:                             168.236 
+---------------------------------------------------------------------------------
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_multi_model_fit_stats")
+> ### * blr_multi_model_fit_stats
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_multi_model_fit_stats
+> ### Title: Multi model fit statistics
+> ### Aliases: blr_multi_model_fit_stats blr_multi_model_fit_stats.default
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> model2 <- glm(honcomp ~ female + read + math, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_multi_model_fit_stats(model, model2)
+                               Measures  Model 1  Model 2
+loglik_null      Log-Lik Intercept Only -115.644 -115.644
+loglik_model         Log-Lik Full Model  -80.118  -75.210
+m_deviance                     Deviance  160.236  150.420
+lr_ratio                             LR   71.052   80.869
+lr_pval                       Prob > LR    0.000    0.000
+mcfadden                  MCFadden's R2    0.307    0.350
+adj_mcfadden          McFadden's Adj R2    0.273    0.315
+m_aic                 ML (Cox-Snell) R2  168.236  158.420
+cox_snell    Cragg-Uhler(Nagelkerke) R2    0.299    0.333
+m_bic           McKelvey & Zavoina's R2  181.430  171.613
+mckelvey                     Efron's R2    0.518    0.523
+effron                         Count R2    0.330    0.379
+nagelkerke                 Adj Count R2    0.436    0.485
+count_r2                            AIC    0.810    0.830
+count_adj                           BIC    0.283    0.358
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_pairs")
+> ### * blr_pairs
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_pairs
+> ### Title: Concordant & discordant pairs
+> ### Aliases: blr_pairs
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_pairs(model)
+  pairs concordance discordance        tied somers_d     gamma      tau
+1  7791    0.856116   0.1424721 0.001411886 0.714653 0.7136439 0.279397
+         c
+1 0.856822
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_c_fitted")
+> ### * blr_plot_c_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_c_fitted
+> ### Title: CI Displacement C vs fitted values plot
+> ### Aliases: blr_plot_c_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_c_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_c_leverage")
+> ### * blr_plot_c_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_c_leverage
+> ### Title: CI Displacement C vs leverage plot
+> ### Aliases: blr_plot_c_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_c_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_deviance_fitted")
+> ### * blr_plot_deviance_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_deviance_fitted
+> ### Title: Deviance vs fitted values plot
+> ### Aliases: blr_plot_deviance_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_deviance_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_deviance_residual")
+> ### * blr_plot_deviance_residual
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_deviance_residual
+> ### Title: Deviance residual values
+> ### Aliases: blr_plot_deviance_residual
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_deviance_residual(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_dfbetas_panel")
+> ### * blr_plot_dfbetas_panel
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_dfbetas_panel
+> ### Title: DFBETAs panel
+> ### Aliases: blr_plot_dfbetas_panel
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D model <- glm(honcomp ~ female + read + science, data = hsb2,
+> ##D family = binomial(link = 'logit'))
+> ##D 
+> ##D blr_plot_dfbetas_panel(model)
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_c")
+> ### * blr_plot_diag_c
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_c
+> ### Title: CI Displacement C plot
+> ### Aliases: blr_plot_diag_c
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_c(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_cbar")
+> ### * blr_plot_diag_cbar
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_cbar
+> ### Title: CI Displacement CBAR plot
+> ### Aliases: blr_plot_diag_cbar
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_cbar(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_difchisq")
+> ### * blr_plot_diag_difchisq
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_difchisq
+> ### Title: Delta chisquare plot
+> ### Aliases: blr_plot_diag_difchisq
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_difchisq(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_difdev")
+> ### * blr_plot_diag_difdev
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_difdev
+> ### Title: Delta deviance plot
+> ### Aliases: blr_plot_diag_difdev
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_difdev(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_fit")
+> ### * blr_plot_diag_fit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_fit
+> ### Title: Fitted values diagnostics plot
+> ### Aliases: blr_plot_diag_fit
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_fit(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_influence")
+> ### * blr_plot_diag_influence
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_influence
+> ### Title: Influence diagnostics plot
+> ### Aliases: blr_plot_diag_influence
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_influence(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_diag_leverage")
+> ### * blr_plot_diag_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_diag_leverage
+> ### Title: Leverage diagnostics plot
+> ### Aliases: blr_plot_diag_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_diag_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_difchisq_fitted")
+> ### * blr_plot_difchisq_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_difchisq_fitted
+> ### Title: Delta chi square vs fitted values plot
+> ### Aliases: blr_plot_difchisq_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_difchisq_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_difchisq_leverage")
+> ### * blr_plot_difchisq_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_difchisq_leverage
+> ### Title: Delta chi square vs leverage plot
+> ### Aliases: blr_plot_difchisq_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_difchisq_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_difdev_fitted")
+> ### * blr_plot_difdev_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_difdev_fitted
+> ### Title: Delta deviance vs fitted values plot
+> ### Aliases: blr_plot_difdev_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_difdev_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_difdev_leverage")
+> ### * blr_plot_difdev_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_difdev_leverage
+> ### Title: Delta deviance vs leverage plot
+> ### Aliases: blr_plot_difdev_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_difdev_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_fitted_leverage")
+> ### * blr_plot_fitted_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_fitted_leverage
+> ### Title: Fitted values vs leverage plot
+> ### Aliases: blr_plot_fitted_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_fitted_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_leverage")
+> ### * blr_plot_leverage
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_leverage
+> ### Title: Leverage plot
+> ### Aliases: blr_plot_leverage
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_leverage(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_leverage_fitted")
+> ### * blr_plot_leverage_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_leverage_fitted
+> ### Title: Leverage vs fitted values plot
+> ### Aliases: blr_plot_leverage_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_leverage_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_pearson_residual")
+> ### * blr_plot_pearson_residual
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_pearson_residual
+> ### Title: Residual values plot
+> ### Aliases: blr_plot_pearson_residual
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_pearson_residual(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_plot_residual_fitted")
+> ### * blr_plot_residual_fitted
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_plot_residual_fitted
+> ### Title: Residual vs fitted values plot
+> ### Aliases: blr_plot_residual_fitted
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_plot_residual_fitted(model)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_prep_dcrate_data")
+> ### * blr_prep_dcrate_data
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_prep_dcrate_data
+> ### Title: Decile capture rate data
+> ### Aliases: blr_prep_dcrate_data
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_prep_dcrate_data(gt)
+   decile total  1 decile_mean
+1       1    20 14        0.70
+2       2    20 13        0.65
+3       3    20 10        0.50
+4       4    20  7        0.35
+5       5    20  3        0.15
+6       6    20  3        0.15
+7       7    20  1        0.05
+8       8    20  2        0.10
+9       9    20  0        0.00
+10     10    20  0        0.00
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_prep_kschart_data")
+> ### * blr_prep_kschart_data
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_prep_kschart_data
+> ### Title: KS Chart data
+> ### Aliases: blr_prep_kschart_data blr_prep_kschart_line
+> ###   blr_prep_ksannotate_y blr_prep_kschart_stat blr_prep_ksannotate_x
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_prep_kschart_data(gt)
+   cum_total_per cum_1s_per cum_0s_per
+1            0.0  0.0000000 0.00000000
+2            0.1  0.2641509 0.04081633
+3            0.2  0.5094340 0.08843537
+4            0.3  0.6981132 0.15646259
+5            0.4  0.8301887 0.24489796
+6            0.5  0.8867925 0.36054422
+7            0.6  0.9433962 0.47619048
+8            0.7  0.9622642 0.60544218
+9            0.8  1.0000000 0.72789116
+10           0.9  1.0000000 0.86394558
+11           1.0  1.0000000 1.00000000
+> ks_line <- blr_prep_kschart_line(gt)
+> blr_prep_kschart_stat(ks_line)
+[1] 59
+> blr_prep_ksannotate_y(ks_line)
+[1] 0.5375433
+> blr_prep_ksannotate_x(ks_line)
+[1] 0.5
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_prep_lchart_gmean")
+> ### * blr_prep_lchart_gmean
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_prep_lchart_gmean
+> ### Title: Lift Chart data
+> ### Aliases: blr_prep_lchart_gmean blr_prep_lchart_data
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> globalmean <- blr_prep_lchart_gmean(gt)
+> blr_prep_lchart_data(gt, globalmean)
+   decile total  1 decile_mean d_by_g_mean
+1       1    20 14        0.70   2.6415094
+2       2    20 13        0.65   2.4528302
+3       3    20 10        0.50   1.8867925
+4       4    20  7        0.35   1.3207547
+5       5    20  3        0.15   0.5660377
+6       6    20  3        0.15   0.5660377
+7       7    20  1        0.05   0.1886792
+8       8    20  2        0.10   0.3773585
+9       9    20  0        0.00   0.0000000
+10     10    20  0        0.00   0.0000000
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_prep_lorenz_data")
+> ### * blr_prep_lorenz_data
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_prep_lorenz_data
+> ### Title: Lorenz curve data
+> ### Aliases: blr_prep_lorenz_data
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> data <- model$data
+> blr_prep_lorenz_data(model, data, FALSE)
+   cum_0s_per cum_1s_per
+1  0.00000000  0.0000000
+2  0.04081633  0.2641509
+3  0.08843537  0.5094340
+4  0.15646259  0.6981132
+5  0.24489796  0.8301887
+6  0.36054422  0.8867925
+7  0.47619048  0.9433962
+8  0.60544218  0.9622642
+9  0.72789116  1.0000000
+10 0.86394558  1.0000000
+11 1.00000000  1.0000000
+12 1.00000000  1.0000000
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_prep_roc_data")
+> ### * blr_prep_roc_data
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_prep_roc_data
+> ### Title: ROC curve data
+> ### Aliases: blr_prep_roc_data
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> gt <- blr_gains_table(model)
+> blr_prep_roc_data(gt)
+   sensitivity specificity sensitivity_per 1 - specificity
+1           NA          NA       0.0000000      0.00000000
+2     26.41509    95.91837       0.2641509      0.04081633
+3     50.94340    91.15646       0.5094340      0.08843537
+4     69.81132    84.35374       0.6981132      0.15646259
+5     83.01887    75.51020       0.8301887      0.24489796
+6     88.67925    63.94558       0.8867925      0.36054422
+7     94.33962    52.38095       0.9433962      0.47619048
+8     96.22642    39.45578       0.9622642      0.60544218
+9    100.00000    27.21088       1.0000000      0.72789116
+10   100.00000    13.60544       1.0000000      0.86394558
+11   100.00000     0.00000       1.0000000      1.00000000
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_regress")
+> ### * blr_regress
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_regress
+> ### Title: Binary logistic regression
+> ### Aliases: blr_regress blr_regress.glm
+> 
+> ### ** Examples
+> 
+> # using formula
+> blr_regress(object = honcomp ~ female + read + science, data = hsb2)
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           196            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -12.7772       1.9755    -6.4677      0.0000 
+  female1      1      1.4825        0.4474     3.3139       9e-04 
+   read        1      0.1035        0.0258     4.0186       1e-04 
+  science      1      0.0948        0.0305     3.1129      0.0019 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8561          Somers' D        0.7147   
+% Discordant          0.1425          Gamma            0.7136   
+% Tied                0.0014          Tau-a            0.2794   
+Pairs                  7791           c                0.8568   
+---------------------------------------------------------------
+
+> 
+> # using a model built with glm
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> 
+> blr_regress(model)
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           196            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -12.7772       1.9755    -6.4677      0.0000 
+  female1      1      1.4825        0.4474     3.3139       9e-04 
+   read        1      0.1035        0.0258     4.0186       1e-04 
+  science      1      0.0948        0.0305     3.1129      0.0019 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8561          Somers' D        0.7147   
+% Discordant          0.1425          Gamma            0.7136   
+% Tied                0.0014          Tau-a            0.2794   
+Pairs                  7791           c                0.8568   
+---------------------------------------------------------------
+
+> 
+> # odds ratio estimates
+> blr_regress(model, odd_conf_limit = TRUE)
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           196            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -12.7772       1.9755    -6.4677      0.0000 
+  female1      1      1.4825        0.4474     3.3139       9e-04 
+   read        1      0.1035        0.0258     4.0186       1e-04 
+  science      1      0.0948        0.0305     3.1129      0.0019 
+-----------------------------------------------------------------
+
+                  Odds Ratio Estimates                    
+---------------------------------------------------------
+ Effects          Estimate          95% Wald Conf. Limit 
+---------------------------------------------------------
+ female1           4.4039          1.8955         11.0521 
+   read            1.1091          1.0569          1.1699 
+ science           1.0994          1.0377          1.1702 
+---------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8561          Somers' D        0.7147   
+% Discordant          0.1425          Gamma            0.7136   
+% Tied                0.0014          Tau-a            0.2794   
+Pairs                  7791           c                0.8568   
+---------------------------------------------------------------
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_residual_diagnostics")
+> ### * blr_residual_diagnostics
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_residual_diagnostics
+> ### Title: Residual diagnostics
+> ### Aliases: blr_residual_diagnostics
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++ family = binomial(link = 'logit'))
+> 
+> blr_residual_diagnostics(model)
+               c         cbar      difdev     difchisq
+1   1.714775e-03 1.682909e-03 0.175200955  0.090559751
+2   1.429214e-01 1.394315e-01 3.998937227  5.710209661
+3   9.959732e-04 9.813000e-04 0.130007342  0.066607468
+4   9.023852e-03 8.761106e-03 0.536722606  0.300894248
+5   5.980764e-04 5.917929e-04 0.110220460  0.056328100
+6   2.876007e-03 2.801553e-03 0.208574176  0.108218735
+7   8.995744e-04 8.891766e-04 0.149175691  0.076927702
+8   9.902361e-06 9.877010e-06 0.007711173  0.003858052
+9   1.219551e-02 1.189404e-02 0.800918692  0.481155824
+10  2.163331e-03 2.125096e-03 0.229423218  0.120235791
+11  4.832076e-03 4.727697e-03 0.401357308  0.218861551
+12  6.191650e-02 6.043716e-02 2.609131129  2.529552930
+13  2.995002e-02 2.852142e-02 0.975083831  0.597941207
+14  1.048892e-01 1.034023e-01 4.369886254  7.294114623
+15  2.555955e-05 2.544456e-05 0.011305342  0.005655812
+16  1.890339e-04 1.876253e-04 0.049929085  0.025180243
+17  3.927621e-04 3.891513e-04 0.083321991  0.042330035
+18  4.470660e-03 4.394080e-03 0.461923138  0.256523888
+19  8.222657e-02 7.856862e-02 2.147893802  1.766130095
+20  1.922340e-03 1.894221e-03 0.245647296  0.129496817
+21  3.360228e-02 3.254494e-02 1.465662476  1.034273716
+22  3.070469e-02 2.919663e-02 0.971586410  0.594457116
+23  1.187856e-03 1.172889e-03 0.179275765  0.093083875
+24  1.024315e-02 1.002336e-02 0.779442376  0.467132920
+25  1.666718e-05 1.661460e-05 0.010522075  0.005266506
+26  9.902361e-06 9.877010e-06 0.007711173  0.003858052
+27  3.868987e-02 3.760510e-02 1.754720088  1.341233680
+28  1.397582e-03 1.376421e-03 0.175507244  0.090907237
+29  5.883201e-05 5.851604e-05 0.021732193  0.010895452
+30  1.538551e-03 1.518165e-03 0.218615492  0.114575242
+31  1.206777e-04 1.199131e-04 0.037621469  0.018926550
+32  1.582197e-01 1.510534e-01 3.149359572  3.334983697
+33  2.790231e-02 2.700378e-02 1.254920166  0.838561702
+34  1.832472e-02 1.690403e-02 0.414238978  0.218036836
+35  4.199876e-03 4.115064e-03 0.375701229  0.203778702
+36  4.902223e-02 4.797035e-02 2.417385169  2.235629715
+37  6.184782e-02 5.972581e-02 2.102207404  1.740757786
+38  2.790231e-02 2.700378e-02 1.254920166  0.838561702
+39  7.221982e-05 7.175699e-05 0.022341692  0.011196792
+40  2.371239e-05 2.362595e-05 0.012944686  0.006481368
+41  1.484749e-04 1.473695e-04 0.039352793  0.019794657
+42  3.430254e-03 3.374692e-03 0.382426519  0.208346373
+43  1.538551e-03 1.518165e-03 0.218615492  0.114575242
+44  1.890339e-04 1.876253e-04 0.049929085  0.025180243
+45  3.282110e-02 3.187881e-02 1.538424442  1.110378773
+46  3.133334e-02 2.980554e-02 0.993508264  0.611278393
+47  5.583226e-04 5.524581e-04 0.103098442  0.052595923
+48  2.821714e-02 2.740703e-02 1.378342821  0.954620784
+49  5.980764e-04 5.917929e-04 0.110220460  0.056328100
+50  1.714775e-03 1.682909e-03 0.175200955  0.090559751
+51  1.007565e-01 9.926312e-02 4.216014793  6.697126795
+52  7.587586e-05 7.546277e-05 0.027607615  0.013860744
+53  2.523756e-04 2.503371e-04 0.061302700  0.030993042
+54  1.005310e-02 9.782114e-03 0.631353787  0.362895817
+55  1.049232e-02 1.010920e-02 0.500933885  0.276855002
+56  3.884597e-06 3.876617e-06 0.003774610  0.001887141
+57  7.089019e-06 7.072193e-06 0.005957749  0.002979759
+58  5.314174e-04 5.251688e-04 0.087936379  0.044663202
+59  1.219551e-02 1.189404e-02 0.800918692  0.481155824
+60  2.250623e-04 2.231714e-04 0.052660204  0.026562307
+61  1.937427e-03 1.907634e-03 0.235987514  0.124050481
+62  2.447935e-01 2.312153e-01 3.612373822  4.168455201
+63  3.099590e-05 3.085479e-05 0.013539849  0.006777256
+64  6.322787e-06 6.309041e-06 0.005801949  0.002902014
+65  1.324601e-04 1.313238e-04 0.030518715  0.015308706
+66  2.523756e-04 2.503371e-04 0.061302700  0.030993042
+67  5.521616e-03 5.408598e-03 0.475398199  0.264241258
+68  1.484749e-04 1.473695e-04 0.039352793  0.019794657
+69  2.843505e-02 2.759905e-02 1.362233451  0.938735201
+70  3.258439e-04 3.226311e-04 0.064728136  0.032721649
+71  5.883201e-05 5.851604e-05 0.021732193  0.010895452
+72  7.100426e-03 6.959611e-03 0.610177412  0.350928915
+73  2.223940e-02 2.127829e-02 0.828148303  0.492362786
+74  1.711199e-01 1.636562e-01 3.349721185  3.752139610
+75  3.430254e-03 3.374692e-03 0.382426519  0.208346373
+76  2.115485e-04 2.098617e-04 0.052173679  0.026319642
+77  1.778370e-01 1.751576e-01 5.295761642 11.625223156
+78  4.554600e-02 4.401450e-02 1.736019169  1.308970340
+79  5.923198e-06 5.910812e-06 0.005651206  0.002826627
+80  1.484749e-04 1.473695e-04 0.039352793  0.019794657
+81  1.005310e-02 9.782114e-03 0.631353787  0.362895817
+82  6.867317e-04 6.747790e-04 0.076771905  0.038768758
+83  6.184782e-02 5.972581e-02 2.102207404  1.740757786
+84  3.683128e-02 3.586186e-02 1.770358544  1.362493836
+85  8.739224e-04 8.603094e-04 0.108422252  0.055230101
+86  7.733278e-02 7.545805e-02 2.935899226  3.112646806
+87  1.199785e-03 1.184777e-03 0.182277117  0.094717594
+88  1.568983e-05 1.564199e-05 0.010248659  0.005129580
+89  1.040428e-04 1.031947e-04 0.025264629  0.012659537
+90  5.648486e-03 5.535976e-03 0.497125122  0.277928055
+91  2.296646e-01 2.269371e-01 6.278388092 19.108468289
+92  3.360228e-02 3.254494e-02 1.465662476  1.034273716
+93  2.507119e-03 2.448154e-03 0.200719009  0.104092427
+94  4.620611e-04 4.574798e-04 0.090692860  0.046140576
+95  1.279493e-03 1.263815e-03 0.197703474  0.103142180
+96  5.656904e-02 5.404523e-02 1.663597494  1.211374960
+97  2.249922e-03 2.200995e-03 0.195221725  0.101213040
+98  5.683130e-03 5.505435e-03 0.330657695  0.176077827
+99  1.101009e-04 1.093947e-04 0.033936548  0.017056493
+100 9.143496e-03 8.924746e-03 0.645164254  0.373044051
+101 2.507119e-03 2.448154e-03 0.200719009  0.104092427
+102 7.065249e-02 6.554781e-02 1.382022263  0.907229749
+103 5.496769e-04 5.417171e-04 0.074013559  0.037409012
+104 3.606158e-02 3.480992e-02 1.437638887  1.002911024
+105 2.946148e-02 2.853544e-02 1.331287766  0.907840313
+106 5.676501e-03 5.522539e-03 0.377058254  0.203613395
+107 3.826369e-02 3.727759e-02 1.842392766  1.446484548
+108 9.579393e-04 9.427774e-04 0.116711853  0.059565092
+109 2.558035e-03 2.523557e-03 0.346142203  0.187228311
+110 6.989810e-03 6.772784e-03 0.402548738  0.218132880
+111 3.907660e-02 3.809320e-02 1.897852151  1.513681841
+112 5.546298e-04 5.483299e-04 0.094862141  0.048273447
+113 5.299547e-02 4.993601e-02 1.315205267  0.864984721
+114 7.541574e-03 7.336359e-03 0.486192864  0.269608174
+115 1.021654e-02 9.796266e-03 0.438780016  0.238142198
+116 2.294176e-04 2.275486e-04 0.055328822  0.027930516
+117 4.649203e-03 4.543908e-03 0.370955406  0.200632248
+118 5.889263e-03 5.700167e-03 0.333349523  0.177527665
+119 1.501761e-02 1.469141e-02 1.052883879  0.676357480
+120 3.333480e-04 3.302306e-04 0.069748542  0.035312784
+121 1.926803e-02 1.877147e-02 1.119684321  0.728390444
+122 3.469276e-03 3.422783e-03 0.458987480  0.255407134
+123 1.706084e-03 1.674517e-03 0.175082379  0.090500084
+124 2.023481e-03 1.997373e-03 0.290115157  0.154804754
+125 3.696036e-01 3.642264e-01 6.950796928 25.035516433
+126 1.838113e-02 1.802134e-02 1.330233919  0.920702469
+127 2.330179e-03 2.293319e-03 0.273338950  0.144976356
+128 1.215048e-03 1.197280e-03 0.158677951  0.081875583
+129 2.763419e-03 2.724278e-03 0.354973148  0.192339395
+130 2.783763e-05 2.772063e-05 0.013175835  0.006595622
+131 1.039078e-02 1.019111e-02 0.864222041  0.530342453
+132 2.214178e-02 2.178123e-02 1.729127087  1.337620342
+133 3.552271e-02 3.367987e-02 1.045504661  0.649215871
+134 1.019456e-03 1.007207e-03 0.162085818  0.083830337
+135 2.219997e-02 2.119220e-02 0.793356119  0.466837321
+136 9.896093e-04 9.720041e-04 0.107415754  0.054637523
+137 1.163020e-02 1.130601e-02 0.695134995  0.405593537
+138 1.217273e-03 1.201953e-03 0.183728947  0.095501951
+139 3.521794e-04 3.489574e-04 0.075228440  0.038142864
+140 3.359504e-03 3.297549e-03 0.332778538  0.178807876
+141 1.033954e-04 1.026746e-04 0.029347552  0.014729117
+142 1.626688e-03 1.603332e-03 0.213484010  0.111669095
+143 9.542028e-04 9.406140e-04 0.128917831  0.066049834
+144 1.418413e-03 1.399681e-03 0.203004768  0.105986475
+145 5.989086e-03 5.904450e-03 0.705683222  0.417816515
+146 2.023481e-03 1.997373e-03 0.290115157  0.154804754
+147 4.364463e-02 4.289970e-02 2.574734358  2.513440758
+148 9.098518e-04 8.993024e-04 0.150363722  0.077561516
+149 1.035674e-03 1.021108e-03 0.141267367  0.072604021
+150 4.072810e-04 4.023678e-04 0.066034991  0.033354067
+151 1.213217e-03 1.196667e-03 0.169461679  0.087721966
+152 6.738631e-02 6.568886e-02 2.660468673  2.607750122
+153 1.783288e-03 1.757971e-03 0.235429953  0.123830352
+154 4.078075e-03 4.012484e-03 0.450196915  0.249471329
+155 1.798284e-02 1.763743e-02 1.327136586  0.918244408
+156 9.586315e-02 9.257885e-02 2.750869718  2.702220617
+157 6.920782e-03 6.818132e-03 0.765144454  0.459685870
+158 1.019456e-03 1.007207e-03 0.162085818  0.083830337
+159 5.468997e-04 5.412187e-04 0.102147214  0.052101738
+160 6.956322e-03 6.783894e-03 0.491955607  0.273683670
+161 6.768584e-02 6.659719e-02 3.367956058  4.140599894
+162 1.068424e-02 1.049175e-02 0.931617433  0.582360803
+163 9.161703e-02 8.684071e-02 2.085772458  1.665733364
+164 1.794676e-02 1.749512e-02 1.079052614  0.695190763
+165 8.183569e-03 8.053310e-03 0.829246770  0.505948870
+166 6.112573e-04 6.042976e-04 0.104062462  0.053074637
+167 2.691798e-02 2.597419e-02 1.143807429  0.740814692
+168 7.248779e-04 7.164235e-04 0.119983373  0.061425852
+169 2.032750e-02 1.999351e-02 1.620327724  1.216833025
+170 2.470070e-02 2.429277e-02 1.843798016  1.470963397
+171 1.626688e-03 1.603332e-03 0.213484010  0.111669095
+172 1.832056e-03 1.808523e-03 0.265475697  0.140796573
+173 1.628309e-04 1.613977e-04 0.036505512  0.018336703
+174 5.031675e-02 4.911828e-02 2.308866824  2.062197192
+175 3.718687e-04 3.677289e-04 0.065376651  0.033032492
+176 1.932064e-02 1.881967e-02 1.116748565  0.725807280
+177 1.580237e-02 1.535157e-02 0.881118321  0.538126313
+178 2.184174e-03 2.141404e-03 0.209906333  0.109356853
+179 1.353245e-02 1.320813e-02 0.895192843  0.551116791
+180 3.295260e-02 3.237871e-02 2.147516973  1.859195000
+181 3.826369e-02 3.727759e-02 1.842392766  1.446484548
+182 5.546298e-04 5.483299e-04 0.094862141  0.048273447
+183 4.059106e-02 3.897641e-02 1.420184895  0.979840258
+184 3.989745e-02 3.924613e-02 2.506277005  2.404079826
+185 6.050690e-02 5.680204e-02 1.391329501  0.927678395
+186 1.042797e-02 1.016529e-02 0.690776927  0.403546839
+187 5.989086e-03 5.904450e-03 0.705683222  0.417816515
+188 1.213217e-03 1.196667e-03 0.169461679  0.087721966
+189 1.666544e-02 1.625457e-02 1.034466544  0.659304844
+190 5.036356e-03 4.962806e-03 0.591189342  0.339831218
+191 5.468997e-04 5.412187e-04 0.102147214  0.052101738
+192 8.813239e-04 8.685670e-04 0.117465633  0.060005835
+193 7.150669e-03 7.028620e-03 0.698578733  0.411798254
+194 1.897529e-04 1.881278e-04 0.043648756  0.021966086
+195 7.498085e-02 7.397022e-02 3.841734514  5.488016022
+196 5.676501e-03 5.522539e-03 0.377058254  0.203613395
+197 2.848621e-04 2.821357e-04 0.058393203  0.029477645
+198 1.419097e-02 1.395780e-02 1.248919982  0.849491713
+199 2.255815e-02 2.211660e-02 1.543189126  1.129927516
+200 2.267186e-02 2.204654e-02 1.204840140  0.799328652
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_roc_curve")
+> ### * blr_roc_curve
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_roc_curve
+> ### Title: ROC curve
+> ### Aliases: blr_roc_curve
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> k <- blr_gains_table(model)
+> blr_roc_curve(k)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_adj_count")
+> ### * blr_rsq_adj_count
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_adj_count
+> ### Title: Adjusted count R2
+> ### Aliases: blr_rsq_adj_count
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_adj_count(model)
+[1] 0.2830189
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_count")
+> ### * blr_rsq_count
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_count
+> ### Title: Count R2
+> ### Aliases: blr_rsq_count
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_count(model)
+[1] 0.81
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_cox_snell")
+> ### * blr_rsq_cox_snell
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_cox_snell
+> ### Title: Cox Snell R2
+> ### Aliases: blr_rsq_cox_snell
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_cox_snell(model)
+[1] 0.2990105
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_effron")
+> ### * blr_rsq_effron
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_effron
+> ### Title: Effron R2
+> ### Aliases: blr_rsq_effron
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_effron(model)
+[1] 0.3304513
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_mcfadden")
+> ### * blr_rsq_mcfadden
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_mcfadden
+> ### Title: McFadden's R2
+> ### Aliases: blr_rsq_mcfadden
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_mcfadden(model)
+[1] 0.3072023
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_mcfadden_adj")
+> ### * blr_rsq_mcfadden_adj
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_mcfadden_adj
+> ### Title: McFadden's adjusted R2
+> ### Aliases: blr_rsq_mcfadden_adj
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_mcfadden_adj(model)
+[1] 0.2726135
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_mckelvey_zavoina")
+> ### * blr_rsq_mckelvey_zavoina
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_mckelvey_zavoina
+> ### Title: McKelvey Zavoina R2
+> ### Aliases: blr_rsq_mckelvey_zavoina
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_mckelvey_zavoina(model)
+[1] 0.5177764
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_rsq_nagelkerke")
+> ### * blr_rsq_nagelkerke
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_rsq_nagelkerke
+> ### Title: Cragg-Uhler (Nagelkerke) R2
+> ### Aliases: blr_rsq_nagelkerke
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_rsq_nagelkerke(model)
+[1] 0.4362587
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_segment")
+> ### * blr_segment
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_segment
+> ### Title: Event rate
+> ### Aliases: blr_segment blr_segment.default
+> 
+> ### ** Examples
+> 
+> blr_segment(hsb2, honcomp, prog)
+Event By Attributes 
+-------------------
+pred           1s%  
+-------------------
+ 1             0.04 
+ 2             0.20 
+ 3             0.03 
+-------------------
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_segment_dist")
+> ### * blr_segment_dist
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_segment_dist
+> ### Title: Response distribution
+> ### Aliases: blr_segment_dist plot.blr_segment_dist
+> 
+> ### ** Examples
+> 
+> k <- blr_segment_dist(hsb2, honcomp, prog)
+> k
+         Event Segmentation           
+-------------------------------------
+  pred       n     1s     n%     1s%  
+-------------------------------------
+   1        45     7     0.22    0.04 
+   2        105    40    0.52    0.20 
+   3        50     6     0.25    0.03 
+-------------------------------------
+
+> 
+> # plot
+> plot(k)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_segment_twoway")
+> ### * blr_segment_twoway
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_segment_twoway
+> ### Title: Two way event rate
+> ### Aliases: blr_segment_twoway blr_segment_twoway.default
+> 
+> ### ** Examples
+> 
+> blr_segment_twoway(hsb2, honcomp, prog, female)
+                prog     
+-----------------------
+honcomp     0       1     
+-----------------------
+  1     0.010   0.025   
+-----------------------
+  2     0.075   0.125   
+-----------------------
+  3     0.005   0.025   
+-----------------------
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_aic_backward")
+> ### * blr_step_aic_backward
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_aic_backward
+> ### Title: Stepwise AIC backward elimination
+> ### Aliases: blr_step_aic_backward blr_step_aic_backward.default
+> ###   plot.blr_step_aic_backward
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D model <- glm(honcomp ~ female + read + science + math + prog + socst,
+> ##D data = hsb2, family = binomial(link = 'logit'))
+> ##D 
+> ##D # elimination summary
+> ##D blr_step_aic_backward(model)
+> ##D 
+> ##D # print details of each step
+> ##D blr_step_aic_backward(model, details = TRUE)
+> ##D 
+> ##D # plot
+> ##D plot(blr_step_aic_backward(model))
+> ##D 
+> ##D # final model
+> ##D k <- blr_step_aic_backward(model)
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_aic_both")
+> ### * blr_step_aic_both
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_aic_both
+> ### Title: Stepwise AIC selection
+> ### Aliases: blr_step_aic_both plot.blr_step_aic_both
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D model <- glm(y ~ ., data = stepwise)
+> ##D 
+> ##D # selection summary
+> ##D blr_step_aic_both(model)
+> ##D 
+> ##D # print details at each step
+> ##D blr_step_aic_both(model, details = TRUE)
+> ##D 
+> ##D # plot
+> ##D plot(blr_step_aic_both(model))
+> ##D 
+> ##D # final model
+> ##D k <- blr_step_aic_both(model)
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_aic_forward")
+> ### * blr_step_aic_forward
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_aic_forward
+> ### Title: Stepwise AIC forward selection
+> ### Aliases: blr_step_aic_forward blr_step_aic_forward.default
+> ###   plot.blr_step_aic_forward
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D model <- glm(honcomp ~ female + read + science, data = hsb2,
+> ##D family = binomial(link = 'logit'))
+> ##D 
+> ##D # selection summary
+> ##D blr_step_aic_forward(model)
+> ##D 
+> ##D # print details of each step
+> ##D blr_step_aic_forward(model, details = TRUE)
+> ##D 
+> ##D # plot
+> ##D plot(blr_step_aic_forward(model))
+> ##D 
+> ##D # final model
+> ##D k <- blr_step_aic_forward(model)
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_p_backward")
+> ### * blr_step_p_backward
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_p_backward
+> ### Title: Stepwise backward regression
+> ### Aliases: blr_step_p_backward blr_step_p_backward.default
+> ###   plot.blr_step_p_backward
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # stepwise backward regression
+> ##D model <- glm(honcomp ~ female + read + science + math + prog + socst,
+> ##D   data = hsb2, family = binomial(link = 'logit'))
+> ##D blr_step_p_backward(model)
+> ##D 
+> ##D # stepwise backward regression plot
+> ##D model <- glm(honcomp ~ female + read + science + math + prog + socst,
+> ##D   data = hsb2, family = binomial(link = 'logit'))
+> ##D k <- blr_step_p_backward(model)
+> ##D plot(k)
+> ##D 
+> ##D # final model
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_p_both")
+> ### * blr_step_p_both
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_p_both
+> ### Title: Stepwise regression
+> ### Aliases: blr_step_p_both blr_step_p_both.default plot.blr_step_p_both
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # stepwise regression
+> ##D model <- glm(y ~ ., data = stepwise)
+> ##D blr_step_p_both(model)
+> ##D 
+> ##D # stepwise regression plot
+> ##D model <- glm(y ~ ., data = stepwise)
+> ##D k <- blr_step_p_both(model)
+> ##D plot(k)
+> ##D 
+> ##D # final model
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_step_p_forward")
+> ### * blr_step_p_forward
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_step_p_forward
+> ### Title: Stepwise forward regression
+> ### Aliases: blr_step_p_forward blr_step_p_forward.default
+> ###   plot.blr_step_p_forward
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D # stepwise forward regression
+> ##D model <- glm(honcomp ~ female + read + science, data = hsb2,
+> ##D   family = binomial(link = 'logit'))
+> ##D blr_step_p_forward(model)
+> ##D 
+> ##D # stepwise forward regression plot
+> ##D model <- glm(honcomp ~ female + read + science, data = hsb2,
+> ##D   family = binomial(link = 'logit'))
+> ##D k <- blr_step_p_forward(model)
+> ##D plot(k)
+> ##D 
+> ##D # final model
+> ##D k$model
+> ##D 
+> ## End(Not run)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_test_hosmer_lemeshow")
+> ### * blr_test_hosmer_lemeshow
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_test_hosmer_lemeshow
+> ### Title: Hosmer lemeshow test
+> ### Aliases: blr_test_hosmer_lemeshow
+> 
+> ### ** Examples
+> 
+> model <- glm(honcomp ~ female + read + science, data = hsb2,
++              family = binomial(link = 'logit'))
+> 
+> blr_test_hosmer_lemeshow(model)
+           Partition for the Hosmer & Lemeshow Test            
+--------------------------------------------------------------
+                        def = 1                 def = 0        
+Group    Total    Observed    Expected    Observed    Expected 
+--------------------------------------------------------------
+  1       20         0          0.16         20        19.84   
+  2       20         0          0.53         20        19.47   
+  3       20         2          0.99         18        19.01   
+  4       20         1          1.64         19        18.36   
+  5       21         3          2.72         18        18.28   
+  6       19         3          4.05         16        14.95   
+  7       20         7          6.50         13        13.50   
+  8       20         10         8.90         10        11.10   
+  9       20         13        11.49         7          8.51   
+ 10       20         14        16.02         6          3.98   
+--------------------------------------------------------------
+
+     Goodness of Fit Test      
+------------------------------
+Chi-Square    DF    Pr > ChiSq 
+------------------------------
+  4.4998      8       0.8095   
+------------------------------
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_test_lr")
+> ### * blr_test_lr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_test_lr
+> ### Title: Likelihood ratio test
+> ### Aliases: blr_test_lr blr_test_lr.default
+> 
+> ### ** Examples
+> 
+> # compare full model with intercept only model
+> # full model
+> model_1 <- glm(honcomp ~ female + read + science, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_test_lr(model_1)
+> 
+> # compare full model with nested model
+> # nested model
+> model_2 <- glm(honcomp ~ female + read, data = hsb2,
++             family = binomial(link = 'logit'))
+> 
+> blr_test_lr(model_1, model_2)
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_woe_iv")
+> ### * blr_woe_iv
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_woe_iv
+> ### Title: WoE & IV
+> ### Aliases: blr_woe_iv plot.blr_woe_iv
+> 
+> ### ** Examples
+> 
+> # woe and iv
+> k <- blr_woe_iv(hsb2, female, honcomp)
+> k
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  0          73          18          0.50       0.34       0.38     0.06  
+  1          74          35          0.50       0.66      -0.27     0.04  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ female          0.1023       
+-----------------------------
+> 
+> # plot woe
+> plot(k)
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("blr_woe_iv_stats")
+> ### * blr_woe_iv_stats
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: blr_woe_iv_stats
+> ### Title: Multi variable WOE & IV
+> ### Aliases: blr_woe_iv_stats
+> 
+> ### ** Examples
+> 
+> blr_woe_iv_stats(hsb2, honcomp, prog, race, female, schtyp)
+Variable: prog
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          38          7           0.26       0.13       0.67     0.08  
+  2          65          40          0.44       0.75      -0.53     0.17  
+  3          44          6           0.30       0.11       0.97     0.18  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  prog           0.4329       
+-----------------------------
+
+
+Variable: race
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          22          2           0.15       0.04       1.38     0.15  
+  2          6           5           0.04       0.09      -0.84     0.04  
+  3          18          2           0.12       0.04       1.18     0.10  
+  4         101          44          0.69       0.83      -0.19     0.03  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  race            0.326       
+-----------------------------
+
+
+Variable: female
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  0          73          18          0.50       0.34       0.38     0.06  
+  1          74          35          0.50       0.66      -0.27     0.04  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ female          0.1023       
+-----------------------------
+
+
+Variable: schtyp
+
+                           Weight of Evidence                            
+------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe     iv   
+------------------------------------------------------------------------
+  1         123          45          0.84       0.85      -0.01    0.00  
+  2          24          8           0.16       0.15       0.08    0.00  
+------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ schtyp          0.0012       
+-----------------------------
+
+
+> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  32.57 1.84 37.36 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

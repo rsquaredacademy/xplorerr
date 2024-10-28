@@ -1,0 +1,27 @@
+* installing *source* package 'inferr' ...
+** package 'inferr' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C compiler: 'gcc.exe (GCC) 13.2.0'
+using C++ compiler: 'G__~1.EXE (GCC) 13.2.0'
+g++ -std=gnu++17  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/new/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c RcppExports.cpp -o RcppExports.o
+gcc  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/new/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c init.c -o init.o
+g++ -std=gnu++17  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/new/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c nsign.cpp -o nsign.o
+g++ -std=gnu++17  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/new/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c tvar.cpp -o tvar.o
+g++ -std=gnu++17 -shared -s -static-libgcc -o inferr.dll tmp.def RcppExports.o init.o nsign.o tvar.o -LC:/rtools44/x86_64-w64-mingw32.static.posix/lib/x64 -LC:/rtools44/x86_64-w64-mingw32.static.posix/lib -LC:/PROGRA~1/R/R-44~1.1/bin/x64 -lR
+installing to F:/R/Packages/shiny/xplorerr/revdep/checks/inferr/new/inferr.Rcheck/00LOCK-inferr/00new/inferr/libs/x64
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+Note: wrong number of arguments to 'sqrt' 
+Note: wrong number of arguments to 'sqrt' 
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (inferr)

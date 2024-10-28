@@ -1,0 +1,17 @@
+test_that("when fitted.values == TRUE, fitted values from the regression\n\tare used for the test", {
+  model <- lm(mpg ~ disp + hp + wt + drat + qsec, data = mtcars)
+  expect_snapshot(ols_test_breusch_pagan(model))
+  expect_snapshot(ols_test_breusch_pagan(model, rhs = TRUE))
+  expect_snapshot(ols_test_breusch_pagan(model, rhs = TRUE, multiple = TRUE))
+  expect_snapshot(ols_test_breusch_pagan(model, fitted.values = FALSE, rhs = TRUE, multiple = TRUE))
+  expect_snapshot(ols_test_breusch_pagan(model, rhs = TRUE, multiple = TRUE, p.adj = "bonferroni"))
+  expect_snapshot(ols_test_breusch_pagan(model, rhs = TRUE, multiple = TRUE, p.adj = "holm"))
+  expect_snapshot(ols_test_breusch_pagan(model, rhs = TRUE, multiple = TRUE, p.adj = "sidak"))
+  expect_snapshot(ols_test_breusch_pagan(model, vars = c("disp")))
+  expect_snapshot(ols_test_breusch_pagan(model, multiple = TRUE, rhs = FALSE, vars = c("disp", "hp")))
+  expect_snapshot(ols_test_breusch_pagan(model, multiple = TRUE, vars = c("disp", "hp"), p.adj = "bonferroni"))
+  expect_snapshot(ols_test_breusch_pagan(model, multiple = TRUE, vars = c("disp", "hp"), p.adj = "sidak"))
+  expect_snapshot(ols_test_breusch_pagan(model, multiple = TRUE, vars = c("disp", "hp"), p.adj = "holm"))
+  expect_snapshot(ols_test_breusch_pagan(model, multiple = TRUE, rhs = FALSE, vars = c("disp")))
+})
+

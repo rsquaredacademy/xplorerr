@@ -1,0 +1,51 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> library(descriptr)
+> 
+> test_check("descriptr")
+----------------------------------------------------------------------
+|  Column Name  |  Data Type  |  Levels  |  Missing  |  Missing (%)  |
+----------------------------------------------------------------------
+|     Ozone     |   integer   |    NA    |    37     |     24.18     |
+|    Solar.R    |   integer   |    NA    |     7     |     4.58      |
+|     Wind      |   numeric   |    NA    |     0     |       0       |
+|     Temp      |   integer   |    NA    |     0     |       0       |
+|     Month     |   integer   |    NA    |     0     |       0       |
+|      Day      |   integer   |    NA    |     0     |       0       |
+----------------------------------------------------------------------
+
+ Overall Missing Values           44 
+ Percentage of Missing Values     4.79 %
+ Rows with Missing Values         42 
+ Columns With Missing Values      2 
+[ FAIL 0 | WARN 3 | SKIP 13 | PASS 254 ]
+
+══ Skipped tests (13) ══════════════════════════════════════════════════════════
+• On CRAN (12): 'test-cross-table.R:51:3', 'test-freq-table.R:15:3',
+  'test-freq-table.R:35:3', 'test-group-summary.R:52:3', 'test-plots.R:5:3',
+  'test-plots.R:10:3', 'test-plots.R:16:3', 'test-plots.R:31:3',
+  'test-plots.R:37:3', 'test-plots.R:43:3', 'test-plots.R:49:3',
+  'test-plots.R:55:3'
+• getRversion() > "4.0.3" is TRUE (1): 'test-plots.R:22:3'
+
+[ FAIL 0 | WARN 3 | SKIP 13 | PASS 254 ]
+> 
+> proc.time()
+   user  system elapsed 
+  26.04    2.95   31.50 

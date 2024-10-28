@@ -1,0 +1,1152 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "inferr"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> library('inferr')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("infer_binom_calc")
+> ### * infer_binom_calc
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_binom_calc
+> ### Title: Binomial Test
+> ### Aliases: infer_binom_calc infer_binom_test
+> 
+> ### ** Examples
+> 
+> # using calculator
+> infer_binom_calc(32, 13, prob = 0.5)
+            Binomial Test              
+ --------------------------------------
+  Group    N     Obs. Prop    Exp. Prop 
+ --------------------------------------
+    0      19      0.59375        0.500 
+    1      13      0.40625        0.500 
+ --------------------------------------
+
+
+                 Test Summary                 
+ --------------------------------------------
+  Tail              Prob             p-value  
+ --------------------------------------------
+  Lower         Pr(k <= 13)          0.188543 
+  Upper         Pr(k >= 13)          0.892336 
+ --------------------------------------------
+> 
+> # using data set
+> infer_binom_test(hsb, female, prob = 0.5)
+             Binomial Test              
+ ---------------------------------------
+  Group     N     Obs. Prop    Exp. Prop 
+ ---------------------------------------
+    0       91        0.455        0.500 
+    1      109        0.545        0.500 
+ ---------------------------------------
+
+
+                  Test Summary                  
+ ----------------------------------------------
+  Tail               Prob              p-value  
+ ----------------------------------------------
+  Lower          Pr(k <= 109)          0.910518 
+  Upper          Pr(k >= 109)          0.114623 
+ ----------------------------------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_chisq_assoc_test")
+> ### * infer_chisq_assoc_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_chisq_assoc_test
+> ### Title: Chi Square Test of Association
+> ### Aliases: infer_chisq_assoc_test
+> 
+> ### ** Examples
+> 
+> infer_chisq_assoc_test(hsb, female, schtyp)
+               Chi Square Statistics                 
+
+Statistics                     DF    Value      Prob 
+----------------------------------------------------
+Chi-Square                     1    0.0470    0.8284
+Likelihood Ratio Chi-Square    1    0.0471    0.8282
+Continuity Adj. Chi-Square     1    0.0005    0.9822
+Mantel-Haenszel Chi-Square     1    0.0468    0.8287
+Phi Coefficient                     0.0153          
+Contingency Coefficient             0.0153          
+Cramer's V                          0.0153          
+----------------------------------------------------
+> 
+> infer_chisq_assoc_test(hsb, female, ses)
+               Chi Square Statistics                 
+
+Statistics                     DF    Value      Prob 
+----------------------------------------------------
+Chi-Square                     2    4.5765    0.1014
+Likelihood Ratio Chi-Square    2    4.6789    0.0964
+Phi Coefficient                     0.1513          
+Contingency Coefficient             0.1496          
+Cramer's V                          0.1513          
+----------------------------------------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_chisq_gof_test")
+> ### * infer_chisq_gof_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_chisq_gof_test
+> ### Title: Chi Square Goodness of Fit Test
+> ### Aliases: infer_chisq_gof_test
+> 
+> ### ** Examples
+> 
+> infer_chisq_gof_test(hsb, race, c(20, 20, 20, 140))
+    Test Statistics     
+-----------------------
+Chi-Square       5.0286 
+DF                    3 
+Pr > Chi Sq      0.1697 
+Sample Size         200 
+
+                         Variable: race                           
+-----------------------------------------------------------------
+Category    Observed    Expected    % Deviation    Std. Residuals 
+-----------------------------------------------------------------
+   1           24          20          20.00            0.89      
+   2           11          20         -45.00           -2.01      
+   3           20          20           0.00            0.00      
+   4          145         140           3.57            0.42      
+-----------------------------------------------------------------
+> 
+> # apply continuity correction
+> infer_chisq_gof_test(hsb, race, c(20, 20, 20, 140), correct = TRUE)
+    Test Statistics     
+-----------------------
+Chi-Square       4.3821 
+DF                    3 
+Pr > Chi Sq      0.2231 
+Sample Size         200 
+
+                         Variable: race                           
+-----------------------------------------------------------------
+Category    Observed    Expected    % Deviation    Std. Residuals 
+-----------------------------------------------------------------
+   1           24          20          17.50            0.78      
+   2           11          20         -47.50           -2.12      
+   3           20          20          -2.50           -0.11      
+   4          145         140           3.21            0.38      
+-----------------------------------------------------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_cochran_qtest")
+> ### * infer_cochran_qtest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_cochran_qtest
+> ### Title: Cochran Q Test
+> ### Aliases: infer_cochran_qtest
+> 
+> ### ** Examples
+> 
+> infer_cochran_qtest(exam, exam1, exam2, exam3)
+   Test Statistics     
+----------------------
+N                   15 
+Cochran's Q       4.75 
+df                   2 
+p value          0.093 
+----------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_launch_shiny_app")
+> ### * infer_launch_shiny_app
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_launch_shiny_app
+> ### Title: Launch Shiny App
+> ### Aliases: infer_launch_shiny_app
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D infer_launch_shiny_app()
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_levene_test")
+> ### * infer_levene_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_levene_test
+> ### Title: Levene's test for equality of variances
+> ### Aliases: infer_levene_test infer_levene_test.default
+> 
+> ### ** Examples
+> 
+> # using grouping variable
+> infer_levene_test(hsb, read, group_var = race)
+           Summary Statistics             
+Levels    Frequency    Mean     Std. Dev  
+-----------------------------------------
+  1          24        46.67      10.24   
+  2          11        51.91      7.66    
+  3          20        46.8       7.12    
+  4          145       53.92      10.28   
+-----------------------------------------
+Total        200       52.23      10.25   
+-----------------------------------------
+
+                             Test Statistics                              
+-------------------------------------------------------------------------
+Statistic                            Num DF    Den DF         F    Pr > F 
+-------------------------------------------------------------------------
+Brown and Forsythe                        3       196      3.44    0.0179 
+Levene                                    3       196    3.4792     0.017 
+Brown and Forsythe (Trimmed Mean)         3       196    3.3936     0.019 
+-------------------------------------------------------------------------
+> 
+> # using  variables
+> infer_levene_test(hsb, read, write, socst)
+           Summary Statistics             
+Levels    Frequency    Mean     Std. Dev  
+-----------------------------------------
+  0          200       52.23      10.25   
+  1          200       52.77      9.48    
+  2          200       52.41      10.74   
+-----------------------------------------
+Total        600       52.47      10.15   
+-----------------------------------------
+
+                             Test Statistics                              
+-------------------------------------------------------------------------
+Statistic                            Num DF    Den DF         F    Pr > F 
+-------------------------------------------------------------------------
+Brown and Forsythe                        2       597    1.1683    0.3116 
+Levene                                    2       597    1.3803    0.2523 
+Brown and Forsythe (Trimmed Mean)         2       597    1.3258    0.2664 
+-------------------------------------------------------------------------
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_mcnemar_test")
+> ### * infer_mcnemar_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_mcnemar_test
+> ### Title: McNemar Test
+> ### Aliases: infer_mcnemar_test
+> 
+> ### ** Examples
+> 
+> # using variables from data
+> hb <- hsb
+> hb$himath <- ifelse(hsb$math > 60, 1, 0)
+> hb$hiread <- ifelse(hsb$read > 60, 1, 0)
+> infer_mcnemar_test(hb, himath, hiread)
+           Controls 
+---------------------------------
+Cases       0       1       Total 
+---------------------------------
+  0        135      21        156 
+  1         18      26         44 
+---------------------------------
+Total      153      47        200 
+---------------------------------
+
+       McNemar's Test        
+----------------------------
+McNemar's chi2        0.2308 
+DF                         1 
+Pr > chi2              0.631 
+Exact Pr >= chi2      0.7493 
+----------------------------
+
+       Kappa Coefficient         
+--------------------------------
+Kappa                     0.4454 
+ASE                        0.075 
+95% Lower Conf Limit      0.2984 
+95% Upper Conf Limit      0.5923 
+--------------------------------
+
+Proportion With Factor 
+----------------------
+cases             0.78 
+controls         0.765 
+ratio           1.0196 
+odds ratio      1.1667 
+----------------------
+> 
+> # test if the proportion of students in himath and hiread group is same
+> himath <- ifelse(hsb$math > 60, 1, 0)
+> hiread <- ifelse(hsb$read > 60, 1, 0)
+> infer_mcnemar_test(table(himath, hiread))
+           Controls 
+---------------------------------
+Cases       0       1       Total 
+---------------------------------
+  0        135      21        156 
+  1         18      26         44 
+---------------------------------
+Total      153      47        200 
+---------------------------------
+
+       McNemar's Test        
+----------------------------
+McNemar's chi2        0.2308 
+DF                         1 
+Pr > chi2              0.631 
+Exact Pr >= chi2      0.7493 
+----------------------------
+
+       Kappa Coefficient         
+--------------------------------
+Kappa                     0.4454 
+ASE                        0.075 
+95% Lower Conf Limit      0.2984 
+95% Upper Conf Limit      0.5923 
+--------------------------------
+
+Proportion With Factor 
+----------------------
+cases             0.78 
+controls         0.765 
+ratio           1.0196 
+odds ratio      1.1667 
+----------------------
+> 
+> # using matrix
+> infer_mcnemar_test(matrix(c(135, 18, 21, 26), nrow = 2))
+           Controls 
+---------------------------------
+Cases       0       1       Total 
+---------------------------------
+  0        135      21        156 
+  1         18      26         44 
+---------------------------------
+Total      153      47        200 
+---------------------------------
+
+       McNemar's Test        
+----------------------------
+McNemar's chi2        0.2308 
+DF                         1 
+Pr > chi2              0.631 
+Exact Pr >= chi2      0.7493 
+----------------------------
+
+       Kappa Coefficient         
+--------------------------------
+Kappa                     0.4454 
+ASE                        0.075 
+95% Lower Conf Limit      0.2984 
+95% Upper Conf Limit      0.5923 
+--------------------------------
+
+Proportion With Factor 
+----------------------
+cases             0.78 
+controls         0.765 
+ratio           1.0196 
+odds ratio      1.1667 
+----------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_oneway_anova")
+> ### * infer_oneway_anova
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_oneway_anova
+> ### Title: One Way ANOVA
+> ### Aliases: infer_oneway_anova
+> 
+> ### ** Examples
+> 
+> infer_oneway_anova(mtcars, mpg, cyl)
+                               ANOVA                                 
+--------------------------------------------------------------------
+                   Sum of                                           
+                  Squares     DF    Mean Square      F        Sig.  
+--------------------------------------------------------------------
+Between Groups    824.785     2       412.392      39.699      0    
+Within Groups     301.263     29      10.388                        
+Total             1126.048    31                                    
+--------------------------------------------------------------------
+
+                 Report                  
+----------------------------------------
+Category    N       Mean      Std. Dev. 
+----------------------------------------
+   4        11     26.664       4.510   
+   6        7      19.743       1.454   
+   8        14     15.100       2.560   
+----------------------------------------
+
+Number of obs = 32        R-squared     = 0.7325 
+Root MSE      = 3.2231    Adj R-squared = 0.714 
+
+> infer_oneway_anova(hsb, write, prog)
+                                ANOVA                                  
+----------------------------------------------------------------------
+                   Sum of                                             
+                   Squares     DF     Mean Square      F        Sig.  
+----------------------------------------------------------------------
+Between Groups    3175.698      2      1587.849      21.275      0    
+Within Groups     14703.177    197      74.635                        
+Total             17878.875    199                                    
+----------------------------------------------------------------------
+
+                 Report                   
+-----------------------------------------
+Category     N       Mean      Std. Dev. 
+-----------------------------------------
+   1        45      51.333       9.398   
+   2        105     56.257       7.943   
+   3        50      46.760       9.319   
+-----------------------------------------
+
+Number of obs = 200       R-squared     = 0.1776 
+Root MSE      = 8.6392    Adj R-squared = 0.1693 
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_os_prop_test")
+> ### * infer_os_prop_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_os_prop_test
+> ### Title: One Sample Test of Proportion
+> ### Aliases: infer_os_prop_test infer_os_prop_test.default
+> 
+> ### ** Examples
+> 
+> # use as a calculator
+> infer_os_prop_test(200, prob = 0.5, phat = 0.3)
+     Test Statistics       
+--------------------------
+Sample Size            200 
+Exp Prop               0.5 
+Obs Prop               0.3 
+z                  -5.6569 
+Pr(|Z| > |z|)            0 
+
+-----------------------------------------------------------------
+Category    Observed    Expected    % Deviation    Std. Residuals 
+-----------------------------------------------------------------
+   0          140         100          40.00            4.00      
+   1           60         100         -40.00           -4.00      
+-----------------------------------------------------------------
+> 
+> # using data set
+> infer_os_prop_test(hsb, female, prob = 0.5)
+     Test Statistics      
+-------------------------
+Sample Size           200 
+Exp Prop              0.5 
+Obs Prop            0.545 
+z                  1.2728 
+Pr(|Z| > |z|)      0.2031 
+
+-----------------------------------------------------------------
+Category    Observed    Expected    % Deviation    Std. Residuals 
+-----------------------------------------------------------------
+   0           91         100          -9.00           -0.90      
+   1          109         100           9.00            0.90      
+-----------------------------------------------------------------
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_os_t_test")
+> ### * infer_os_t_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_os_t_test
+> ### Title: One Sample t Test
+> ### Aliases: infer_os_t_test
+> 
+> ### ** Examples
+> 
+> # lower tail
+> infer_os_t_test(hsb, write, mu = 50, alternative = 'less')
+                              One-Sample Statistics                               
+---------------------------------------------------------------------------------
+ Variable    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+---------------------------------------------------------------------------------
+  write      200    52.775     0.6702       9.4786         -Inf     53.8828   
+---------------------------------------------------------------------------------
+
+                                 Lower Tail Test                                 
+                                 ---------------                                  
+
+                               Ho: mean(write) >=50                              
+                                Ha: mean(write) <50                               
+--------------------------------------------------------------------------------
+ Variable      t      DF       Sig       Mean Diff.    [95% Conf. Interval] 
+--------------------------------------------------------------------------------
+  write      4.141    199    0.99997       2.775          -Inf      3.8828   
+--------------------------------------------------------------------------------> 
+> # upper tail
+> infer_os_t_test(hsb, write, mu = 50, alternative = 'greater')
+                              One-Sample Statistics                               
+---------------------------------------------------------------------------------
+ Variable    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+---------------------------------------------------------------------------------
+  write      200    52.775     0.6702       9.4786       51.6678      Inf     
+---------------------------------------------------------------------------------
+
+                                 Upper Tail Test                                 
+                                 ---------------                                  
+
+                               Ho: mean(write) <=50                              
+                               Ha: mean(write) >50                                
+--------------------------------------------------------------------------------
+ Variable      t      DF       Sig       Mean Diff.    [95% Conf. Interval] 
+--------------------------------------------------------------------------------
+  write      4.141    199    0.00003       2.775         1.6678      Inf     
+--------------------------------------------------------------------------------> 
+> # both tails
+> infer_os_t_test(hsb, write, mu = 50, alternative = 'both')
+                              One-Sample Statistics                               
+---------------------------------------------------------------------------------
+ Variable    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+---------------------------------------------------------------------------------
+  write      200    52.775     0.6702       9.4786       51.4537    54.0969   
+---------------------------------------------------------------------------------
+
+                                  Two Tail Test                                  
+                                 ---------------                                  
+
+                               Ho: mean(write) ~=50                              
+                               Ha: mean(write) !=50                               
+--------------------------------------------------------------------------------
+ Variable      t      DF       Sig       Mean Diff.    [95% Conf. Interval] 
+--------------------------------------------------------------------------------
+  write      4.141    199    0.00005       2.775         1.4537     4.0969   
+--------------------------------------------------------------------------------> 
+> # all tails
+> infer_os_t_test(hsb, write, mu = 50, alternative = 'all')
+                              One-Sample Statistics                               
+---------------------------------------------------------------------------------
+ Variable    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+---------------------------------------------------------------------------------
+  write      200    52.775     0.6702       9.4786       51.4537    54.0969   
+---------------------------------------------------------------------------------
+
+                               Ho: mean(write) ~=50                              
+
+        Ha: mean < 50              Ha: mean ~= 50               Ha: mean > 50        
+         t = 4.141                   t = 4.141                   t = 4.141         
+       P < t = 0.99997            P > |t| = 0.00005            P > t = 0.00003      > 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_os_var_test")
+> ### * infer_os_var_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_os_var_test
+> ### Title: One Sample Variance Comparison Test
+> ### Aliases: infer_os_var_test
+> 
+> ### ** Examples
+> 
+> # lower tail
+> infer_os_var_test(mtcars, mpg, 5, alternative = 'less')
+                            One-Sample Statistics                             
+-----------------------------------------------------------------------------
+ Variable    Obs     Mean      Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+   mpg       32     20.0906     1.0654       6.0269        3.8737    10.6527   
+-----------------------------------------------------------------------------
+
+            Lower Tail Test           
+            ---------------           
+           Ho: sd(mpg) >= 5           
+            Ha: sd(mpg) < 5            
+
+    Chi-Square Test for Variance      
+-------------------------------------
+ Variable       c       DF      Sig       
+-------------------------------------
+   mpg       45.042     31     0.9506  
+-------------------------------------> 
+> # upper tail
+> infer_os_var_test(mtcars, mpg, 5, alternative = 'greater')
+                            One-Sample Statistics                             
+-----------------------------------------------------------------------------
+ Variable    Obs     Mean      Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+   mpg       32     20.0906     1.0654       6.0269        3.8737    10.6527   
+-----------------------------------------------------------------------------
+
+            Upper Tail Test           
+            ---------------           
+           Ho: sd(mpg) <= 5           
+            Ha: sd(mpg) > 5            
+
+    Chi-Square Test for Variance      
+-------------------------------------
+ Variable       c       DF      Sig    
+-------------------------------------
+   mpg       45.042     31     0.0494  
+-------------------------------------> 
+> # both tails
+> infer_os_var_test(mtcars, mpg, 5, alternative = 'both')
+                            One-Sample Statistics                             
+-----------------------------------------------------------------------------
+ Variable    Obs     Mean      Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+   mpg       32     20.0906     1.0654       6.0269        3.8737    10.6527   
+-----------------------------------------------------------------------------
+
+             Two Tail Test            
+            ---------------           
+            Ho: sd(mpg) = 5           
+           Ha: sd(mpg) != 5            
+
+    Chi-Square Test for Variance      
+-------------------------------------
+ Variable       c       DF      Sig    
+-------------------------------------
+   mpg       45.042     31     0.0988  
+-------------------------------------> 
+> # all tails
+> infer_os_var_test(mtcars, mpg, 5, alternative = 'all')
+                            One-Sample Statistics                             
+-----------------------------------------------------------------------------
+ Variable    Obs     Mean      Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+   mpg       32     20.0906     1.0654       6.0269        3.8737    10.6527   
+-----------------------------------------------------------------------------
+
+                                Ho: sd(mpg) = 5                                
+
+         Ha: sd < 5                Ha: sd != 5                 Ha: sd > 5         
+        c = 45.0419                c = 45.0419                c = 45.0419       
+     Pr(C < c) = 0.9506       2 * Pr(C > c) = 0.0988       Pr(C > c) = 0.0494    > 
+> 
+> 
+> cleanEx()
+> nameEx("infer_runs_test")
+> ### * infer_runs_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_runs_test
+> ### Title: Test for Random Order
+> ### Aliases: infer_runs_test
+> 
+> ### ** Examples
+> 
+> infer_runs_test(hsb, read)
+Runs Test
+ Total Cases:  200 
+ Test Value :  50 
+ Cases < Test Value:  101 
+ Cases > Test Value:  99 
+ Number of Runs:  95 
+ Expected Runs:  100.99 
+ Variance (Runs):  49.73874 
+ z Statistic:  -0.8493358 
+ p-value:  0.3956945 
+> 
+> infer_runs_test(hsb, read, drop = TRUE)
+Runs Test
+ Total Cases:  200 
+ Test Value :  50 
+ Cases < Test Value:  83 
+ Cases > Test Value:  99 
+ Number of Runs:  89 
+ Expected Runs:  91.2967 
+ Variance (Runs):  44.54805 
+ z Statistic:  -0.3441046 
+ p-value:  0.7307676 
+> 
+> infer_runs_test(hsb, read, split = TRUE)
+Runs Test
+ Total Cases:  200 
+ Test Value :  50 
+ Cases < Test Value:  101 
+ Cases > Test Value:  99 
+ Number of Runs:  95 
+ Expected Runs:  100.99 
+ Variance (Runs):  49.73874 
+ z Statistic:  -0.8493358 
+ p-value:  0.3956945 
+> 
+> infer_runs_test(hsb, read, mean = TRUE)
+Runs Test
+ Total Cases:  200 
+ Test Value :  52.23 
+ Cases < Test Value:  115 
+ Cases > Test Value:  85 
+ Number of Runs:  93 
+ Expected Runs:  98.75 
+ Variance (Runs):  47.52418 
+ z Statistic:  -0.8340854 
+ p-value:  0.4042329 
+> 
+> infer_runs_test(hsb, read, threshold = 0)
+Runs Test
+ Total Cases:  200 
+ Test Value :  0 
+ Cases < Test Value:  0 
+ Cases > Test Value:  200 
+ Number of Runs:  1 
+ Expected Runs:  1 
+ Variance (Runs):  0 
+ z Statistic:  NaN 
+ p-value:  NaN 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_ts_ind_ttest")
+> ### * infer_ts_ind_ttest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_ts_ind_ttest
+> ### Title: Two Independent Sample t Test
+> ### Aliases: infer_ts_ind_ttest
+> 
+> ### ** Examples
+> 
+> # lower tail
+> infer_ts_ind_ttest(hsb, female, write, alternative = 'less')
+                              Group Statistics                                
+-----------------------------------------------------------------------------
+  Group       Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+    0          91    50.121      1.080       10.305       47.97539   52.26661  
+    1         109    54.991      0.779        8.134       53.44689   56.53511  
+-----------------------------------------------------------------------------
+ combined     200    52.775      0.67         9.479       51.45379   54.09621  
+-----------------------------------------------------------------------------
+   diff       200    -4.87       1.304        9.231       -7.42623   -2.31377  
+-----------------------------------------------------------------------------
+
+                      Independent Samples Test                        
+                      ------------------------                        
+
+                  Ho: mean(0) - mean(1) = diff = 0                    
+                            Ha: diff < 0                              
+
+---------------------------------------------------------------------
+ Variable        Method        Variances    DF     t Value     P < t  
+---------------------------------------------------------------------
+  write          Pooled          Equal      198    -3.7341    0.0001  
+  write       Satterthwaite     Unequal     170    -3.6564    0.0002  
+---------------------------------------------------------------------
+
+                Test for Equality of Variances                  
+---------------------------------------------------------------
+ Variable      Method     Num DF    Den DF    F Value    P > F  
+---------------------------------------------------------------
+  write       Folded F      90       108       1.605     0.0188 
+---------------------------------------------------------------> 
+> # upper tail
+> infer_ts_ind_ttest(hsb, female, write, alternative = 'greater')
+                              Group Statistics                                
+-----------------------------------------------------------------------------
+  Group       Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+    0          91    50.121      1.080       10.305       47.97539   52.26661  
+    1         109    54.991      0.779        8.134       53.44689   56.53511  
+-----------------------------------------------------------------------------
+ combined     200    52.775      0.67         9.479       51.45379   54.09621  
+-----------------------------------------------------------------------------
+   diff       200    -4.87       1.304        9.231       -7.42623   -2.31377  
+-----------------------------------------------------------------------------
+
+                      Independent Samples Test                        
+                      ------------------------                        
+
+                  Ho: mean(0) - mean(1) = diff = 0                    
+                            Ha: diff > 0                              
+
+---------------------------------------------------------------------
+ Variable        Method        Variances    DF     t Value     P > t  
+---------------------------------------------------------------------
+  write          Pooled          Equal      198    -3.7341    0.9999  
+  write       Satterthwaite     Unequal     170    -3.6564    0.9998  
+---------------------------------------------------------------------
+
+                Test for Equality of Variances                  
+---------------------------------------------------------------
+ Variable      Method     Num DF    Den DF    F Value    P > F  
+---------------------------------------------------------------
+  write       Folded F      90       108       1.605     0.0188 
+---------------------------------------------------------------> 
+> # both tails
+> infer_ts_ind_ttest(hsb, female, write, alternative = 'both')
+                              Group Statistics                                
+-----------------------------------------------------------------------------
+  Group       Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+    0          91    50.121      1.080       10.305       47.97539   52.26661  
+    1         109    54.991      0.779        8.134       53.44689   56.53511  
+-----------------------------------------------------------------------------
+ combined     200    52.775      0.67         9.479       51.45379   54.09621  
+-----------------------------------------------------------------------------
+   diff       200    -4.87       1.304        9.231       -7.42623   -2.31377  
+-----------------------------------------------------------------------------
+
+                      Independent Samples Test                        
+                      ------------------------                        
+
+                  Ho: mean(0) - mean(1) = diff = 0                    
+                            Ha: diff ~= 0                             
+
+---------------------------------------------------------------------
+ Variable        Method        Variances    DF     t Value    P > |t| 
+---------------------------------------------------------------------
+  write          Pooled          Equal      198    -3.7341    0.0002  
+  write       Satterthwaite     Unequal     170    -3.6564    0.0003  
+---------------------------------------------------------------------
+
+                Test for Equality of Variances                  
+---------------------------------------------------------------
+ Variable      Method     Num DF    Den DF    F Value    P > F  
+---------------------------------------------------------------
+  write       Folded F      90       108       1.605     0.0188 
+---------------------------------------------------------------> 
+> # all tails
+> infer_ts_ind_ttest(hsb, female, write, alternative = 'all')
+                              Group Statistics                                
+-----------------------------------------------------------------------------
+  Group       Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+-----------------------------------------------------------------------------
+    0          91    50.121      1.080       10.305       47.97539   52.26661  
+    1         109    54.991      0.779        8.134       53.44689   56.53511  
+-----------------------------------------------------------------------------
+ combined     200    52.775      0.67         9.479       51.45379   54.09621  
+-----------------------------------------------------------------------------
+   diff       200    -4.87       1.304        9.231       -7.42623   -2.31377  
+-----------------------------------------------------------------------------
+
+                        Independent Samples Test                         
+                      ------------------------                        
+
+                    Ho: mean(0) - mean(1) = diff = 0                     
+
+      Ha: diff < 0            Ha: diff ~= 0             Ha: diff > 0       
+
+                                  Pooled                                   
+------------------------------------------------------------------------
+       t = -3.7341              t = -3.7341              t = -3.7341       
+     P < t = 0.0001          P > |t| = 0.0002          P > t = 0.9999      
+
+                              Satterthwaite                                
+------------------------------------------------------------------------
+       t = -3.6564              t = -3.6564              t = -3.6564       
+     P < t = 0.0002          P > |t| = 0.0003          P > t = 0.9998      
+
+
+                Test for Equality of Variances                  
+---------------------------------------------------------------
+ Variable      Method     Num DF    Den DF    F Value    P > F  
+---------------------------------------------------------------
+  write       Folded F      90       108       1.605     0.0188 
+---------------------------------------------------------------> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_ts_paired_ttest")
+> ### * infer_ts_paired_ttest
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_ts_paired_ttest
+> ### Title: Paired t test
+> ### Aliases: infer_ts_paired_ttest
+> 
+> ### ** Examples
+> 
+> # lower tail
+> infer_ts_paired_ttest(hsb, read, write, alternative = 'less')
+                         Paired Samples Statistics                           
+----------------------------------------------------------------------------
+Variables    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+----------------------------------------------------------------------------
+   read       200    52.23     0.7249921    10.25294        50.8      53.66   
+   write      200    52.775    0.6702372    9.478586       51.45       54.1    
+----------------------------------------------------------------------------
+   diff       200    -0.545    0.6283822    8.886666       -1.78       0.69    
+----------------------------------------------------------------------------
+
+         Paired Samples Correlations         
+-------------------------------------------
+  Variables      Obs    Correlation    Sig.
+ read & write    200       0.60        0 
+-------------------------------------------
+
+          Paired Samples Test            
+          -------------------            
+       Ho: mean(read - write) = 0        
+       Ha: mean(read - write) < 0        
+
+----------------------------------------
+  Variables         t       df     Sig.  
+----------------------------------------
+ read - write    -0.8673    199    0.193 
+----------------------------------------> 
+> # upper tail
+> infer_ts_paired_ttest(hsb, read, write, alternative = 'greater')
+                         Paired Samples Statistics                           
+----------------------------------------------------------------------------
+Variables    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+----------------------------------------------------------------------------
+   read       200    52.23     0.7249921    10.25294        50.8      53.66   
+   write      200    52.775    0.6702372    9.478586       51.45       54.1    
+----------------------------------------------------------------------------
+   diff       200    -0.545    0.6283822    8.886666       -1.78       0.69    
+----------------------------------------------------------------------------
+
+         Paired Samples Correlations         
+-------------------------------------------
+  Variables      Obs    Correlation    Sig.
+ read & write    200       0.60        0 
+-------------------------------------------
+
+          Paired Samples Test            
+          -------------------            
+       Ho: mean(read - write) = 0        
+       Ha: mean(read - write) > 0        
+
+----------------------------------------
+  Variables         t       df     Sig.  
+----------------------------------------
+ read - write    -0.8673    199    0.807 
+----------------------------------------> 
+> # both tails
+> infer_ts_paired_ttest(hsb, read, write, alternative = 'both')
+                         Paired Samples Statistics                           
+----------------------------------------------------------------------------
+Variables    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+----------------------------------------------------------------------------
+   read       200    52.23     0.7249921    10.25294        50.8      53.66   
+   write      200    52.775    0.6702372    9.478586       51.45       54.1    
+----------------------------------------------------------------------------
+   diff       200    -0.545    0.6283822    8.886666       -1.78       0.69    
+----------------------------------------------------------------------------
+
+         Paired Samples Correlations         
+-------------------------------------------
+  Variables      Obs    Correlation    Sig.
+ read & write    200       0.60        0 
+-------------------------------------------
+
+          Paired Samples Test            
+          -------------------            
+       Ho: mean(read - write) = 0        
+      Ha: mean(read - write) ~= 0        
+
+----------------------------------------
+  Variables         t       df     Sig.  
+----------------------------------------
+ read - write    -0.8673    199    0.387 
+----------------------------------------> 
+> # all tails
+> infer_ts_paired_ttest(hsb, read, write, alternative = 'all')
+                         Paired Samples Statistics                           
+----------------------------------------------------------------------------
+Variables    Obs     Mean     Std. Err.    Std. Dev.    [95% Conf. Interval] 
+----------------------------------------------------------------------------
+   read       200    52.23     0.7249921    10.25294        50.8      53.66   
+   write      200    52.775    0.6702372    9.478586       51.45       54.1    
+----------------------------------------------------------------------------
+   diff       200    -0.545    0.6283822    8.886666       -1.78       0.69    
+----------------------------------------------------------------------------
+
+         Paired Samples Correlations         
+-------------------------------------------
+  Variables      Obs    Correlation    Sig.
+ read & write    200       0.60        0 
+-------------------------------------------
+
+                Ho: mean(read - write) = mean(diff) = 0                  
+
+   Ha: mean(diff) < 0      Ha: mean(diff) ~= 0       Ha: mean(diff) > 0    
+       t = -0.8673              t = -0.8673              t = -0.8673       
+     P < t = 0.193           P > |t| = 0.387           P > t = 0.807       
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_ts_prop_test")
+> ### * infer_ts_prop_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_ts_prop_test
+> ### Title: Two Sample Test of Proportion
+> ### Aliases: infer_ts_prop_test infer_ts_prop_calc infer_ts_prop_group
+> 
+> ### ** Examples
+> 
+> # using variables
+> # lower tail
+> infer_ts_prop_test(treatment, treatment1, treatment2,
++ alternative = 'less')
+       Test Statistics        
+-----------------------------
+Total Observations        100 
+z                       0.403 
+Pr(Z < z)               0.656 
+
+> 
+> # using groups
+> # lower tail
+> infer_ts_prop_group(treatment2, outcome, female,
++ alternative = 'less')
+       Test Statistics        
+-----------------------------
+Total Observations        200 
+z                       0.351 
+Pr(Z < z)               0.637 
+
+> 
+> # using sample size and proportions
+> # lower tail
+> infer_ts_prop_calc(n1 = 30, n2 = 25, p1 = 0.3, p2 = 0.5, alternative = 'less')
+       Test Statistics         
+------------------------------
+Total Observations          55 
+z                       -1.514 
+Pr(Z < z)                0.065 
+
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("infer_ts_var_test")
+> ### * infer_ts_var_test
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: infer_ts_var_test
+> ### Title: Two Sample Variance Comparison Test
+> ### Aliases: infer_ts_var_test
+> 
+> ### ** Examples
+> 
+> # using grouping variable
+> infer_ts_var_test(hsb, read, group_var = female, alternative = 'less')
+               Variance Ratio Test                 
+--------------------------------------------------
+  Group      Obs    Mean     Std. Err.    Std. Dev. 
+--------------------------------------------------
+   0        91     52.82       1.1         10.51   
+   1        109    51.73      0.96         10.06   
+--------------------------------------------------
+ combined    200    52.23      0.72         10.25   
+--------------------------------------------------
+
+           Lower Tail Test           
+           ---------------           
+         ratio = sd(0) / (1)         
+            Ho: ratio = 1            
+            Ha: ratio < 1             
+
+        Variance Ratio Test          
+------------------------------------
+   F       Num DF    Den DF      p    
+------------------------------------
+ 1.0913      90       108      0.6694 
+------------------------------------> 
+> # using two variables
+> infer_ts_var_test(hsb, read, write, alternative = 'less')
+               Variance Ratio Test                 
+--------------------------------------------------
+  Group      Obs    Mean     Std. Err.    Std. Dev. 
+--------------------------------------------------
+  read      200    52.23      0.72         10.25   
+ write      200    52.77      0.67         9.48    
+--------------------------------------------------
+ combined    400    52.5       0.49         9.86    
+--------------------------------------------------
+
+           Lower Tail Test           
+           ---------------           
+      ratio = sd(read) / (write)     
+            Ho: ratio = 1            
+            Ha: ratio < 1             
+
+        Variance Ratio Test          
+------------------------------------
+   F       Num DF    Den DF      p    
+------------------------------------
+ 1.1701     199       199      0.8656 
+------------------------------------> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  2.44 0.69 3.92 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

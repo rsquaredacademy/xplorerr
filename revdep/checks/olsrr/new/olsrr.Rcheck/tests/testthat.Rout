@@ -1,0 +1,174 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> library(olsrr)
+
+Attaching package: 'olsrr'
+
+The following object is masked from 'package:datasets':
+
+    rivers
+
+> 
+> test_check("olsrr")
+[ FAIL 0 | WARN 0 | SKIP 78 | PASS 559 ]
+
+══ Skipped tests (78) ══════════════════════════════════════════════════════════
+• On CRAN (78): 'test-all-possible.R:32:3', 'test-bartlett-output.R:2:3',
+  'test-best-subsets-output.R:3:3', 'test-best-subsets-output.R:8:3',
+  'test-bp-output.R:3:3', 'test-collindiag.R:42:3',
+  'test-correlations-output.R:3:2', 'test-ftest-output.R:3:3',
+  'test-loftest-output.R:3:3', 'test-norm-output.R:3:3',
+  'test-regress-output.R:2:3', 'test-score-output.R:3:3',
+  'test-step-backward-output.R:3:3', 'test-step-backward-output.R:10:3',
+  'test-step-forward-output.R:3:3', 'test-step-forward-output.R:10:3',
+  'test-step-rsquared-output.R:4:3', 'test-step-rsquared-output.R:10:3',
+  'test-step-rsquared-output.R:16:3', 'test-step-rsquared-output.R:22:3',
+  'test-step-rsquared-output.R:28:3', 'test-step-rsquared-output.R:34:3',
+  'test-stepaic-b-output.R:4:3', 'test-stepaic-b-output.R:10:3',
+  'test-stepaic-b-output.R:16:3', 'test-stepaic-both-output.R:3:3',
+  'test-stepaic-both-output.R:9:3', 'test-stepaic-both-output.R:15:3',
+  'test-stepaic-f-output.R:4:3', 'test-stepaic-f-output.R:11:3',
+  'test-stepaic-f-output.R:18:3', 'test-stepwise-output.R:3:3',
+  'test-utility.R:99:3', 'test-visual.R:4:3', 'test-visual.R:11:3',
+  'test-visual.R:18:3', 'test-visual.R:24:3', 'test-visual.R:30:3',
+  'test-visual.R:36:3', 'test-visual.R:42:3', 'test-visual.R:49:3',
+  'test-visual.R:55:3', 'test-visual.R:61:3', 'test-visual.R:67:3',
+  'test-visual.R:90:3', 'test-visual.R:99:3', 'test-visual.R:105:3',
+  'test-visual.R:111:3', 'test-visual.R:117:3', 'test-visual.R:123:3',
+  'test-visual.R:130:3', 'test-visual.R:139:3', 'test-visual.R:149:3',
+  'test-visual.R:159:3', 'test-visual.R:170:3', 'test-visual.R:179:3',
+  'test-visual.R:192:3', 'test-visual.R:205:3', 'test-visual.R:217:3',
+  'test-visual.R:235:3', 'test-visual.R:241:3', 'test-visual.R:251:3',
+  'test-visual.R:258:3', 'test-visual.R:265:3', 'test-visual.R:272:3',
+  'test-visual.R:283:3', 'test-visual.R:294:3', 'test-visual.R:306:3',
+  'test-visual.R:317:3', 'test-visual.R:328:3', 'test-visual.R:339:3',
+  'test-visual.R:350:3', 'test-visual.R:361:3', 'test-visual.R:372:3',
+  'test-visual.R:383:3', 'test-visual.R:394:3', 'test-visual.R:405:3',
+  'test-visual.R:416:3'
+
+[ FAIL 0 | WARN 0 | SKIP 78 | PASS 559 ]
+Deleting unused snapshots:
+• visual/adjusted-rsquared-backward-regression-plot-details.svg
+• visual/adjusted-rsquared-backward-regression-plot.svg
+• visual/adjusted-rsquared-both-direction-regression-plot-details.svg
+• visual/adjusted-rsquared-both-direction-regression-plot.svg
+• visual/adjusted-rsquared-forward-regression-plot-details.svg
+• visual/adjusted-rsquared-forward-regression-plot.svg
+• visual/allplot-1.svg
+• visual/allplot-2.svg
+• visual/allplot-3.svg
+• visual/allplot-4.svg
+• visual/allplot-5.svg
+• visual/allplot-6.svg
+• visual/avplot-1.svg
+• visual/avplot-2.svg
+• visual/avplot-3.svg
+• visual/bestplot-1.svg
+• visual/bestplot-2.svg
+• visual/bestplot-3.svg
+• visual/bestplot-4.svg
+• visual/bestplot-5.svg
+• visual/bestplot-6.svg
+• visual/cooks-d-bar-chart-threshold.svg
+• visual/cooks-d-bar-chart.svg
+• visual/cooks-d-bar-plot-threshold.svg
+• visual/cooks-d-bar-plot-type-2.svg
+• visual/cooks-d-bar-plot-type-3.svg
+• visual/cooks-d-bar-plot-type-4.svg
+• visual/cooks-d-bar-plot-type-5.svg
+• visual/cooks-d-bar-plot.svg
+• visual/dfbetas-1.svg
+• visual/dfbetas-2.svg
+• visual/dfbetas-3.svg
+• visual/dfbetas-4.svg
+• visual/dfbetas-5.svg
+• visual/dffits-cutoff-plot.svg
+• visual/dffits-plot.svg
+• visual/diag-1.svg
+• visual/diag-10.svg
+• visual/diag-2.svg
+• visual/diag-3.svg
+• visual/diag-4.svg
+• visual/diag-5.svg
+• visual/diag-6.svg
+• visual/diag-7.svg
+• visual/diag-8.svg
+• visual/diag-9.svg
+• visual/dsrvsp-plot.svg
+• visual/fm-plot.svg
+• visual/ggplot2-histogram.svg
+• visual/hadi-plot.svg
+• visual/ovsp-plot.svg
+• visual/potential-residual-plot.svg
+• visual/reg-line-plot.svg
+• visual/residual-box-plot.svg
+• visual/residual-fit-spread-plot-2.svg
+• visual/residual-fit-spread-plot.svg
+• visual/residual-qq-plot.svg
+• visual/residual-vs-fitted-plot.svg
+• visual/residual-vs-regressor-plot.svg
+• visual/residual-vs-regressor-shiny-plot.svg
+• visual/resp-viz-boxplot.svg
+• visual/resp-viz-dot-plot.svg
+• visual/resp-viz-histogram.svg
+• visual/resp-viz-trend-plot.svg
+• visual/rpcplot-1.svg
+• visual/rpcplot-2.svg
+• visual/rpcplot-3.svg
+• visual/rpcplot-4.svg
+• visual/rsd-plot.svg
+• visual/rslev-1.svg
+• visual/rsquared-both-direction-regression-plot-details.svg
+• visual/rsquared-both-direction-regression-plot.svg
+• visual/rsquared-forward-regression-plot-details.svg
+• visual/rsquared-forward-regression-plot.svg
+• visual/sbc-backward-regression-plot-details.svg
+• visual/sbc-backward-regression-plot.svg
+• visual/sbc-both-direction-regression-plot-details.svg
+• visual/sbc-both-direction-regression-plot.svg
+• visual/sbc-forward-regression-plot-details.svg
+• visual/sbc-forward-regression-plot.svg
+• visual/sbic-backward-regression-plot-details.svg
+• visual/sbic-backward-regression-plot.svg
+• visual/sbic-forward-regression-plot-details.svg
+• visual/sbic-forward-regression-plot.svg
+• visual/stanres-1.svg
+• visual/step-back-1.svg
+• visual/step-back-2.svg
+• visual/step-back-3.svg
+• visual/step-back-4.svg
+• visual/step-both-1.svg
+• visual/step-both-2.svg
+• visual/step-both-3.svg
+• visual/step-both-4.svg
+• visual/step-forward-1.svg
+• visual/step-forward-2.svg
+• visual/step-forward-3.svg
+• visual/step-forward-4.svg
+• visual/stepaic-backward-regression-plot-without-details.svg
+• visual/stepaic-backward-regression-plot.svg
+• visual/stepaic-both-regression-plot-details.svg
+• visual/stepaic-both-regression-plot.svg
+• visual/stepaic-forward-regression-plot-without-details.svg
+• visual/stepaic-forward-regression-plot.svg
+• visual/studres-1.svg
+> 
+> proc.time()
+   user  system elapsed 
+ 317.57   23.32  363.15 
