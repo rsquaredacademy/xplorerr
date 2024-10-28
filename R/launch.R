@@ -15,7 +15,6 @@ app_visualizer <- function() {
 	check_suggests('dplyr')
 	check_suggests('ggplot2')
 	check_suggests('plotly')
-	check_suggests('rbokeh')
 	check_suggests('highcharter')
 	check_suggests('purrr')
 	check_suggests('tidyr')
@@ -62,7 +61,7 @@ app_descriptive <- function() {
 #' @description Launches app for visualizing probability distributions.
 #' @examples
 #' \dontrun{
-#' app_descriptive()
+#' app_vistributions()
 #' }
 #' @export
 #'
@@ -160,7 +159,7 @@ app_logistic_regression <- function() {
 }
 
 #' @title RFM Analysis
-#' @description Launches the RFM analyssi app.
+#' @description Launches the RFM analysis app.
 #' @examples
 #' \dontrun{
 #' app_rfm_analysis()

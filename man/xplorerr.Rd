@@ -3,6 +3,7 @@
 \docType{package}
 \name{xplorerr}
 \alias{xplorerr}
+\alias{xplorerr-package}
 \title{\code{xplorerr} package}
 \description{
 R Shiny app for interactive statistical analysis
@@ -11,3 +12,17 @@ R Shiny app for interactive statistical analysis
 See the README on
 \href{https://github.com/rsquaredacademy/xplorerr}{GitHub}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/rsquaredacademy/xplorerr}
+  \item \url{https://xplorerr.rsquaredacademy.com/}
+  \item Report bugs at \url{https://github.com/rsquaredacademy/xplorerr/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Aravind Hebbali \email{hebbali.aravind@gmail.com} (\href{https://orcid.org/0000-0001-9220-9669}{ORCID})
+
+}
+\keyword{internal}
