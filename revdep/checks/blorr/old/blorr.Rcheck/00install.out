@@ -1,0 +1,22 @@
+* installing *source* package 'blorr' ...
+** package 'blorr' successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+using C++ compiler: 'G__~1.EXE (GCC) 13.2.0'
+g++ -std=gnu++17  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/old/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++17  -I"C:/PROGRA~1/R/R-44~1.1/include" -DNDEBUG  -I'F:/R/Packages/shiny/xplorerr/revdep/library/xplorerr/old/Rcpp/include'   -I"C:/rtools44/x86_64-w64-mingw32.static.posix/include"     -O2 -Wall  -mfpmath=sse -msse2 -mstackrealign  -c blr-pairs-cpp.cpp -o blr-pairs-cpp.o
+g++ -std=gnu++17 -shared -s -static-libgcc -o blorr.dll tmp.def RcppExports.o blr-pairs-cpp.o -LC:/rtools44/x86_64-w64-mingw32.static.posix/lib/x64 -LC:/rtools44/x86_64-w64-mingw32.static.posix/lib -LC:/PROGRA~1/R/R-44~1.1/bin/x64 -lR
+installing to F:/R/Packages/shiny/xplorerr/revdep/checks/blorr/old/blorr.Rcheck/00LOCK-blorr/00new/blorr/libs/x64
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (blorr)

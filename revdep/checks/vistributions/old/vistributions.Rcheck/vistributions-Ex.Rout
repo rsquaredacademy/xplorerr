@@ -1,0 +1,204 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "vistributions"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> library('vistributions')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("vdist_binom_plot")
+> ### * vdist_binom_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_binom_plot
+> ### Title: Visualize binomial distribution
+> ### Aliases: vdist_binom_plot vdist_binom_prob vdist_binom_perc
+> 
+> ### ** Examples
+> 
+> # visualize binomial distribution
+> vdist_binom_plot(10, 0.3)
+> 
+> # visualize probability from a given quantile
+> vdist_binom_prob(10, 0.3, 4, type = 'exact')
+> vdist_binom_prob(10, 0.3, 4, type = 'lower')
+> vdist_binom_prob(10, 0.3, 4, type = 'upper')
+> vdist_binom_prob(10, 0.3, c(4, 6), type = 'interval')
+> 
+> 
+> # visualize quantiles out of given probability
+> vdist_binom_perc(10, 0.5, 0.05)
+> vdist_binom_perc(10, 0.5, 0.05, "upper")
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vdist_chisquare_plot")
+> ### * vdist_chisquare_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_chisquare_plot
+> ### Title: Visualize chi square distribution
+> ### Aliases: vdist_chisquare_plot vdist_chisquare_perc vdist_chisquare_prob
+> 
+> ### ** Examples
+> 
+> # visualize chi square distribution
+> vdist_chisquare_plot()
+> vdist_chisquare_plot(df = 5)
+> vdist_chisquare_plot(df = 5, normal = TRUE)
+> 
+> # visualize quantiles out of given probability
+> vdist_chisquare_perc(0.165, 8, 'lower')
+> vdist_chisquare_perc(0.22, 13, 'upper')
+> 
+> # visualize probability from a given quantile.
+> vdist_chisquare_prob(13.58, 11, 'lower')
+> vdist_chisquare_prob(15.72, 13, 'upper')
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vdist_f_plot")
+> ### * vdist_f_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_f_plot
+> ### Title: Visualize f distribution
+> ### Aliases: vdist_f_plot vdist_f_perc vdist_f_prob
+> 
+> ### ** Examples
+> 
+> # visualize F distribution
+> vdist_f_plot()
+> vdist_f_plot(6, 10, normal = TRUE)
+> 
+> # visualize probability from a given quantile
+> vdist_f_perc(0.95, 3, 30, 'lower')
+> vdist_f_perc(0.125, 9, 35, 'upper')
+> 
+> # visualize quantiles out of given probability
+> vdist_f_prob(2.35, 5, 32)
+> vdist_f_prob(1.5222, 9, 35, type = "upper")
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vdist_launch_app")
+> ### * vdist_launch_app
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_launch_app
+> ### Title: Launch shiny app
+> ### Aliases: vdist_launch_app
+> 
+> ### ** Examples
+> 
+> ## Not run: 
+> ##D vdist_launch_app ()
+> ## End(Not run)
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vdist_normal_plot")
+> ### * vdist_normal_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_normal_plot
+> ### Title: Visualize normal distribution
+> ### Aliases: vdist_normal_plot vdist_normal_perc vdist_normal_prob
+> 
+> ### ** Examples
+> 
+> # visualize normal distribution
+> vdist_normal_plot()
+> vdist_normal_plot(mean = 2, sd = 0.6)
+> 
+> # visualize quantiles out of given probability
+> vdist_normal_perc(0.95, mean = 2, sd = 1.36)
+> vdist_normal_perc(0.3, mean = 2, sd = 1.36, type = 'upper')
+> vdist_normal_perc(0.95, mean = 2, sd = 1.36, type = 'both')
+> 
+> # visualize probability from a given quantile
+> vdist_normal_prob(3.78, mean = 2, sd = 1.36)
+> vdist_normal_prob(3.43, mean = 2, sd = 1.36, type = 'upper')
+> vdist_normal_prob(c(-1.74, 1.83), type = 'both')
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("vdist_t")
+> ### * vdist_t
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: vdist_t
+> ### Title: Visualize t distribution
+> ### Aliases: vdist_t vdist_t_plot vdist_t_perc vdist_t_prob
+> 
+> ### ** Examples
+> 
+> # visualize t distribution
+> vdist_t_plot()
+> vdist_t_plot(6)
+> vdist_t_plot(df = 8)
+> 
+> # visualize quantiles out of given probability
+> vdist_t_perc(probs = 0.95, df = 4, type = 'lower')
+> vdist_t_perc(probs = 0.35, df = 4, type = 'upper')
+> vdist_t_perc(probs = 0.69, df = 7, type = 'both')
+> 
+> # visualize probability from a given quantile
+> vdist_t_prob(2.045, 7, 'lower')
+> vdist_t_prob(0.945, 7, 'upper')
+> vdist_t_prob(1.445, 7, 'interval')
+> vdist_t_prob(1.6, 7, 'both')
+> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  35.49 1.21 38.66 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

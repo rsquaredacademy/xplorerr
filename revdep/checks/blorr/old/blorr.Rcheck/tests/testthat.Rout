@@ -1,0 +1,1775 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> library(blorr)
+> 
+> test_check("blorr")
+Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . female 
+2 . read 
+3 . science 
+4 . math 
+5 . prog 
+6 . socst 
+
+We are eliminating variables based on p value...
+
+Variables Removed: 
+
+- prog 
+- socst 
+
+No more variables satisfy the condition of p value =  0.3
+
+
+Final Model Output 
+------------------
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           195            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.5773       2.1568    -6.7589      0.0000 
+  female1      1      1.3622        0.4605     2.9580      0.0031 
+   read        1      0.0631        0.0281     2.2455      0.0247 
+  science      1      0.0569        0.0326     1.7429      0.0814 
+   math        1      0.1113        0.0338     3.2992      0.0010 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8835          Somers' D        0.7669   
+% Discordant          0.1165          Gamma            0.7669   
+% Tied                0.0000          Tau-a            0.3003   
+Pairs                  7791           c                0.8835   
+---------------------------------------------------------------
+
+Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . female 
+2 . read 
+3 . science 
+4 . math 
+5 . prog 
+6 . socst 
+
+
+Variables Removed: 
+
+✖ prog 
+✖ socst 
+
+
+         Backward Elimination Summary         
+--------------------------------------------
+Variable        AIC        BIC      Deviance 
+--------------------------------------------
+Full Model    162.424    188.811     146.424 
+prog          158.953    178.743     146.953 
+socst         157.286    173.777     147.286 
+--------------------------------------------Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . female1 
+2 . read 
+3 . science 
+4 . math 
+5 . prog2 
+6 . prog3 
+7 . socst 
+
+We are eliminating variables based on p value...
+
+Variables Removed: 
+
+✖ prog3 
+✖ prog2 
+✖ socst 
+
+No more variables satisfy the condition of p value = 0.3
+
+
+Final Model Output 
+------------------
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           195            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.5773       2.1568    -6.7589      0.0000 
+  female1      1      1.3622        0.4605     2.9580      0.0031 
+   read        1      0.0631        0.0281     2.2455      0.0247 
+  science      1      0.0569        0.0326     1.7429      0.0814 
+   math        1      0.1113        0.0338     3.2992      0.0010 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8835          Somers' D        0.7669   
+% Discordant          0.1165          Gamma            0.7669   
+% Tied                0.0000          Tau-a            0.3003   
+Pairs                  7791           c                0.8835   
+---------------------------------------------------------------
+
+
+
+                Elimination Summary                  
+----------------------------------------------------
+        Variable                                        
+Step    Removed       AIC         BIC       Deviance    
+----------------------------------------------------
+   1    prog3       160.7102    183.7984    146.7102    
+   2    prog2       158.9527    178.7427    146.9527    
+   3    socst       157.2856    173.7772    147.2856    
+----------------------------------------------------Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . female 
+2 . read 
+3 . science 
+4 . math 
+5 . prog 
+6 . socst 
+
+ Step 0: AIC = 162.4241 
+ honcomp ~ female + read + science + math + prog + socst 
+
+-------------------------------------------------
+Variable     DF      AIC        BIC      Deviance 
+-------------------------------------------------
+prog         1     158.953    178.743     146.953 
+socst        1     160.745    183.834     146.745 
+read         1     163.394    186.482     149.394 
+science      1     163.815    186.903     149.815 
+female       1     169.570    192.658     155.570 
+math         1     170.017    193.105     156.017 
+-------------------------------------------------
+
+
+✖ prog 
+
+
+  Step 1 : AIC = 158.9527 
+ honcomp ~ female + read + science + math + socst 
+
+-------------------------------------------------
+Variable     DF      AIC        BIC      Deviance 
+-------------------------------------------------
+socst        1     157.286    173.777     147.286 
+science      1     159.941    176.432     149.941 
+read         1     160.307    176.798     150.307 
+female       1     166.114    182.606     156.114 
+math         1     168.669    185.161     158.669 
+-------------------------------------------------
+
+✖ socst 
+
+
+  Step 2 : AIC = 157.2856 
+ honcomp ~ female + read + science + math 
+
+-------------------------------------------------
+Variable     DF      AIC        BIC      Deviance 
+-------------------------------------------------
+science      1     158.420    171.613     150.420 
+read         1     160.658    173.851     152.658 
+female       1     164.988    178.181     156.988 
+math         1     168.236    181.430     160.236 
+-------------------------------------------------
+
+No more variables to be removed.
+
+Variables Removed: 
+
+✖ prog 
+✖ socst 
+
+
+Final Model Output 
+------------------
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           195            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.5773       2.1568    -6.7589      0.0000 
+  female1      1      1.3622        0.4605     2.9580      0.0031 
+   read        1      0.0631        0.0281     2.2455      0.0247 
+  science      1      0.0569        0.0326     1.7429      0.0814 
+   math        1      0.1113        0.0338     3.2992      0.0010 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8835          Somers' D        0.7669   
+% Discordant          0.1165          Gamma            0.7669   
+% Tied                0.0000          Tau-a            0.3003   
+Pairs                  7791           c                0.8835   
+---------------------------------------------------------------
+
+
+
+         Backward Elimination Summary         
+--------------------------------------------
+Variable        AIC        BIC      Deviance 
+--------------------------------------------
+Full Model    162.424    188.811     146.424 
+prog          158.953    178.743     146.953 
+socst         157.286    173.777     147.286 
+--------------------------------------------Backward Elimination Method 
+---------------------------
+
+Candidate Terms: 
+
+1 . female1 
+2 . read 
+3 . science 
+4 . math 
+5 . prog2 
+6 . prog3 
+7 . socst 
+
+We are eliminating variables based on p value...
+
+✖ prog3 
+
+Backward Elimination: Step 1 
+
+ Variable prog3 Removed 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           193            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.7222       2.2246    -6.6180      0.0000 
+  female1      1      1.3547        0.4659     2.9075      0.0036 
+   read        1      0.0541        0.0311     1.7420      0.0815 
+  science      1      0.0605        0.0341     1.7729      0.0762 
+   math        1      0.1033        0.0357     2.8968      0.0038 
+   prog2       1      0.2382        0.4839     0.4922      0.6226 
+   socst       1      0.0135        0.0273     0.4953      0.6204 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8845          Somers' D        0.7690   
+% Discordant          0.1155          Gamma            0.7690   
+% Tied                0.0000          Tau-a            0.3011   
+Pairs                  7791           c                0.8845   
+---------------------------------------------------------------
+
+
+
+✖ prog2 
+
+Backward Elimination: Step 2 
+
+ Variable prog2 Removed 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           194            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.8131       2.2101    -6.7024      0.0000 
+  female1      1      1.3351        0.4634     2.8813      0.0040 
+   read        1      0.0558        0.0309     1.8050      0.0711 
+  science      1      0.0561        0.0329     1.7036      0.0885 
+   math        1      0.1086        0.0342     3.1761      0.0015 
+   socst       1      0.0155        0.0270     0.5738      0.5661 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8822          Somers' D        0.7643   
+% Discordant          0.1178          Gamma            0.7643   
+% Tied                0.0000          Tau-a            0.2992   
+Pairs                  7791           c                0.8822   
+---------------------------------------------------------------
+
+
+
+✖ socst 
+
+Backward Elimination: Step 3 
+
+ Variable socst Removed 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           195            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.5773       2.1568    -6.7589      0.0000 
+  female1      1      1.3622        0.4605     2.9580      0.0031 
+   read        1      0.0631        0.0281     2.2455      0.0247 
+  science      1      0.0569        0.0326     1.7429      0.0814 
+   math        1      0.1113        0.0338     3.2992      0.0010 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8835          Somers' D        0.7669   
+% Discordant          0.1165          Gamma            0.7669   
+% Tied                0.0000          Tau-a            0.3003   
+Pairs                  7791           c                0.8835   
+---------------------------------------------------------------
+
+
+
+
+No more variables satisfy the condition of p value = 0.3
+
+
+Variables Removed: 
+
+✖ prog3 
+✖ prog2 
+✖ socst 
+
+
+Final Model Output 
+------------------
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           195            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -14.5773       2.1568    -6.7589      0.0000 
+  female1      1      1.3622        0.4605     2.9580      0.0031 
+   read        1      0.0631        0.0281     2.2455      0.0247 
+  science      1      0.0569        0.0326     1.7429      0.0814 
+   math        1      0.1113        0.0338     3.2992      0.0010 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8835          Somers' D        0.7669   
+% Discordant          0.1165          Gamma            0.7669   
+% Tied                0.0000          Tau-a            0.3003   
+Pairs                  7791           c                0.8835   
+---------------------------------------------------------------
+
+
+
+                Elimination Summary                  
+----------------------------------------------------
+        Variable                                        
+Step    Removed       AIC         BIC       Deviance    
+----------------------------------------------------
+   1    prog3       160.7102    183.7984    146.7102    
+   2    prog2       158.9527    178.7427    146.9527    
+   3    socst       157.2856    173.7772    147.2856    
+----------------------------------------------------                         Bivariate Analysis
+---------------------------------------------------------------------
+           Variable    Information Value    LR Chi Square    LR DF    LR p-value
+           ---------------------------------------------------------------------
+           female           0.10              3.9350          1        0.0473
+           prog            0.43              16.1450         2        3e-04
+           ---------------------------------------------------------------------Event By Attributes
+-------------------
+           race           1s%
+           -------------------
+           1             0.01
+           2             0.02
+           3             0.01
+           4             0.22
+           -------------------                         race
+-----------------------------------------
+    prog      1       2       3       4
+    -----------------------------------------
+    1     0.000   0.000   0.000   0.035
+    -----------------------------------------
+    2     0.010   0.020   0.005   0.165
+    -----------------------------------------
+    3     0.000   0.005   0.005   0.020
+    -----------------------------------------         Event Segmentation
+-------------------------------------
+    race       n     1s     n%     1s%
+    -------------------------------------
+    1        24     2     0.12    0.01
+    2        11     5     0.06    0.02
+    3        20     2     0.10    0.01
+    4        145    44    0.72    0.22
+    -------------------------------------                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          38          7           0.26       0.13       0.67     0.08  
+  2          65          40          0.44       0.75      -0.53     0.17  
+  3          44          6           0.30       0.11       0.97     0.18  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  prog           0.4329       
+-----------------------------Variable: prog
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          38          7           0.26       0.13       0.67     0.08  
+  2          65          40          0.44       0.75      -0.53     0.17  
+  3          44          6           0.30       0.11       0.97     0.18  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  prog           0.4329       
+-----------------------------
+
+
+Variable: race
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          22          2           0.15       0.04       1.38     0.15  
+  2          6           5           0.04       0.09      -0.84     0.04  
+  3          18          2           0.12       0.04       1.18     0.10  
+  4         101          44          0.69       0.83      -0.19     0.03  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  race            0.326       
+-----------------------------
+
+
+Variable: female
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  0          73          18          0.50       0.34       0.38     0.06  
+  1          74          35          0.50       0.66      -0.27     0.04  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ female          0.1023       
+-----------------------------
+
+
+Variable: schtyp
+
+                           Weight of Evidence                            
+------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe     iv   
+------------------------------------------------------------------------
+  1         123          45          0.84       0.85      -0.01    0.00  
+  2          24          8           0.16       0.15       0.08    0.00  
+------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ schtyp          0.0012       
+-----------------------------
+
+
+Variable: prog
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          38          7           0.26       0.13       0.67     0.08  
+  2          65          40          0.44       0.75      -0.53     0.17  
+  3          44          6           0.30       0.11       0.97     0.18  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  prog           0.4329       
+-----------------------------
+
+
+Variable: race
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  1          22          2           0.15       0.04       1.38     0.15  
+  2          6           5           0.04       0.09      -0.84     0.04  
+  3          18          2           0.12       0.04       1.18     0.10  
+  4         101          44          0.69       0.83      -0.19     0.03  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+  race            0.326       
+-----------------------------
+
+
+Variable: female
+
+                           Weight of Evidence                             
+-------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe      iv   
+-------------------------------------------------------------------------
+  0          73          18          0.50       0.34       0.38     0.06  
+  1          74          35          0.50       0.66      -0.27     0.04  
+-------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ female          0.1023       
+-----------------------------
+
+
+Variable: schtyp
+
+                           Weight of Evidence                            
+------------------------------------------------------------------------
+levels    count_0s    count_1s    dist_0s    dist_1s        woe     iv   
+------------------------------------------------------------------------
+  1         123          45          0.84       0.85      -0.01    0.00  
+  2          24          8           0.16       0.15       0.08    0.00  
+------------------------------------------------------------------------
+
+      Information Value       
+-----------------------------
+Variable    Information Value 
+-----------------------------
+ schtyp          0.0012       
+-----------------------------Hmmm.. Looks like you have specified an incorrect model. The below steps might be helpful:
+
+* Check if you have used the glm() function to build the model.
+* If you have never used it before, you can learn more by typing ?glm or help(glm) in the Console.
+
+ Please specify the model in the below format:
+
+ glm( write ~ 1 , data =  hsb2 , family = binomial(link = 'logit'))
+
+ Happy modeling :)
+Hmmm.. Looks like you have specified an incorrect model. The below steps might be helpful:
+
+* Check if you have used the glm() function to build the model.
+* If you have never used it before, you can learn more by typing ?glm or help(glm) in the Console.
+
+ Please specify the model in the below format:
+
+ glm( write ~ 1 , data =  hsb2 , family = binomial(link = 'logit'))
+
+ Happy modeling :)
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Computing odds ratio estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           196            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -12.7772       1.9755    -6.4677      0.0000 
+  female1      1      1.4825        0.4474     3.3139       9e-04 
+   read        1      0.1035        0.0258     4.0186       1e-04 
+  science      1      0.0948        0.0305     3.1129      0.0019 
+-----------------------------------------------------------------
+
+                  Odds Ratio Estimates                    
+---------------------------------------------------------
+ Effects          Estimate          95% Wald Conf. Limit 
+---------------------------------------------------------
+ female1           4.4039          1.8955         11.0521 
+   read            1.1091          1.0569          1.1699 
+ science           1.0994          1.0377          1.1702 
+---------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8561          Somers' D        0.7147   
+% Discordant          0.1425          Gamma            0.7136   
+% Tied                0.0014          Tau-a            0.2794   
+Pairs                  7791           c                0.8568   
+---------------------------------------------------------------Tolerance and Variance Inflation Factor
+---------------------------------------
+  Variable Tolerance      VIF
+1  female1 0.9824347 1.017879
+2     read 0.6021370 1.660752
+3  science 0.5939847 1.683545
+
+
+Eigenvalue and Condition Index
+------------------------------
+  Eigenvalue Condition Index    intercept      female1         read      science
+1 3.57391760        1.000000 3.500782e-06 2.232611e-05 0.0006577134 0.0009448623
+2 0.39409893        3.011408 5.155657e-06 8.559696e-04 0.0015266309 0.0025603607
+3 0.01888407       13.757025 1.632498e-03 4.397949e-05 0.1143698337 0.0545537252
+4 0.01309940       16.517583 5.619292e-05 1.312420e-05 0.2758987745 0.5468553525Forward Selection Method    
+---------------------------
+
+Candidate Terms: 
+
+1. female 
+2. read 
+3. science 
+
+We are selecting variables based on p value...
+
+Variables Entered: 
+
+- read 
+- female 
+- science 
+
+
+Final Model Output 
+------------------
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     200        199           196            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              147              1              53     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -12.7772       1.9755    -6.4677      0.0000 
+   read        1      0.1035        0.0258     4.0186       1e-04 
+  female1      1      1.4825        0.4474     3.3139       9e-04 
+  science      1      0.0948        0.0305     3.1129      0.0019 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8561          Somers' D        0.7147   
+% Discordant          0.1425          Gamma            0.7136   
+% Tied                0.0014          Tau-a            0.2794   
+Pairs                  7791           c                0.8568   
+---------------------------------------------------------------
+
+Forward Selection Method 
+------------------------
+
+Candidate Terms: 
+
+1 . female 
+2 . read 
+3 . science 
+
+
+Variables Entered: 
+
+✔ read 
+✔ female 
+✔ science 
+
+                 Selection Summary                  
+---------------------------------------------------
+Step    Variable       AIC        BIC      Deviance 
+---------------------------------------------------
+1       read         183.063    189.660     179.063 
+2       female       176.887    176.887     176.887 
+3       science      168.236    168.236     168.236 
+---------------------------------------------------Forward Selection Method    
+---------------------------
+
+Candidate Terms: 
+
+1. female1 
+2. read 
+3. science 
+
+We are selecting variables based on p value...
+
+Variables Entered: 
+
+✔ read 
+✔ science 
+✔ female1 
+
+
+Final Model Output 
+------------------
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     372        371           368            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              290              1              82     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -11.5804       1.3980    -8.2836      0.0000 
+   read        1      0.1000        0.0210     4.7651      0.0000 
+  science      1      0.0798        0.0246     3.2390      0.0012 
+  female1      1      0.9324        0.3126     2.9826      0.0029 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8259          Somers' D        0.6607   
+% Discordant          0.1687          Gamma            0.6572   
+% Tied                0.0054          Tau-a            0.2265   
+Pairs                 23780           c                0.8286   
+---------------------------------------------------------------
+
+
+                 Selection Summary                   
+----------------------------------------------------
+        Variable                                        
+Step    Entered       AIC         BIC       Deviance    
+----------------------------------------------------
+   1    read        316.3831    324.2209    312.3831    
+   2    science     310.5294    322.2861    304.5294    
+   3    female1     303.0855    318.7611    295.0855    
+----------------------------------------------------Forward Selection Method    
+---------------------------
+
+Candidate Terms: 
+
+1. female1 
+2. read 
+3. science 
+
+We are selecting variables based on p value...
+
+
+Forward Selection: Step 1 
+
+✔ read 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     372        371           370            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              290              1              82     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -8.5704        0.9875    -8.6789      0.0000 
+   read        1      0.1340        0.0172     7.7741      0.0000 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.7771          Somers' D        0.6582   
+% Discordant          0.1602          Gamma            0.6169   
+% Tied                0.0627          Tau-a            0.2126   
+Pairs                 23780           c                0.8085   
+---------------------------------------------------------------
+
+
+
+
+Forward Selection: Step 2 
+
+✔ science 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     372        371           369            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              290              1              82     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -10.1484       1.2142    -8.3581      0.0000 
+   read        1      0.0990        0.0207     4.7938      0.0000 
+  science      1      0.0643        0.0233     2.7592      0.0058 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8181          Somers' D        0.6510   
+% Discordant          0.1729          Gamma            0.6452   
+% Tied                0.0090          Tau-a            0.2223   
+Pairs                 23780           c                0.8226   
+---------------------------------------------------------------
+
+
+
+
+Forward Selection: Step 3 
+
+✔ female1 
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     372        371           368            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              290              1              82     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -11.5804       1.3980    -8.2836      0.0000 
+   read        1      0.1000        0.0210     4.7651      0.0000 
+  science      1      0.0798        0.0246     3.2390      0.0012 
+  female1      1      0.9324        0.3126     2.9826      0.0029 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8259          Somers' D        0.6607   
+% Discordant          0.1687          Gamma            0.6572   
+% Tied                0.0054          Tau-a            0.2265   
+Pairs                 23780           c                0.8286   
+---------------------------------------------------------------
+
+
+
+
+
+Variables Entered: 
+
+✔ read 
+✔ science 
+✔ female1 
+
+
+Final Model Output 
+------------------
+
+✔ Creating model overview. 
+✔ Creating response profile. 
+✔ Extracting maximum likelihood estimates. 
+✔ Estimating concordant and discordant pairs. 
+
+                             Model Overview                              
+------------------------------------------------------------------------
+Data Set    Resp Var    Obs.    Df. Model    Df. Residual    Convergence 
+------------------------------------------------------------------------
+  data      honcomp     372        371           368            TRUE     
+------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0              290              1              82     
+--------------------------------------------------------
+
+                  Maximum Likelihood Estimates                    
+-----------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value    Pr(>|z|) 
+-----------------------------------------------------------------
+(Intercept)    1     -11.5804       1.3980    -8.2836      0.0000 
+   read        1      0.1000        0.0210     4.7651      0.0000 
+  science      1      0.0798        0.0246     3.2390      0.0012 
+  female1      1      0.9324        0.3126     2.9826      0.0029 
+-----------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8259          Somers' D        0.6607   
+% Discordant          0.1687          Gamma            0.6572   
+% Tied                0.0054          Tau-a            0.2265   
+Pairs                 23780           c                0.8286   
+---------------------------------------------------------------
+
+
+                 Selection Summary                   
+----------------------------------------------------
+        Variable                                        
+Step    Entered       AIC         BIC       Deviance    
+----------------------------------------------------
+   1    read        316.3831    324.2209    312.3831    
+   2    science     310.5294    322.2861    304.5294    
+   3    female1     303.0855    318.7611    295.0855    
+----------------------------------------------------           Partition for the Hosmer & Lemeshow Test
+--------------------------------------------------------------
+    def = 1                 def = 0
+    Group    Total    Observed    Expected    Observed    Expected
+    --------------------------------------------------------------
+    1       20         0          0.16         20        19.84
+    2       20         0          0.53         20        19.47
+    3       20         2          0.99         18        19.01
+    4       20         1          1.64         19        18.36
+    5       21         3          2.72         18        18.28
+    6       19         3          4.05         16        14.95
+    7       20         7          6.50         13        13.50
+    8       20         10         8.90         10        11.10
+    9       20         13        11.49         7          8.51
+    10       20         14        16.02         6          3.98
+    --------------------------------------------------------------
+
+    Goodness of Fit Test
+    ------------------------------
+    Chi-Square    DF    Pr > ChiSq
+    ------------------------------
+    4.4998      8       0.8095
+    ------------------------------                              Model Fit Statistics
+---------------------------------------------------------------------------------
+    Log-Lik Intercept Only:      -115.644    Log-Lik Full Model:              -80.118
+    Deviance(196):                160.236    LR(3):                            71.052
+    Prob > LR:                         0.000
+    MCFadden's R2                   0.307    McFadden's Adj R2:                 0.273
+    ML (Cox-Snell) R2:              0.299    Cragg-Uhler(Nagelkerke) R2:        0.436
+    McKelvey & Zavoina's R2:        0.518    Efron's R2:                        0.330
+    Count R2:                       0.810    Adj Count R2:                      0.283
+    BIC:                          181.430    AIC:                             168.236
+    ---------------------------------------------------------------------------------                      Measures  Model 1  Model 2
+1       Log-Lik Intercept Only -115.644 -115.644
+    2          Log-Lik Full Model:  -80.118  -84.570
+    3                     Deviance  160.236  169.141
+    4                           LR   71.052   62.148
+    5                   Prob > LR:    0.000    0.000
+    6                MCFadden's R2    0.307    0.269
+    7           McFadden's Adj R2:    0.273    0.225
+    8           ML (Cox-Snell) R2:    0.299    0.267
+    9  Cragg-Uhler(Nagelkerke) R2:    0.436    0.390
+    10    McKelvey & Zavoina's R2:    0.518    0.440
+    11                 Efron's R2:    0.330    0.281
+    12                   Count R2:    0.810    0.785
+    13               Adj Count R2:    0.283    0.189
+    14                        AIC:  168.236  179.141
+    15                        BIC:  181.430  195.632    Likelihood Ratio Test
+------------------------------
+    Chi-Square    DF    Pr > ChiSq
+    ------------------------------
+    71.0525      3       0.0000
+    ------------------------------Confusion Matrix and Statistics
+
+          Reference
+Prediction   0   1
+         0 125  16
+         1  22  37
+
+
+                Accuracy : 0.8100
+     No Information Rate : 0.7350
+
+                   Kappa : 0.5293
+
+McNemars's Test P-Value  : 0.4173
+
+             Sensitivity : 0.6981
+             Specificity : 0.8503
+          Pos Pred Value : 0.6271
+          Neg Pred Value : 0.8865
+              Prevalence : 0.2650
+          Detection Rate : 0.1850
+    Detection Prevalence : 0.2950
+       Balanced Accuracy : 0.7742
+               Precision : 0.6271
+                  Recall : 0.6981
+
+        'Positive' Class : 1Hmmm.. Looks like you have specified an incorrect model. The below steps might be helpful:
+
+* Check if you have used the glm() function to build the model.
+* If you have never used it before, you can learn more by typing ?glm or help(glm) in the Console.
+
+ Please specify the model in the below format:
+
+ glm( honcomp ~ female + read + science , data =  hsb2 , family = binomial(link = 'logit'))
+
+ Happy modeling :)Hmmm.. Looks like you have specified an incorrect model. The below steps might be helpful:
+
+* Check if you have used the glm() function to build the model.
+* If you have never used it before, you can learn more by typing ?glm or help(glm) in the Console.
+
+ Please specify the model in the below format:
+
+ glm( read ~ female + science , data =  hsb2 , family = binomial(link = 'logit'))
+
+ Happy modeling :)
+cutoff can take on values between 0 and 1 only. You have used 1.4 , please specify a value between 0 and 1 only.
+cutoff can take on values between 0 and 1 only. You have used 1.4 , please specify a value between 0 and 1 only. 
+
+Stepwise Selection Method 
+-------------------------
+
+Candidate Terms: 
+
+1 . x1 
+2 . x2 
+3 . x3 
+4 . x4 
+5 . x5 
+6 . x6 
+
+
+Variables Entered/Removed: 
+
+- x6 added 
+- x1 added 
+- x3 added 
+- x2 added 
+- x6 removed 
+- x5 added 
+
+No more variables to be added or removed.Stepwise Selection Method   
+---------------------------
+
+Candidate Terms: 
+
+1. x1 
+2. x2 
+3. x3 
+4. x4 
+5. x5 
+6. x6 
+
+We are selecting variables based on p value...
+
+Variables Entered/Removed: 
+
+- x6 added 
+- x5 added 
+- x6 added 
+
+No more variables to be added/removed.
+
+
+Final Model Output 
+------------------
+
+                             Model Overview                               
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence 
+-------------------------------------------------------------------------
+  data         y        20000      19999         19995           TRUE     
+-------------------------------------------------------------------------
+
+                    Response Summary                     
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency 
+--------------------------------------------------------
+   0             10041             1             9959    
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates                    
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|) 
+------------------------------------------------------------------
+(Intercept)    1     -1.5228        0.0287    -53.1302      0.0000 
+    x1         1      1.0276        0.0212     48.4927      0.0000 
+    x2         1      0.9807        0.0209     46.9690      0.0000 
+    x3         1      1.0260        0.0213     48.2799      0.0000 
+    x5         1      0.0357        0.0192      1.8531      0.0639 
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses  
+---------------------------------------------------------------
+% Concordant          0.8911          Somers' D        0.7821   
+% Discordant          0.1089          Gamma            0.7821   
+% Tied                0.0000          Tau-a            0.3911   
+Pairs                99998319         c                0.8911   
+---------------------------------------------------------------
+
+Stepwise Selection Method
+-------------------------
+
+Candidate Terms:
+
+1 . x1
+2 . x2
+3 . x3
+4 . x4
+5 . x5
+6 . x6
+
+
+Variables Entered/Removed:
+
+✔ x6
+✔ x1
+✔ x3
+✔ x2
+✖ x6
+✔ x5
+
+No more variables to be added or removed.
+
+                      Stepwise Summary
+-----------------------------------------------------------
+Variable     Method        AIC          BIC       Deviance
+-----------------------------------------------------------
+x6          addition    18869.627    18885.434    18865.627
+x1          addition    18571.376    18595.087    18565.376
+x3          addition    18016.724    18048.338    18008.724
+x2          addition    16642.374    16681.891    16632.374
+x6          removal     16640.653    16672.267    16632.653
+x5          addition    16639.219    16678.736    16629.219
+-----------------------------------------------------------Stepwise Selection Method
+---------------------------
+
+Candidate Terms:
+
+1. x1
+2. x2
+3. x3
+4. x4
+5. x5
+6. x6
+
+We are selecting variables based on p value...
+
+Variables Entered/Removed:
+
+✔ x6
+✔ x1
+✔ x3
+✔ x2
+✔ x5
+✖ x6
+
+No more variables to be added/removed.
+
+
+Final Model Output
+------------------
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19995           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.5228        0.0287    -53.1302      0.0000
+    x1         1      1.0276        0.0212     48.4927      0.0000
+    x3         1      1.0260        0.0213     48.2799      0.0000
+    x2         1      0.9807        0.0209     46.9690      0.0000
+    x5         1      0.0357        0.0192      1.8531      0.0639
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8911          Somers' D        0.7821
+% Discordant          0.1089          Gamma            0.7821
+% Tied                0.0000          Tau-a            0.3911
+Pairs                99998319         c                0.8911
+---------------------------------------------------------------
+
+
+                      Stepwise Selection Summary
+----------------------------------------------------------------------
+                     Added/
+Step    Variable    Removed        AIC           BIC           C(p)
+----------------------------------------------------------------------
+   1       x6       addition     18869.627     18885.434    18865.6270
+   2       x1       addition     18571.376     18595.087    18565.3760
+   3       x3       addition     18016.724     18048.338    18008.7240
+   4       x2       addition     16642.374     16681.891    16632.3740
+   5       x5       addition     16640.883     16688.304    16628.8830
+   6       x6       removal      16639.219     16678.736    16629.2190
+----------------------------------------------------------------------Stepwise Selection Method
+---------------------------
+
+Candidate Terms:
+
+1. x1
+2. x2
+3. x3
+4. x4
+5. x5
+6. x6
+
+We are selecting variables based on p value...
+
+
+Stepwise Selection: Step 1
+
+✔ x6
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19998           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.1331        0.0242    -46.8217      0.0000
+    x6         1      0.7490        0.0107     69.8309      0.0000
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8558          Somers' D        0.7115
+% Discordant          0.1442          Gamma            0.7115
+% Tied                0.0000          Tau-a            0.3558
+Pairs                99998319         c                0.8558
+---------------------------------------------------------------
+
+
+
+
+Stepwise Selection: Step 2
+
+✔ x1
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19997           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.1836        0.0248    -47.8070      0.0000
+    x6         1      0.6619        0.0116     56.9586      0.0000
+    x1         1      0.3595        0.0210     17.0908      0.0000
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8610          Somers' D        0.7220
+% Discordant          0.1390          Gamma            0.7220
+% Tied                0.0000          Tau-a            0.3610
+Pairs                99998319         c                0.8610
+---------------------------------------------------------------
+
+
+
+
+Stepwise Selection: Step 3
+
+✔ x3
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19996           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.2730        0.0257    -49.4449      0.0000
+    x6         1      0.4865        0.0135     35.9577      0.0000
+    x1         1      0.5367        0.0229     23.4089      0.0000
+    x3         1      0.5331        0.0232     22.9908      0.0000
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8704          Somers' D        0.7407
+% Discordant          0.1296          Gamma            0.7407
+% Tied                0.0000          Tau-a            0.3704
+Pairs                99998319         c                0.8704
+---------------------------------------------------------------
+
+
+
+
+Stepwise Selection: Step 4
+
+✔ x2
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19995           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.5229        0.0287    -53.1387      0.0000
+    x6         1     -0.0102        0.0193     -0.5290      0.5968
+    x1         1      1.0381        0.0287     36.1728      0.0000
+    x3         1      1.0365        0.0290     35.7651      0.0000
+    x2         1      0.9910        0.0285     34.7112      0.0000
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8910          Somers' D        0.7820
+% Discordant          0.1090          Gamma            0.7820
+% Tied                0.0000          Tau-a            0.3910
+Pairs                99998319         c                0.8910
+---------------------------------------------------------------
+
+
+
+
+Stepwise Selection: Step 5
+
+✔ x5
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19994           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.5228        0.0287    -53.1294      0.0000
+    x6         1     -0.0112        0.0193     -0.5790      0.5626
+    x1         1      1.0388        0.0287     36.1852      0.0000
+    x3         1      1.0374        0.0290     35.7813      0.0000
+    x2         1      0.9919        0.0286     34.7282      0.0000
+    x5         1      0.0360        0.0193      1.8680      0.0618
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8911          Somers' D        0.7821
+% Discordant          0.1089          Gamma            0.7821
+% Tied                0.0000          Tau-a            0.3911
+Pairs                99998319         c                0.8911
+---------------------------------------------------------------
+
+
+
+
+Stepwise Selection: Step 6
+
+✖ x6
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19995           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.5228        0.0287    -53.1302      0.0000
+    x1         1      1.0276        0.0212     48.4927      0.0000
+    x3         1      1.0260        0.0213     48.2799      0.0000
+    x2         1      0.9807        0.0209     46.9690      0.0000
+    x5         1      0.0357        0.0192      1.8531      0.0639
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8911          Somers' D        0.7821
+% Discordant          0.1089          Gamma            0.7821
+% Tied                0.0000          Tau-a            0.3911
+Pairs                99998319         c                0.8911
+---------------------------------------------------------------
+
+
+
+
+No more variables to be added/removed.
+
+
+Final Model Output
+------------------
+
+✔ Creating model overview.
+✔ Creating response profile.
+✔ Extracting maximum likelihood estimates.
+✔ Estimating concordant and discordant pairs.
+
+                             Model Overview
+-------------------------------------------------------------------------
+Data Set    Resp Var     Obs.    Df. Model    Df. Residual    Convergence
+-------------------------------------------------------------------------
+  data         y        20000      19999         19995           TRUE
+-------------------------------------------------------------------------
+
+                    Response Summary
+--------------------------------------------------------
+Outcome        Frequency        Outcome        Frequency
+--------------------------------------------------------
+   0             10041             1             9959
+--------------------------------------------------------
+
+                   Maximum Likelihood Estimates
+------------------------------------------------------------------
+ Parameter     DF    Estimate    Std. Error    z value     Pr(>|z|)
+------------------------------------------------------------------
+(Intercept)    1     -1.5228        0.0287    -53.1302      0.0000
+    x1         1      1.0276        0.0212     48.4927      0.0000
+    x3         1      1.0260        0.0213     48.2799      0.0000
+    x2         1      0.9807        0.0209     46.9690      0.0000
+    x5         1      0.0357        0.0192      1.8531      0.0639
+------------------------------------------------------------------
+
+ Association of Predicted Probabilities and Observed Responses
+---------------------------------------------------------------
+% Concordant          0.8911          Somers' D        0.7821
+% Discordant          0.1089          Gamma            0.7821
+% Tied                0.0000          Tau-a            0.3911
+Pairs                99998319         c                0.8911
+---------------------------------------------------------------
+
+
+                      Stepwise Selection Summary
+----------------------------------------------------------------------
+                     Added/
+Step    Variable    Removed        AIC           BIC           C(p)
+----------------------------------------------------------------------
+   1       x6       addition     18869.627     18885.434    18865.6270
+   2       x1       addition     18571.376     18595.087    18565.3760
+   3       x3       addition     18016.724     18048.338    18008.7240
+   4       x2       addition     16642.374     16681.891    16632.3740
+   5       x5       addition     16640.883     16688.304    16628.8830
+   6       x6       removal      16639.219     16678.736    16629.2190
+----------------------------------------------------------------------[ FAIL 0 | WARN 0 | SKIP 28 | PASS 79 ]
+
+══ Skipped tests (28) ══════════════════════════════════════════════════════════
+• On CRAN (28): 'test-blr-plots.R:9:3', 'test-blr-plots.R:17:3',
+  'test-blr-plots.R:25:3', 'test-blr-plots.R:33:3', 'test-blr-plots.R:41:3',
+  'test-blr-plots.R:49:3', 'test-blr-plots.R:57:3', 'test-blr-plots.R:65:3',
+  'test-blr-plots.R:73:3', 'test-blr-plots.R:81:3', 'test-blr-plots.R:90:3',
+  'test-blr-plots.R:98:3', 'test-blr-plots.R:106:3', 'test-blr-plots.R:114:3',
+  'test-blr-plots.R:122:3', 'test-blr-plots.R:130:3', 'test-blr-plots.R:139:3',
+  'test-blr-plots.R:147:3', 'test-blr-plots.R:155:3', 'test-blr-plots.R:163:3',
+  'test-blr-plots.R:171:3', 'test-blr-plots.R:179:3', 'test-blr-plots.R:187:3',
+  'test-blr-plots.R:196:3', 'test-blr-plots.R:204:3', 'test-blr-plots.R:212:3',
+  'test-blr-plots.R:220:3', 'test-blr-plots.R:230:3'
+
+[ FAIL 0 | WARN 0 | SKIP 28 | PASS 79 ]
+> 
+> proc.time()
+   user  system elapsed 
+  76.00   10.68   94.37 

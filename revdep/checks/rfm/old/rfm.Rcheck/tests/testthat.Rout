@@ -1,0 +1,88 @@
+
+R version 4.4.1 (2024-06-14 ucrt) -- "Race for Your Life"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # This file is part of the standard setup for testthat.
+> # It is recommended that you do not modify it.
+> #
+> # Where should you do additional test configuration?
+> # Learn more about the roles of various files in:
+> # * https://r-pkgs.org/tests.html
+> # * https://testthat.r-lib.org/reference/test_package.html#special-files
+> 
+> library(testthat)
+> library(rfm)
+> 
+> test_check("rfm")
+[ FAIL 0 | WARN 0 | SKIP 36 | PASS 15 ]
+
+══ Skipped tests (36) ══════════════════════════════════════════════════════════
+• On CRAN (36): 'test-rfm-plotly.R:24:3', 'test-rfm-plotly.R:39:3',
+  'test-rfm-plotly.R:56:3', 'test-rfm-plotly.R:74:3', 'test-rfm-plotly.R:88:3',
+  'test-rfm-plotly.R:103:3', 'test-rfm-plotly.R:119:3',
+  'test-rfm-plotly.R:135:3', 'test-rfm-plotly.R:152:3',
+  'test-rfm-plotly.R:170:3', 'test-rfm-plotly.R:192:3',
+  'test-rfm-plotly.R:216:3', 'test-rfm-plotly.R:230:3',
+  'test-rfm-plotly.R:247:3', 'test-rfm-plotly.R:261:3',
+  'test-rfm-plotly.R:276:3', 'test-rfm-plotly.R:292:3',
+  'test-rfm-plotly.R:307:3', 'test-rfm-plotly.R:324:3', 'test-rfm-plots.R:3:3',
+  'test-rfm-plots.R:14:3', 'test-rfm-plots.R:26:3', 'test-rfm-plots.R:38:3',
+  'test-rfm-plots.R:75:3', 'test-rfm-plots.R:87:3', 'test-rfm-plots.R:100:3',
+  'test-rfm-plots.R:112:3', 'test-rfm-plots.R:120:3', 'test-rfm-plots.R:128:3',
+  'test-rfm-plots.R:136:3', 'test-rfm-plots.R:145:3', 'test-rfm-plots.R:154:3',
+  'test-rfm-plots.R:163:3', 'test-rfm-plots.R:173:3', 'test-rfm-plots.R:185:3',
+  'test-rfm-plots.R:193:3'
+
+[ FAIL 0 | WARN 0 | SKIP 36 | PASS 15 ]
+Deleting unused snapshots:
+• rfm-plots/customers-by-segment.svg
+• rfm-plots/orders-by-segment-descending.svg
+• rfm-plots/orders-by-segment-flipped-sorted.svg
+• rfm-plots/orders-by-segment-flipped.svg
+• rfm-plots/orders-by-segment-sorted.svg
+• rfm-plots/orders-by-segment.svg
+• rfm-plots/revenue-by-segment-descending-new.svg
+• rfm-plots/rfm-barchart.svg
+• rfm-plots/rfm-heatmap.svg
+• rfm-plots/rfm-histograms.svg
+• rfm-plots/rfm-median-frequency-flip.svg
+• rfm-plots/rfm-median-frequency-sort-ascending-flip.svg
+• rfm-plots/rfm-median-frequency-sort-ascending.svg
+• rfm-plots/rfm-median-frequency-sort-flip.svg
+• rfm-plots/rfm-median-frequency-sort.svg
+• rfm-plots/rfm-median-frequency.svg
+• rfm-plots/rfm-median-monetary-flip.svg
+• rfm-plots/rfm-median-monetary-sort-ascending-flip.svg
+• rfm-plots/rfm-median-monetary-sort-ascending.svg
+• rfm-plots/rfm-median-monetary-sort-flip.svg
+• rfm-plots/rfm-median-monetary-sort.svg
+• rfm-plots/rfm-median-monetary.svg
+• rfm-plots/rfm-median-recency-flip.svg
+• rfm-plots/rfm-median-recency-sort-ascending-flip.svg
+• rfm-plots/rfm-median-recency-sort-ascending.svg
+• rfm-plots/rfm-median-recency-sort-flip.svg
+• rfm-plots/rfm-median-recency-sort.svg
+• rfm-plots/rfm-median-recency.svg
+• rfm-plots/rfm-orderdist-flip.svg
+• rfm-plots/rfm-orderdist.svg
+• rfm-plots/rfm-plot-revenue-dist-flipped.svg
+• rfm-plots/rfm-plot-revenue-dist.svg
+• rfm-plots/rfm-plot-segment-scatter.svg
+• rfm-plots/rfm-plot-segment.svg
+> 
+> proc.time()
+   user  system elapsed 
+  15.07    2.39   18.00 
