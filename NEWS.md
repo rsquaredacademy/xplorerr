@@ -1,3 +1,5 @@
+# xplorerr (development version)
+
 # xplorerr 0.2.0
 
 This is a minor release to fix CRAN note.
