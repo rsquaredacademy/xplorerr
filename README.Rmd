@@ -124,3 +124,5 @@ Tools for interactive data visualization . Users can visualize data using
 ```{r visualize, eval=FALSE}
 app_visualizer()
 ```
+
+<div data-rsa-signup data-site="xplorerr.rsquaredacademy.com" data-privacy-url="https://www.rsquaredacademy.com/privacy-policy.html"></div>

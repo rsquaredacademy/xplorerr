@@ -115,3 +115,5 @@ using ‘ggplot2’, ‘plotly’, ‘rbokeh’ and ‘highcharter’ libraries.
 ``` r
 app_visualizer()
 ```
+
+<div data-rsa-signup data-site="xplorerr.rsquaredacademy.com" data-privacy-url="https://www.rsquaredacademy.com/privacy-policy.html"></div>
