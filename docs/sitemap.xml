@@ -1,45 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/index.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_descriptive.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_inference.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_linear_regression.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_logistic_regression.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_rfm_analysis.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_vistributions.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/app_visualizer.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/exam.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/hsb.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/treatment.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/xplorerr.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/xpl_gvar.html</loc>
-  </url>
-  <url>
-    <loc>https://xplorerr.rsquaredacademy.com/reference/xpl_nsignC.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://xplorerr.rsquaredacademy.com/404.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/authors.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/CONDUCT.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/google02e424888b5e2def.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/index.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/LICENSE-text.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/LICENSE.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/news/index.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_descriptive.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_inference.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_linear_regression.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_logistic_regression.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_rfm_analysis.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_vistributions.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/app_visualizer.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/exam.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/hsb.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/index.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_blorr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_descriptr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_inferr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_olsrr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_visualizer.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/launch_app_xplorerr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/treatment.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/xplorerr.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/xpl_gvar.html</loc></url>
+<url><loc>https://xplorerr.rsquaredacademy.com/reference/xpl_nsignC.html</loc></url>
 </urlset>
+

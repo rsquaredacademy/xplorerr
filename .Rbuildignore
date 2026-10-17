@@ -11,5 +11,6 @@
 ^_pkgdown\.yml$
 ^hex_xplorerr\.png$
 ^docs$
+^pkgdown$
 ^\.github$
 ^revdep$

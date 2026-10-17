@@ -1,9 +1,8 @@
-pandoc: 2.11.2
-pkgdown: 1.6.1
+pandoc: 3.10.2
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-05-21T05:22Z
+last_built: 2026-10-17T06:56Z
 urls:
   reference: https://xplorerr.rsquaredacademy.com/reference
   article: https://xplorerr.rsquaredacademy.com/articles
-

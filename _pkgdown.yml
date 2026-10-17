@@ -4,10 +4,9 @@ authors:
   Aravind Hebbali:
     href: https://www.aravindhebbali.com
 
-templates:
-  params:
-    bootswatch: cosmo
-    ganalytics: UA-57270671-33
+template:
+  bootstrap: 5
+  bootswatch: cosmo
 
 home:
   links:
@@ -15,6 +14,14 @@ home:
       href: https://www.rsquaredacademy.com
     - text: Try shiny apps
       href: https://apps.rsquaredacademy.com
+
+navbar:
+  structure:
+    right: [search, academy, github]
+  components:
+    academy:
+      text: 'Rsquared Academy'
+      href: https://www.rsquaredacademy.com
 
 reference:
 - title: All functions
@@ -28,3 +35,23 @@ reference:
   - app_logistic_regression
   - app_rfm_analysis
   - xplorerr
+
+- title: Data
+
+  contents:
+  - exam
+  - hsb
+  - treatment
+
+- title: Utilities
+
+  contents:
+  - xpl_gvar
+  - xpl_nsignC
+
+footer:
+  structure:
+    left: developed_by
+    right: [built_with, privacy]
+  components:
+    privacy: '[Privacy](https://www.rsquaredacademy.com/privacy-policy.html) · <a href="#" data-rsa-analytics-optout>Turn off analytics</a>'
