@@ -36,6 +36,19 @@ reference:
   - app_rfm_analysis
   - xplorerr
 
+- title: Data
+
+  contents:
+  - exam
+  - hsb
+  - treatment
+
+- title: Utilities
+
+  contents:
+  - xpl_gvar
+  - xpl_nsignC
+
 footer:
   structure:
     left: developed_by
